@@ -110,115 +110,111 @@ const Signup = () => {
               autoComplete="off"
             >
               {/* Step 1 phone number */}
-              {current === 0 && (
-                <Form.Item<FieldType>
-                  label="ເບີໂທລະສັບ"
-                  name="phoneno"
-                  rules={[
-                    { required: true, message: "Please input your phone!" },
-                  ]}
-                >
-                  <Input className="" size="large" />
-                </Form.Item>
-              )}
+              <Form.Item<FieldType>
+                className={`${current === 0 ? "block" : "hidden"}`}
+                label="ເບີໂທລະສັບ"
+                name="phoneno"
+                rules={[
+                  { required: true, message: "Please input your phone!" },
+                ]}
+              >
+                <Input className="" size="large" />
+              </Form.Item>
 
               {/* Step 2 OTP*/}
-              {current === 1 && (
-                <Form.Item<FieldType>
-                  label="OTP"
-                  name="otp"
-                  rules={[
-                    { required: true, message: "Please input your otp!" },
-                  ]}
-                >
-                  <InputOTP length={4} inputType="numeric" />
-                </Form.Item>
-              )}
+              <Form.Item<FieldType>
+                className={`${current === 1 ? "block" : "hidden"}`}
+                label="OTP"
+                name="otp"
+                rules={[{ required: true, message: "Please input your otp!" }]}
+              >
+                <InputOTP length={4} inputType="numeric" />
+              </Form.Item>
 
               {/* Step 3 First name and last name*/}
-              {current === 2 && (
-                <>
-                  <Form.Item<FieldType>
-                    label="ຊື່ແທ້"
-                    name="fname"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Please input your first name!",
-                      },
-                    ]}
-                  >
-                    <Input size="large" />
-                  </Form.Item>
-                  <Form.Item<FieldType>
-                    label="ນາມສະກຸນ"
-                    name="lname"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Please input your last name!",
-                      },
-                    ]}
-                  >
-                    <Input size="large" />
-                  </Form.Item>
-                </>
-              )}
+              <Form.Item<FieldType>
+                className={`${current === 2 ? "block" : "hidden"}`}
+                label="ຊື່ແທ້"
+                name="fname"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your first name!",
+                  },
+                ]}
+              >
+                <Input size="large" />
+              </Form.Item>
+              <Form.Item<FieldType>
+                className={`${current === 2 ? "block" : "hidden"}`}
+                label="ນາມສະກຸນ"
+                name="lname"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your last name!",
+                  },
+                ]}
+              >
+                <Input size="large" />
+              </Form.Item>
 
               {/* Step 4 Date of birth*/}
-              {current === 3 && (
-                <>
-                  <Form.Item<FieldType>
-                    label="ວັນເດືອນເກີດ"
-                    name="dob"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Please input your date of birth!",
-                      },
-                    ]}
-                  >
-                    <DatePicker onChange={onChange} />
-                  </Form.Item>
-                </>
-              )}
+              <Form.Item<FieldType>
+                className={`${current === 3 ? "block" : "hidden"}`}
+                label="ວັນເດືອນເກີດ"
+                name="dob"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your date of birth!",
+                  },
+                ]}
+              >
+                <DatePicker
+                  style={{ display: "block" }}
+                  size="large"
+                  onChange={onChange}
+                />
+              </Form.Item>
 
-              {current === 4 && (
-                <>
-                  <Form.Item<FieldType>
-                    label="ລະຫັດຜ່ານໃຫມ່"
-                    name="password"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Please input!",
-                      },
-                    ]}
-                  >
-                    <Input.Password
-                      iconRender={(visible) =>
-                        visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
-                      }
-                    />
-                  </Form.Item>
-                  <Form.Item<FieldType>
-                    label="ຢືນຢັ້ນລະຫັດຜ່ານ"
-                    name="confirmPassword"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Please input!",
-                      },
-                    ]}
-                  >
-                    <Input.Password
-                      iconRender={(visible) =>
-                        visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
-                      }
-                    />
-                  </Form.Item>
-                </>
-              )}
+              {/* Step 5 password*/}
+              <Form.Item<FieldType>
+                className={`${current === 4 ? "block" : "hidden"}`}
+                label="ລະຫັດຜ່ານໃຫມ່"
+                name="password"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input!",
+                  },
+                ]}
+              >
+                <Input.Password
+                  iconRender={(visible) =>
+                    visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
+                  }
+                />
+              </Form.Item>
+              <Form.Item<FieldType>
+                className={`${current === 4 ? "block" : "hidden"}`}
+                label="ຢືນຢັ້ນລະຫັດຜ່ານ"
+                name="confirmPassword"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input!",
+                  },
+                ]}
+              >
+                <Input.Password
+                  iconRender={(visible) =>
+                    visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
+                  }
+                />
+              </Form.Item>
+
+              {/* Buttons */}
               <Form.Item>
                 <div className="mt-2 gap-2 flex items-center">
                   {current < steps.length - 1 && (
