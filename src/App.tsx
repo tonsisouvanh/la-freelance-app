@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import RootLayout from "./views/RootLayout.js";
-import { Home, Signin, Signup } from "./views/index";
+import { Home, Signin, Signup, About, WorkBoard } from "./views/index";
 import { ConfigProvider } from "antd";
 function App() {
   return (
@@ -18,6 +18,8 @@ function App() {
           <Route path="/signup" element={<Signup />}></Route>
           <Route element={<RootLayout />}>
             <Route index path="/" element={<Home />}></Route>
+            <Route path="/work-board" element={<WorkBoard />}></Route>
+            <Route path="/about" element={<About />}></Route>
           </Route>
         </Routes>
       </ConfigProvider>

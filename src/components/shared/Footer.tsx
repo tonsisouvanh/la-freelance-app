@@ -1,7 +1,17 @@
-const Footer = () => {
-  return (
-    <div>Footer</div>
-  )
-}
+import { Layout } from "antd";
+import Logo from "./Logo";
 
-export default Footer
+const { Footer: Footers } = Layout;
+
+type Props = {};
+
+const Footer = (props: Props) => {
+  return (
+    <Footers className="flex flex-col justify-center items-center">
+      LA-FREELANCE ©{new Date().getFullYear()} Created by LAF
+      <Logo />
+    </Footers>
+  );
+};
+
+export default Footer;

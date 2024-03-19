@@ -1,12 +1,4 @@
-import {
-  Button,
-  Form,
-  type FormProps,
-  Input,
-  message,
-  Steps,
-  DatePicker,
-} from "antd";
+import { Button, Form, type FormProps, Input, Steps, DatePicker } from "antd";
 import { InputOTP } from "antd-input-otp"; // Don't forget to import this too!
 import { useState } from "react";
 import type { DatePickerProps } from "antd";
@@ -50,13 +42,6 @@ type FieldType = {
   confirmPassword?: string;
 };
 
-const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
-  console.log("🚀 ~ values:", values);
-};
-
-const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
-  console.log("🚀 ~ errorInfo:", errorInfo);
-};
 const Signup = () => {
   const [current, setCurrent] = useState(0);
 
@@ -79,7 +64,7 @@ const Signup = () => {
       return "ສົ່ງ OTP";
     }
     if (current === 1) {
-      return "ຢືນຢັ້ນ OTP";
+      return "ຢືນຢັນ OTP";
     } else {
       return "ຕໍ່ໄປ";
     }
@@ -87,11 +72,25 @@ const Signup = () => {
   const onChange: DatePickerProps["onChange"] = (date, dateString) => {
     console.log(date, dateString);
   };
+
+  const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
+    console.log("🚀 ~ values:", values);
+  };
+
+  const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (
+    errorInfo
+  ) => {
+    console.log("🚀 ~ errorInfo:", errorInfo);
+  };
+
   return (
     <>
       <div className="w-full h-screen flex items-center justify-center px-10">
+        <div className="absolute top-0 -z-10 h-full w-full bg-white">
+          <div className="absolute bottom-auto left-auto right-0 top-0 h-[500px] w-[500px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[#1A96CB]/20 opacity-50 blur-[80px]"></div>
+        </div>
         <div className="gap-10 flex flex-col items-center justify-center">
-          <Logo className="w-24" />
+          <Logo className="w-36" />
           <Steps
             responsive
             current={current}
@@ -122,14 +121,26 @@ const Signup = () => {
               </Form.Item>
 
               {/* Step 2 OTP*/}
-              <Form.Item<FieldType>
-                className={`${current === 1 ? "block" : "hidden"}`}
-                label="OTP"
-                name="otp"
-                rules={[{ required: true, message: "Please input your otp!" }]}
-              >
-                <InputOTP length={4} inputType="numeric" />
-              </Form.Item>
+              <div className={`${current === 1 ? "block" : "hidden"}`}>
+                <Form.Item<FieldType>
+                  label="OTP"
+                  name="otp"
+                  rules={[
+                    { required: true, message: "Please input your otp!" },
+                  ]}
+                >
+                  <InputOTP length={4} inputType="numeric" />
+                </Form.Item>
+                <div className="ml-auto max-w-fit">
+                  <Button
+                    htmlType="button"
+                    className="text-primary ml-auto"
+                    type="link"
+                  >
+                    ສົ່ງລະຫັດ OTP ອີກຄັ້ງ
+                  </Button>
+                </div>
+              </div>
 
               {/* Step 3 First name and last name*/}
               <Form.Item<FieldType>
@@ -220,6 +231,7 @@ const Signup = () => {
                   {current < steps.length - 1 && (
                     <Button
                       type="primary"
+                      className="bg-primary"
                       block
                       size="large"
                       onClick={() => next()}
@@ -231,9 +243,9 @@ const Signup = () => {
                     <Button
                       type="primary"
                       block
+                      className="bg-primary"
                       htmlType="submit"
                       size="large"
-                      onClick={() => message.success("Processing complete!")}
                     >
                       ຢືນຢັນ
                     </Button>
