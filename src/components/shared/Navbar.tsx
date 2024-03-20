@@ -39,7 +39,7 @@ const items: MenuProps["items"] = [
 
 const Navbar = () => {
   return (
-    <Header className="border z-[1] shadow lh:px-10 px-10 py-10 lg:py-12 sticky top-0 bg-white flex border-b-[0.5px] items-center justify-between flex-1 gap-10">
+    <Header className="border z-[1] shadow lh:px-10 px-4 py-10 lg:py-12 sticky top-0 bg-white flex border-b-[0.5px] items-center justify-between flex-1 gap-10">
       <div className="lg:hidden">
         <MobileDrawer />
       </div>
