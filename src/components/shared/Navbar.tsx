@@ -31,7 +31,7 @@ function getItem(
 }
 
 const items: MenuProps["items"] = [
-  getItem(<Link to="/">Home</Link>, "1", <HomeOutlined />),
+  getItem(<Link to="/">ໜ້າຫຼັກ</Link>, "1", <HomeOutlined />),
   getItem(<Link to="/work-board">ປະກາດຫາວຽກ</Link>, "2", <SoundOutlined />),
   getItem(<Link to="/about">ກ່ຽວກັບ</Link>, "3", <TeamOutlined />),
   getItem(<Link to="#">ສະໝັກເປັນຟີຣແລນສ</Link>, "4", <SignatureOutlined />),
@@ -50,17 +50,19 @@ const Navbar = () => {
         defaultSelectedKeys={["1"]}
         defaultOpenKeys={["sub1"]}
         items={items}
-        className="bg-transparent border-none hidden lg:flex"
+        className="bg-transparent border-none hidden lg:flex text-lg"
       />
 
       <div className="space-x-3 hidden lg:flex">
         <Link to="signin">
-          <Button type="primary" className="bg-primary">
+          <Button type="primary" size="large" className="bg-primary">
             ເຂົ້າສູລະບົບ
           </Button>
         </Link>
         <Link to="/signup">
-          <Button type="default">ສະໝັກສະມາຊິກ</Button>
+          <Button type="default" size="large">
+            ສະໝັກສະມາຊິກ
+          </Button>
         </Link>
         <LanguageDropdown />
       </div>

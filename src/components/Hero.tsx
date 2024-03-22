@@ -17,7 +17,7 @@ const Hero = (props: Props) => {
       <div className="flex flex-col items-center justify-center">
         <TyperText />
         <div className="mt-5">
-          <p className="text-white text-md lg:text-lg mb-3 z-[1] mr-auto">
+          <p className="text-slate-900 text-md lg:text-lg mb-3 z-[1] font-bold text-center ">
             ຄົ້ນຫາຟີຣແລນສ
           </p>
           <Input
