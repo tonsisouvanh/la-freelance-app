@@ -11,7 +11,7 @@ const Reason = (props: Props) => {
       <div className="space-y-10">
         <div className="">
           <h1 className="text-3xl font-bold">
-            ເປັນຫຍັງຕ້ອງເລືອກໃຊ້ SCanX Work ?
+            ເປັນຫຍັງຕ້ອງເລືອກໃຊ້ LA-FREELANCE ?
           </h1>
           <h1 className="text-primary text-4xl mt-3 font-bold">
             ເພາະເຮົາສາມາດປຽ່ນໄອເດຍເຈົ້າໃຫ້ເປັນຈິງ ດ້ວຍຟີຮແລຮນມືອາຊີບ
@@ -26,7 +26,7 @@ const Reason = (props: Props) => {
                 <span className="text-sm font-medium">
                   ຟີຣແລຮນຈະຜ່ານການຄັດເລືອກ ແລະ ຢືນຢັນຕົວຕົນ
                   <br />
-                  ກັບ SCanX Work ສາມາດກວດສອບໄດ້
+                  ກັບ LA-FREELANCE ສາມາດກວດສອບໄດ້
                 </span>
               </h1>
             </div>
@@ -56,7 +56,7 @@ const Reason = (props: Props) => {
           {/* <div>
             <div className="mt-32">
               <h1 className="text-4xl text-blue-700 font-bold">
-                ເລີ່ມຈ້າງວຽກຟີຮແລຮນງ່າຍໆ ກັບ SCanX Work
+                ເລີ່ມຈ້າງວຽກຟີຮແລຮນງ່າຍໆ ກັບ LA-FREELANCE
               </h1>
             </div>
             <div className="mt-24">

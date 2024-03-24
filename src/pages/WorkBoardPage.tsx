@@ -1,6 +1,6 @@
 import { Tabs } from "antd";
-import WorkBoardTable from "../components/WorkBoard/WorkBoardTable";
-import MyBoard from "../components/WorkBoard/PostedWorkTable";
+import WorkBoardTable from "../components/workboard/WorkBoardTable";
+import MyBoard from "../components/workboard/PostedWorkTable";
 const TabPane = Tabs.TabPane;
 
 function callback(key) {
@@ -23,15 +23,14 @@ const WorkBoard = (props: Props) => {
       </div>
       <div className="border mt-5 rounded-2xl">
         <div className="max-w-6xl mx-auto">
-
-        <Tabs defaultActiveKey="1" onChange={callback}>
-          <TabPane tab="ບ໋ອດປະກາດຫາວຽກ" key="1">
-            <WorkBoardTable />
-          </TabPane>
-          <TabPane tab="ງານທີ່ຂ້ອຍປະກາດ" key="2">
-            <MyBoard />
-          </TabPane>
-        </Tabs>
+          <Tabs defaultActiveKey="1" onChange={callback}>
+            <TabPane tab="ບ໋ອດປະກາດຫາວຽກ" key="1">
+              <WorkBoardTable />
+            </TabPane>
+            <TabPane tab="ງານທີ່ຂ້ອຍປະກາດ" key="2">
+              <MyBoard />
+            </TabPane>
+          </Tabs>
         </div>
       </div>
     </div>

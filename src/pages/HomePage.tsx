@@ -13,7 +13,7 @@ const Home = () => {
         <div className="max-w-6xl px-4 mx-auto py-10">
           <AdSlider />
         </div>
-        <div className="max-w-6xl px-4 mx-auto flex flex-col gap-28 lg:gap-40 py-16">
+        <div className="_container">
           <WorkCategories />
           <Reason />
           <HowToStartHiring />

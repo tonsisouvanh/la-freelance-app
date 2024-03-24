@@ -1,4 +1,4 @@
-import PostWorkForm from "../components/WorkBoard/PostWorkForm";
+import PostWorkForm from "../components/workboard/PostWorkForm";
 
 type Props = {};
 

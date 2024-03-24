@@ -5,7 +5,7 @@ const HowToStartHiring = (props: Props) => {
     <div className="space-y-10">
       <div className="">
         <h1 className="text-4xl text-primary font-bold">
-          ເລີ່ມຈ້າງວຽກຟີຮແລຮນງ່າຍໆ ກັບ SCanX Work
+          ເລີ່ມຈ້າງວຽກຟີຮແລຮນງ່າຍໆ ກັບ LA-FREELANCE
         </h1>
       </div>
 

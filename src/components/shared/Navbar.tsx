@@ -5,6 +5,8 @@ import {
   SoundOutlined,
   SignatureOutlined,
   TeamOutlined,
+  ProjectOutlined,
+  FireOutlined,
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 const { Header } = Layout;
@@ -33,13 +35,19 @@ function getItem(
 const items: MenuProps["items"] = [
   getItem(<Link to="/">ໜ້າຫຼັກ</Link>, "1", <HomeOutlined />),
   getItem(<Link to="/work-board">ປະກາດຫາວຽກ</Link>, "2", <SoundOutlined />),
+  getItem(<Link to="/works">ວຽກທັງໝົດ</Link>, "5", <ProjectOutlined />),
+  getItem(
+    <Link to="/works/:popular">ວຽກມາແຮງ</Link>,
+    "6",
+    <FireOutlined className="!text-red-500" />
+  ),
   getItem(<Link to="/about">ກ່ຽວກັບ</Link>, "3", <TeamOutlined />),
   getItem(<Link to="#">ສະໝັກເປັນຟີຣແລນສ</Link>, "4", <SignatureOutlined />),
 ];
 
 const Navbar = () => {
   return (
-    <Header className="border z-[1] shadow lh:px-10 px-4 py-10 lg:py-12 sticky top-0 bg-white flex border-b-[0.5px] items-center justify-between flex-1 gap-10">
+    <Header className="border shadow lh:px-10 px-4 py-10 lg:py-12 bg-white flex border-b-[0.5px] items-center justify-between flex-1 gap-10">
       <div className="lg:hidden">
         <MobileDrawer />
       </div>
