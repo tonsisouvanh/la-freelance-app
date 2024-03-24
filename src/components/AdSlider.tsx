@@ -9,13 +9,13 @@ const AdSlider = ({ classname }: Props) => {
     <>
       <div className="rounded-md">
         <Carousel autoplay>
-          <div className={`h-[20rem] ${classname && classname}`}>
+          <div className={`h-[12rem] md:h-[20rem] ${classname && classname}`}>
             <img src={adone} className="w-full h-full object-cover" alt="" />
           </div>
-          <div className={`h-[20rem] ${classname && classname}`}>
+          <div className={`h-[12rem] md:h-[20rem] ${classname && classname}`}>
             <img src={adtwo} className="w-full h-full object-cover" alt="" />
           </div>
-          <div className={`h-[20rem] ${classname && classname}`}>
+          <div className={`h-[12rem] md:h-[20rem] ${classname && classname}`}>
             <img src={adone} className="w-full h-full object-cover" alt="" />
           </div>
         </Carousel>

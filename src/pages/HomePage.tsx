@@ -11,7 +11,7 @@ const Home = () => {
       <div className="w-full overflow-hidden">
         <Hero />
         <div className="max-w-6xl px-4 mx-auto py-10">
-          <AdSlider />
+          <AdSlider classname="border"/>
         </div>
         <div className="_container">
           <WorkCategories />

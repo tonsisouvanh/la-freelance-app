@@ -7,8 +7,9 @@ import {
   TeamOutlined,
   ProjectOutlined,
   FireOutlined,
+  ArrowLeftOutlined,
 } from "@ant-design/icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const { Header } = Layout;
 import type { MenuProps } from "antd";
 import LanguageDropdown from "../LanguageDropdown";
@@ -42,13 +43,20 @@ const items: MenuProps["items"] = [
     <FireOutlined className="!text-red-500" />
   ),
   getItem(<Link to="/about">ກ່ຽວກັບ</Link>, "3", <TeamOutlined />),
-  getItem(<Link to="#">ສະໝັກເປັນຟີຣແລນສ</Link>, "4", <SignatureOutlined />),
+  getItem(<Link to="/freelance/signup">ສະໝັກເປັນຟີຣແລນສ</Link>, "4", <SignatureOutlined />),
 ];
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <Header className="border shadow lh:px-10 px-4 py-10 lg:py-12 bg-white flex border-b-[0.5px] items-center justify-between flex-1 gap-10">
-      <div className="lg:hidden">
+      <Button
+        size="large"
+        className="md:hidden"
+        onClick={() => navigate(-1)}
+        icon={<ArrowLeftOutlined />}
+      ></Button>
+      <div className="hidden">
         <MobileDrawer />
       </div>
       <Logo />

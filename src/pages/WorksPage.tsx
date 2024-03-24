@@ -46,7 +46,7 @@ const WorksPage = () => {
   return (
     <div>
       <HorizalScrollWorkCategory categories={categories} />
-      <div className="_container gap-10">
+      <div className="_container max-md:py-4 gap-10">
         <AdSlider classname="h-[14rem] border" />
         <h1 className="text-3xl mt-4 mb-12 font-bold">ສະບາຍດີ , ແບັກ</h1>
         {/* Popular */}

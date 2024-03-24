@@ -3,6 +3,7 @@ import Navbar from "../components/shared/Navbar";
 import Footer from "../components/shared/Footer";
 import { useEffect, useState } from "react";
 import { Spin } from "antd";
+import MobileNavbar from "../components/shared/MobileNavbar";
 const RootLayout = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true); // Initially loading
 
@@ -27,6 +28,7 @@ const RootLayout = () => {
           <Outlet />
         </main>
         <Footer />
+        <MobileNavbar />
       </div>
     </>
   );

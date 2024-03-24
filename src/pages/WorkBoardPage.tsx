@@ -21,7 +21,7 @@ const WorkBoard = (props: Props) => {
           </p>
         </div>
       </div>
-      <div className="border mt-5 rounded-2xl">
+      <div className="border mt-5 rounded-2xl px-2">
         <div className="max-w-6xl mx-auto">
           <Tabs defaultActiveKey="1" onChange={callback}>
             <TabPane tab="ບ໋ອດປະກາດຫາວຽກ" key="1">

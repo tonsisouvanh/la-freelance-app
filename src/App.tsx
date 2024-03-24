@@ -5,6 +5,7 @@ import { ConfigProvider } from "antd";
 import Chat from "./pages/ChatPage.js";
 import PostWork from "./pages/PostWorkPage.js";
 import WorksPage from "./pages/WorksPage.js";
+import FreelanceRegisterPage from "./pages/FreelanceRegisterPage.js";
 function App() {
   return (
     <>
@@ -27,6 +28,11 @@ function App() {
             <Route path="/works/:category" element={<WorksPage />}></Route>
             <Route path="/work-board" element={<WorkBoard />}></Route>
             {/* Freelancer */}
+            <Route
+              path="/freelance/signup"
+              element={<FreelanceRegisterPage />}
+            ></Route>
+
             {/*  */}
             {/* Client */}
             <Route path="/client/post-work" element={<PostWork />}></Route>
