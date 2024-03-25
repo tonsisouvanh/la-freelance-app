@@ -51,7 +51,7 @@ const items: MenuItem[] = [
     icon: <TeamOutlined />,
   },
   {
-    link: "#",
+    link: "/freelance/signup",
     text: "ເປັນຟີຣແລນສ",
     key: "4",
     icon: <SignatureOutlined />,
@@ -61,13 +61,20 @@ const items: MenuItem[] = [
 const MobileNavbar = () => {
   const [bottom, setBottom] = React.useState<number>(0);
   return (
-    <Affix offsetBottom={bottom} className="lg:hidden">
+    <Affix
+      style={{
+        zIndex: 9999,
+      }}
+      offsetBottom={bottom}
+      className="lg:hidden"
+    >
       <div
         id="tabs"
         className="flex bg-primary text-white justify-between rounded-tl-lg rounded-tr-lg px-1"
       >
         {items.map((item, index) => (
           <Link
+            key={index}
             to={item.link}
             className="w-full focus:text-slate-800 hover:text-slate-800 justify-center inline-block text-center pt-2 pb-1"
           >

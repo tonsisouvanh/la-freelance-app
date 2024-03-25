@@ -48,6 +48,7 @@ const items: MenuProps["items"] = [
 
 const Navbar = () => {
   const navigate = useNavigate();
+  // TODO: change head height for mobile view and also add primary color
   return (
     <Header className="border shadow lh:px-10 px-4 py-10 lg:py-12 bg-white flex border-b-[0.5px] items-center justify-between flex-1 gap-10">
       <Button

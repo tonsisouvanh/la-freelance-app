@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 
-const ChatApp: React.FC = () => {
+const ChatPage: React.FC = () => {
   const [messages, setMessages] = useState<string[]>([]);
   const [message, setMessage] = useState<string>("");
   const socket = io("http://localhost:3000/v1/send/"); // Assuming your server is running on port 3000
@@ -45,4 +45,4 @@ const ChatApp: React.FC = () => {
   );
 };
 
-export default ChatApp;
+export default ChatPage;

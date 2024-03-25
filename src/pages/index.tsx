@@ -1,5 +1,9 @@
-export { default as Home } from "./HomePage";
-export { default as Signin } from "./SigninPage";
-export { default as Signup } from "./SignupPage";
-export { default as About } from "./AboutPage";
-export { default as WorkBoard } from "./WorkBoardPage";
+export { default as HomePage } from "./HomePage";
+export { default as SigninPage } from "./SigninPage";
+export { default as SignupPage } from "./SignupPage";
+export { default as AboutPage } from "./AboutPage";
+export { default as WorkBoardPage } from "./WorkBoardPage";
+export { default as FreelanceSignupPage } from "./FreelanceSignupPage";
+export { default as PostWorkPage } from "./PostWorkPage";
+export { default as ChatPage } from "./ChatPage";
+export { default as WorksPage } from "./WorksPage";
