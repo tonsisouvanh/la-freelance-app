@@ -3,8 +3,8 @@ import { CategoryType } from "../type";
 import HorizalScrollWorkCategory from "../components/shared/HorizalScrollWorkCategory";
 import AdSlider from "../components/AdSlider";
 import { Button } from "antd";
-import WorkCard from "../components/card/WorkCard";
-import Works from "../components/workboard/Works";
+import WorkCard from "../components/card/WorkCard.tsx";
+import Works from "../components/WorkBoard/Works.tsx";
 import {
   DownOutlined,
 } from "@ant-design/icons";

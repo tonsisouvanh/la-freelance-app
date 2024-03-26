@@ -1,4 +1,4 @@
-import PostWorkForm from "../components/workboard/PostWorkForm";
+import PostWorkForm from "../components/WorkBoard/PostWorkForm.tsx";
 
 const PostWork = () => {
   return (

@@ -1,6 +1,8 @@
 import { Tabs } from "antd";
-import WorkBoardTable from "../components/workboard/WorkBoardTable";
-import MyBoard from "../components/workboard/PostedWorkTable";
+// import WorkBoardTable from "../components/workboard/WorkBoardTable";
+// import MyBoard from "../components/workboard/PostedWorkTable";
+ import WorkBoardTable from "../components/WorkBoard/WorkBoardTable.tsx";
+ import MyBoard from "../components/WorkBoard/WorkBoardTable.tsx";
 const TabPane = Tabs.TabPane;
 
 function callback(key: any) {
