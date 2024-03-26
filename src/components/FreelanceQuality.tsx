@@ -1,6 +1,4 @@
-type Props = {};
-
-const FreelanceQuality = (props: Props) => {
+const FreelanceQuality = () => {
   return (
     <section className="bg-transparent">
       <div className="">

@@ -51,7 +51,9 @@ const WorksPage = () => {
         <h1 className="text-3xl mt-4 mb-12 font-bold">ສະບາຍດີ , ແບັກ</h1>
         {/* Popular */}
         <div className="">
-          <h2 className="text-4xl font-extrabold text-gray-800 mb-12">ມາແຮງ</h2>
+          <h2 className="text-2xl md:text-4xl font-extrabold text-gray-800 mb-4 md:mb-12">
+            ມາແຮງ
+          </h2>
           <div className="flex overflow-x-scroll hide-scroll-bar gap-6 pb-10">
             {data.map((_, index) => (
               <div key={index}>

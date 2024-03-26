@@ -4,31 +4,27 @@ import Footer from "../components/shared/Footer";
 import { useEffect, useState } from "react";
 import { Spin } from "antd";
 import MobileNavbar from "../components/shared/MobileNavbar";
+import Spinner from "../components/shared/Spinner";
 const RootLayout = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(true); // Initially loading
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  // Simulate data fetching (replace with your actual logic)
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // Adjust timeout as needed
+    }, 2000);
   }, []);
   if (isLoading) {
-    return (
-      <div className="w-full h-screen flex items-center justify-center">
-        <Spin size="large" />
-      </div>
-    );
+    return <Spinner />;
   }
   return (
     <>
-      <div className="absolute top-0 z-[-2] h-screen w-full bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]">
+      <div className="absolute top-0 z-[-2] mt-[63px] h-screen w-full bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]">
         <Navbar />
         <main>
           <Outlet />
         </main>
         <Footer />
-        <MobileNavbar />
+        {/* <MobileNavbar /> */}
       </div>
     </>
   );

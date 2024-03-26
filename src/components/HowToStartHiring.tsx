@@ -1,6 +1,4 @@
-type Props = {};
-
-const HowToStartHiring = (props: Props) => {
+const HowToStartHiring = () => {
   return (
     <div className="space-y-10">
       <div className="">

@@ -17,9 +17,8 @@ const items: MenuProps["items"] = [
   },
 ];
 
-type Props = {};
 
-const LanguageDropdown = (props: Props) => {
+const LanguageDropdown = () => {
   const onClick: MenuProps["onClick"] = ({ key }) => {
     message.info(`Click on item ${key}`);
   };

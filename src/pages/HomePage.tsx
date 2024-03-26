@@ -11,9 +11,9 @@ const Home = () => {
       <div className="w-full overflow-hidden">
         <Hero />
         <div className="max-w-6xl px-4 mx-auto py-10">
-          <AdSlider classname="border"/>
+          <AdSlider classname="border" />
         </div>
-        <div className="_container">
+        <div className="_container max-sm:py-2 max-sm:gap-[8rem]">
           <WorkCategories />
           <Reason />
           <HowToStartHiring />

@@ -10,8 +10,11 @@ import {
   ChatPage,
   SigninPage,
   SignupPage,
+  NotFoundPage,
 } from "./pages/index";
-import { ConfigProvider } from "antd";
+import { ConfigProvider, message } from "antd";
+import PrivateRoute from "./pages/PrivateRoute.js";
+import MobileNavbar from "./components/shared/MobileNavbar.js";
 function App() {
   return (
     <>
@@ -26,27 +29,37 @@ function App() {
         <Routes>
           <Route path="/signin" element={<SigninPage />}></Route>
           <Route path="/signup" element={<SignupPage />}></Route>
+          <Route
+            path="/freelancer/signup"
+            element={<FreelanceSignupPage />}
+          ></Route>
+
           <Route element={<RootLayout />}>
             <Route index path="/" element={<HomePage />}></Route>
             {/* Work */}
             {/* Freelancer & clients */}
             <Route path="/works" element={<WorksPage />}></Route>
             <Route path="/works/:category" element={<WorksPage />}></Route>
-            <Route path="/work-board" element={<WorkBoardPage />}></Route>
-            {/* Freelancer */}
-            <Route
-              path="/freelance/signup"
-              element={<FreelanceSignupPage />}
-            ></Route>
 
-            {/*  */}
+            {/* Private routes */}
+            <Route element={<PrivateRoute />}>
+              <Route
+                path="/client/post-work"
+                element={<PostWorkPage />}
+              ></Route>
+              <Route path="/chat" element={<ChatPage />}></Route>
+              <Route path="/work-board" element={<WorkBoardPage />}></Route>
+            </Route>
+
+            {/* Freelancer */}
+
             {/* Client */}
-            <Route path="/client/post-work" element={<PostWorkPage />}></Route>
 
             <Route path="/about" element={<AboutPage />}></Route>
-            <Route path="/chat" element={<ChatPage />}></Route>
           </Route>
+          <Route path="*" element={<NotFoundPage />}></Route>
         </Routes>
+        <MobileNavbar />
       </ConfigProvider>
     </>
   );

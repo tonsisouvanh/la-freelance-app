@@ -36,9 +36,7 @@ const items: MenuProps["items"] = [
   getItem(<Link to="#">ສະໝັກເປັນຟີຣແລນສ</Link>, "4", <SignatureOutlined />),
 ];
 
-type Props = {};
-
-const MobileDrawer = (props: Props) => {
+const MobileDrawer = () => {
   const [open, setOpen] = useState(false);
 
   const showDrawer = () => {

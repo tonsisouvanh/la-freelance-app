@@ -43,24 +43,29 @@ const items: MenuProps["items"] = [
     <FireOutlined className="!text-red-500" />
   ),
   getItem(<Link to="/about">ກ່ຽວກັບ</Link>, "3", <TeamOutlined />),
-  getItem(<Link to="/freelance/signup">ສະໝັກເປັນຟີຣແລນສ</Link>, "4", <SignatureOutlined />),
+  getItem(
+    <Link to="/freelancer/signup">ສະໝັກເປັນຟີຣແລນສ</Link>,
+    "4",
+    <SignatureOutlined />
+  ),
 ];
 
 const Navbar = () => {
   const navigate = useNavigate();
-  // TODO: change head height for mobile view and also add primary color
   return (
-    <Header className="border shadow lh:px-10 px-4 py-10 lg:py-12 bg-white flex border-b-[0.5px] items-center justify-between flex-1 gap-10">
+    <Header className="fixed top-0 w-full z-[999] shadow px-4 py-4 max-sm:py-0 max-sm:bg-primaryd lg:py-12d bg-white flex border-b-[0.5px] items-center justify-between flex-1 gap-10">
       <Button
-        size="large"
-        className="md:hidden"
+        htmlType="button"
+        type="primary"
+        size="small"
+        className="md:hidden max-sm:text-whited bg-primary text-white"
         onClick={() => navigate(-1)}
         icon={<ArrowLeftOutlined />}
       ></Button>
       <div className="hidden">
         <MobileDrawer />
       </div>
-      <Logo />
+      <Logo className="w-16" />
       <Menu
         mode="horizontal"
         style={{ flex: 1, minWidth: 0 }}

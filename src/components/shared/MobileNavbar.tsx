@@ -1,6 +1,3 @@
-import React from "react";
-import { Affix, Button, Menu } from "antd";
-import type { MenuProps } from "antd";
 import { Link } from "react-router-dom";
 import {
   HomeOutlined,
@@ -8,7 +5,6 @@ import {
   SignatureOutlined,
   TeamOutlined,
   ProjectOutlined,
-  FireOutlined,
 } from "@ant-design/icons";
 
 type MenuItem = {
@@ -51,7 +47,7 @@ const items: MenuItem[] = [
     icon: <TeamOutlined />,
   },
   {
-    link: "/freelance/signup",
+    link: "/freelancer/signup",
     text: "ເປັນຟີຣແລນສ",
     key: "4",
     icon: <SignatureOutlined />,
@@ -59,15 +55,8 @@ const items: MenuItem[] = [
 ];
 
 const MobileNavbar = () => {
-  const [bottom, setBottom] = React.useState<number>(0);
   return (
-    <Affix
-      style={{
-        zIndex: 9999,
-      }}
-      offsetBottom={bottom}
-      className="lg:hidden"
-    >
+    <div className="lg:hidden fixed bottom-0 left-0 right-0">
       <div
         id="tabs"
         className="flex bg-primary text-white justify-between rounded-tl-lg rounded-tr-lg px-1"
@@ -85,7 +74,7 @@ const MobileNavbar = () => {
           </Link>
         ))}
       </div>
-    </Affix>
+    </div>
   );
 };
 

@@ -33,7 +33,7 @@ const steps = [
 ];
 
 type FieldType = {
-  phoneno?: string;
+  phone?: string;
   otp?: string;
   fname?: string;
   lname?: string;
@@ -112,7 +112,7 @@ const Signup = () => {
               <Form.Item<FieldType>
                 className={`${current === 0 ? "block" : "hidden"}`}
                 label="ເບີໂທລະສັບ"
-                name="phoneno"
+                name="phone"
                 rules={[
                   { required: true, message: "Please input your phone!" },
                 ]}

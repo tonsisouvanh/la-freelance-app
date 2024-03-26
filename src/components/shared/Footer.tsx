@@ -3,13 +3,11 @@ import Logo from "./Logo";
 
 const { Footer: Footers } = Layout;
 
-type Props = {};
-
-const Footer = (props: Props) => {
+const Footer = () => {
   return (
-    <Footers className="flex flex-col justify-center items-center">
+    <Footers className="flex pb-[4rem] flex-col justify-center items-center">
       LA-FREELANCE ©{new Date().getFullYear()} Created by LAF
-      <Logo />
+      <Logo className="w-28" />
     </Footers>
   );
 };

@@ -7,3 +7,4 @@ export { default as FreelanceSignupPage } from "./FreelanceSignupPage";
 export { default as PostWorkPage } from "./PostWorkPage";
 export { default as ChatPage } from "./ChatPage";
 export { default as WorksPage } from "./WorksPage";
+export { default as NotFoundPage } from "./NotFoundPage";

@@ -15,24 +15,34 @@ import {
 } from "@ant-design/icons";
 import type { CheckboxProps } from "antd";
 import { Link } from "react-router-dom";
-
-type FieldType = {
-  phoneno?: string;
-  password?: string;
-};
-
-const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
-  console.log("🚀 ~ values:", values);
-};
-
-const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
-  console.log("🚀 ~ errorInfo:", errorInfo);
-};
+import { SigninType } from "../store/feature/auth/authType";
+import { useAppDispatch, useAppSelector } from "../hook/hooks";
+import { signIn } from "../store/feature/auth/AuthSlice";
 
 const Signin = () => {
+  const dispatch = useAppDispatch();
+  const { isLoading, error, token, user } = useAppSelector(
+    (state) => state.auth
+  );
+
   const onChange: CheckboxProps["onChange"] = (e) => {
     console.log(`checked = ${e.target.checked}`);
   };
+
+  const onFinish: FormProps<SigninType>["onFinish"] = (values) => {
+    if (!values.phone || !values.password) {
+      return;
+    }
+    console.log("submit");
+    dispatch(signIn(values));
+  };
+
+  const onFinishFailed: FormProps<SigninType>["onFinishFailed"] = (
+    errorInfo
+  ) => {
+    console.log("🚀 ~ Signin ~ errorInfo:", errorInfo);
+  };
+
   return (
     <>
       <div className="w-full h-screen flex items-center justify-center px-10">
@@ -56,15 +66,15 @@ const Signin = () => {
             onFinishFailed={onFinishFailed}
             autoComplete="off"
           >
-            <Form.Item<FieldType>
+            <Form.Item<SigninType>
               label="ເບີໂທລະສັບ"
-              name="phoneno"
+              name="phone"
               rules={[{ required: true, message: "Please input your phone!" }]}
             >
               <Input size="large" />
             </Form.Item>
 
-            <Form.Item<FieldType>
+            <Form.Item<SigninType>
               label="ລະຫັດຜ່ານໃຫມ່"
               name="password"
               rules={[
@@ -99,7 +109,6 @@ const Signin = () => {
                   type="primary"
                   htmlType="submit"
                   size="large"
-                  onClick={() => message.success("logged in")}
                 >
                   ຢືນຢັນ
                 </Button>
