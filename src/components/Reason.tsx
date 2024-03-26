@@ -3,9 +3,8 @@ import {
   SafetyCertificateOutlined,
   FileSearchOutlined,
 } from "@ant-design/icons";
-type Props = {};
 
-const Reason = (props: Props) => {
+const Reason = () => {
   return (
     <>
       <div className="space-y-10">

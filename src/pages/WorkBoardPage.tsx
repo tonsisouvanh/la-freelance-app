@@ -3,13 +3,11 @@ import WorkBoardTable from "../components/workboard/WorkBoardTable";
 import MyBoard from "../components/workboard/PostedWorkTable";
 const TabPane = Tabs.TabPane;
 
-function callback(key) {
+function callback(key: any) {
   console.log(key);
 }
 
-type Props = {};
-
-const WorkBoard = (props: Props) => {
+const WorkBoard = () => {
   return (
     <div className="w-full overflow-hidden">
       <div className="max-w-6xl px-4 md:px-0 mx-auto flex flex-col gap-28 lg:gap-40 py-16">

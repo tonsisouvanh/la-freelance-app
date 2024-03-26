@@ -1,8 +1,7 @@
-import { Button, Select, Space, Table, Tag } from "antd";
+import { Button, Select, Table } from "antd";
 import type { TableProps } from "antd";
 import { Link } from "react-router-dom";
 
-type Props = {};
 
 interface DataType {
   key: string;
@@ -47,7 +46,7 @@ const columns: TableProps<DataType>["columns"] = [
 
 const data: DataType[] = [];
 
-const WorkBoardTable = (props: Props) => {
+const WorkBoardTable = () => {
   const filterOption = (
     input: string,
     option?: { label: string; value: string }

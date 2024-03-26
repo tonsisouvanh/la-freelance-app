@@ -10,10 +10,7 @@ import {
   Upload,
 } from "antd";
 import { useState } from "react";
-import type { DatePickerProps } from "antd";
 import {
-  EyeInvisibleOutlined,
-  EyeTwoTone,
   PlusOutlined,
 } from "@ant-design/icons";
 import { FreelanceRegisterFieldType } from "../type";
@@ -60,9 +57,9 @@ const FreelanceSignupPage = () => {
     }
   };
 
-  const onChange: DatePickerProps["onChange"] = (date, dateString) => {
-    console.log(date, dateString);
-  };
+  // const onChange: DatePickerProps["onChange"] = (date, dateString) => {
+  //   console.log(date, dateString);
+  // };
 
   const onFinish: FormProps<FreelanceRegisterFieldType>["onFinish"] = (
     values

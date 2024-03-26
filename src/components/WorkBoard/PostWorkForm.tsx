@@ -1,8 +1,4 @@
-import React from 'react'
-
-type Props = {}
-
-const PostWorkForm = (props: Props) => {
+const PostWorkForm = () => {
   return (
     <div>PostWorkForm</div>
   )

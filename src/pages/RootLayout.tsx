@@ -2,8 +2,6 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../components/shared/Navbar";
 import Footer from "../components/shared/Footer";
 import { useEffect, useState } from "react";
-import { Spin } from "antd";
-import MobileNavbar from "../components/shared/MobileNavbar";
 import Spinner from "../components/shared/Spinner";
 const RootLayout = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);

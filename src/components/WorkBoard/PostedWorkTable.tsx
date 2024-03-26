@@ -1,7 +1,6 @@
-import { Button, Select, Space, Table, Tag } from "antd";
+import { Button,Table } from "antd";
 import type { TableProps } from "antd";
 
-type Props = {};
 
 interface DataType {
   key: string;
@@ -51,19 +50,19 @@ const columns: TableProps<DataType>["columns"] = [
 
 const data: DataType[] = [];
 
-const PostedWork = (props: Props) => {
-  const filterOption = (
-    input: string,
-    option?: { label: string; value: string }
-  ) => (option?.label ?? "").toLowerCase().includes(input.toLowerCase());
+const PostedWork = () => {
+  // const filterOption = (
+  //   input: string,
+  //   option?: { label: string; value: string }
+  // ) => (option?.label ?? "").toLowerCase().includes(input.toLowerCase());
 
-  const onChange = (value: string) => {
-    console.log(`selected ${value}`);
-  };
+  // const onChange = (value: string) => {
+  //   console.log(`selected ${value}`);
+  // };
 
-  const onSearch = (value: string) => {
-    console.log("search:", value);
-  };
+  // const onSearch = (value: string) => {
+  //   console.log("search:", value);
+  // };
   return (
     <>
       <div>

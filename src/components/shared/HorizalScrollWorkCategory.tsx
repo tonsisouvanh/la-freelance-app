@@ -1,4 +1,4 @@
-import { Button, List, Typography } from "antd";
+import { Button } from "antd";
 import React from "react";
 import { CategoryType } from "../../type";
 

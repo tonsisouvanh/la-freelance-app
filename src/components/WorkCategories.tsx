@@ -1,8 +1,7 @@
-import { pentool, language, rating } from "../assets";
+import { rating } from "../assets";
 import HorizalScroll from "./shared/HorizalScroll";
-type Props = {};
 
-const WorkCategories = (props: Props) => {
+const WorkCategories = () => {
   return (
     <div className="p-1 md:space-y-10">
       <h1 className="text-primary text-2xl md:text-4xl font-bold">

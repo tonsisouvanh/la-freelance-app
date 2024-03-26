@@ -1,8 +1,6 @@
 import PostWorkForm from "../components/workboard/PostWorkForm";
 
-type Props = {};
-
-const PostWork = (props: Props) => {
+const PostWork = () => {
   return (
     <>
       <div>PostWork</div>

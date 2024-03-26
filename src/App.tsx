@@ -12,7 +12,7 @@ import {
   SignupPage,
   NotFoundPage,
 } from "./pages/index";
-import { ConfigProvider, message } from "antd";
+import { ConfigProvider } from "antd";
 import PrivateRoute from "./pages/PrivateRoute.js";
 import MobileNavbar from "./components/shared/MobileNavbar.js";
 function App() {

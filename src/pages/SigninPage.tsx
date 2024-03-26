@@ -16,14 +16,14 @@ import {
 import type { CheckboxProps } from "antd";
 import { Link } from "react-router-dom";
 import { SigninType } from "../store/feature/auth/authType";
-import { useAppDispatch, useAppSelector } from "../hook/hooks";
+import { useAppDispatch } from "../hook/hooks";
 import { signIn } from "../store/feature/auth/AuthSlice";
 
 const Signin = () => {
   const dispatch = useAppDispatch();
-  const { isLoading, error, token, user } = useAppSelector(
-    (state) => state.auth
-  );
+  // const { isLoading, error, token, user } = useAppSelector(
+  //   (state) => state.auth
+  // );
 
   const onChange: CheckboxProps["onChange"] = (e) => {
     console.log(`checked = ${e.target.checked}`);

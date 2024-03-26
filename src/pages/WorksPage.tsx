@@ -2,12 +2,10 @@ import { useParams } from "react-router-dom";
 import { CategoryType } from "../type";
 import HorizalScrollWorkCategory from "../components/shared/HorizalScrollWorkCategory";
 import AdSlider from "../components/AdSlider";
-import { Button, Card } from "antd";
+import { Button } from "antd";
 import WorkCard from "../components/card/WorkCard";
 import Works from "../components/workboard/Works";
 import {
-  ArrowDownOutlined,
-  CaretDownOutlined,
   DownOutlined,
 } from "@ant-design/icons";
 const categories: CategoryType[] = [
@@ -20,10 +18,6 @@ const categories: CategoryType[] = [
   { name: "ການຕະຫຼາດ" },
 ];
 
-const gridStyle: React.CSSProperties = {
-  width: "25%",
-  textAlign: "center",
-};
 const data = [
   "1",
   "2",
