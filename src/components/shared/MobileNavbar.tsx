@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   HomeOutlined,
   SoundOutlined,
@@ -40,12 +40,12 @@ const items: MenuItem[] = [
   //     key: "6",
   //     icon: <FireOutlined className="!text-red-500" />,
   //   },
-  {
-    link: "/about",
-    text: "ກ່ຽວກັບ",
-    key: "3",
-    icon: <TeamOutlined />,
-  },
+  // {
+  //   link: "/about",
+  //   text: "ກ່ຽວກັບ",
+  //   key: "3",
+  //   icon: <TeamOutlined />,
+  // },
   {
     link: "/freelancer/signup",
     text: "ເປັນຟີຣແລນສ",
@@ -55,6 +55,8 @@ const items: MenuItem[] = [
 ];
 
 const MobileNavbar = () => {
+  const { pathname } = useLocation();
+  console.log("🚀 ~ MobileNavbar ~ pathname:", pathname);
   return (
     <div className="lg:hidden fixed bottom-0 left-0 right-0">
       <div
@@ -65,12 +67,27 @@ const MobileNavbar = () => {
           <Link
             key={index}
             to={item.link}
-            className="w-full focus:text-slate-800 hover:text-slate-800 justify-center inline-block text-center pt-2 pb-1"
+            className={`w-full relative justify-center inline-block text-center pt-2 pb-3 ${
+              pathname === item.link && ""
+            }`}
           >
-            <div className="inline-block mb-1 w-25 h-25 text-2xl">
-              {item.icon}
+            <div
+              className={` ${
+                pathname === item.link &&
+                "bg-primary absolute top-[-8px] left-[18px] z-[-1] w-[60px] h-[60px] rounded-full"
+              }`}
+            ></div>
+            <div
+              className={`${
+                pathname === item.link &&
+                "text-black scale-110 transition duration-300"
+              }`}
+            >
+              <div className="inline-block mb-1 w-25 h-25 text-2xl">
+                {item.icon}
+              </div>
+              <span className="tab tab-home block text-xs">{item.text}</span>
             </div>
-            <span className="tab tab-home block text-xs">{item.text}</span>
           </Link>
         ))}
       </div>

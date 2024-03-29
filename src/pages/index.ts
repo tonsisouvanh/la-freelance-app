@@ -3,7 +3,7 @@ export { default as SigninPage } from "./SigninPage";
 export { default as SignupPage } from "./SignupPage";
 export { default as AboutPage } from "./AboutPage";
 export { default as ProjectBoardPage } from "./ProjectBoardPage";
-export { default as FreelanceSignupPage } from "./FreelanceSignupPage";
+export { default as FreelanceSignupPage } from "./freelance/FreelanceSignupPage";
 export { default as PostProjectPage } from "./PostProjectPage";
 export { default as ChatPage } from "./ChatPage";
 export { default as ProjectsPage } from "./ProjectsPage";

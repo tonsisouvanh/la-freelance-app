@@ -2,12 +2,16 @@ export interface CategoryType {
   name: string;
 }
 
-export interface FreelanceRegisterFieldType {
-  fname: string;
-  lname: string;
-  village: string;
-  district: string;
-  province: string;
-  dob: Date;
+// Freelacner signup field
+export interface FreelanceSignupFieldType {
   documentType: string;
+  documentNumber: string;
+  dob: Date;
+  imageFrontSide: string;
+  imageBackSide: string;
+  imageProof: string;
+  bank: string;
+  accountName: string;
+  accountNumber: string;
+  acceptTerms: boolean;
 }

@@ -16,7 +16,7 @@ const Hero = () => {
       <div className="flex flex-col items-center justify-center">
         <TyperText />
         <div className="mt-5">
-          <p className="text-slate-900 text-md lg:text-lg mb-3 z-[1] font-bold text-center ">
+          <p className=" text-md text-white lg:text-lg mb-3 z-[1] font-bold text-center ">
             ຄົ້ນຫາຟີຣແລນສ
           </p>
           <Input

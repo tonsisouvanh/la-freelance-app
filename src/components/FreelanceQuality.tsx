@@ -12,7 +12,7 @@ const FreelanceQuality = () => {
           {Array.from({ length: 3 }, (__, index) => (
             <div
               key={index}
-              className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow xl:p-8"
+              className="flex flex-col p-3 md:p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow xl:p-8"
             >
               <h3 className="mb-4 text-2xl font-semibold">Freelance QC</h3>
               <p className="font-light text-gray-500 sm:text-lg ">

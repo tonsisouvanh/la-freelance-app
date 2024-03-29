@@ -6,6 +6,9 @@ export default {
       colors: {
         primary: "#1A96CB",
       },
+      fontFamily: {
+        notosans: ["Noto Sans Lao", "sans-serif"],
+      },
     },
   },
   // corePlugins: {
