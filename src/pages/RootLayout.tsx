@@ -9,8 +9,9 @@ const RootLayout = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 700);
   }, []);
+
   if (isLoading) {
     return <Spinner />;
   }
@@ -22,7 +23,6 @@ const RootLayout = () => {
           <Outlet />
         </main>
         <Footer />
-        {/* <MobileNavbar /> */}
       </div>
     </>
   );

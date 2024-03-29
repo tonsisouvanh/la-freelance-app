@@ -2,17 +2,16 @@ import { Button } from "antd";
 import React from "react";
 import { CategoryType } from "../../type";
 
-interface HorizalScrollWorkCategoryProps {
+interface HorizalScrollProjectCategoryProps {
   classname?: string;
   categories: CategoryType[]; // Prop name with its type (string in this case)
   // age?: number; // Optional prop with a question mark (?)
   // onClick?: (name: string) => void; // Function prop for handling clicks
 }
 
-const HorizalScrollWorkCategory: React.FC<HorizalScrollWorkCategoryProps> = ({
-  categories,
-  classname,
-}) => {
+const HorizalScrollProjectCategory: React.FC<
+  HorizalScrollProjectCategoryProps
+> = ({ categories, classname }) => {
   return (
     <>
       <div
@@ -48,4 +47,4 @@ const HorizalScrollWorkCategory: React.FC<HorizalScrollWorkCategoryProps> = ({
   );
 };
 
-export default HorizalScrollWorkCategory;
+export default HorizalScrollProjectCategory;

@@ -1,6 +1,6 @@
 import { SearchOutlined } from "@ant-design/icons";
 import { Input } from "antd";
-import { works } from "../assets/index";
+import { projects } from "../assets/index";
 import TyperText from "./TyperText";
 
 const Hero = () => {
@@ -8,7 +8,7 @@ const Hero = () => {
     <div className="py-10 w-full relative lg:py-24 px-2 lg:px-10 bg-gradient-to-b from-primary via-primary to-cyan-500">
       <div className="absolute bottom-0 left-0 right-0">
         <img
-          src={works}
+          src={projects}
           className="h-full opacity-50 w-full object-cover"
           alt=""
         />
@@ -22,7 +22,7 @@ const Hero = () => {
           <Input
             size="large"
             className="shadow-lg p-2 w-[20rem] md:w-[40rem] lg:py-4"
-            placeholder="By Freelance name or work"
+            placeholder="By Freelance name or project"
             prefix={
               <SearchOutlined className="text-primary border-r-2 border-r-primary px-1 mr-2" />
             }

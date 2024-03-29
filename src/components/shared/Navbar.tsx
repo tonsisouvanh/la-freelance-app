@@ -35,10 +35,10 @@ function getItem(
 
 const items: MenuProps["items"] = [
   getItem(<Link to="/">ໜ້າຫຼັກ</Link>, "1", <HomeOutlined />),
-  getItem(<Link to="/work-board">ປະກາດຫາວຽກ</Link>, "2", <SoundOutlined />),
-  getItem(<Link to="/works">ວຽກທັງໝົດ</Link>, "5", <ProjectOutlined />),
+  getItem(<Link to="/project-board">ປະກາດຫາວຽກ</Link>, "2", <SoundOutlined />),
+  getItem(<Link to="/projects">ວຽກທັງໝົດ</Link>, "5", <ProjectOutlined />),
   getItem(
-    <Link to="/works/:popular">ວຽກມາແຮງ</Link>,
+    <Link to="/projects/:popular">ວຽກມາແຮງ</Link>,
     "6",
     <FireOutlined className="!text-red-500" />
   ),
@@ -54,18 +54,20 @@ const Navbar = () => {
   const navigate = useNavigate();
   return (
     <Header className="fixed top-0 w-full z-[999] shadow px-4 py-4 max-sm:py-0 max-sm:bg-primaryd lg:py-12d bg-white flex border-b-[0.5px] items-center justify-between flex-1 gap-10">
-      <Button
+      {/* <Button
         htmlType="button"
         type="primary"
         size="small"
         className="md:hidden max-sm:text-whited bg-primary text-white"
         onClick={() => navigate(-1)}
         icon={<ArrowLeftOutlined />}
-      ></Button>
+      ></Button> */}
       <div className="hidden">
         <MobileDrawer />
       </div>
-      <Logo className="w-16" />
+      <Link to="/">
+        <Logo className="w-16" />
+      </Link>
       <Menu
         mode="horizontal"
         style={{ flex: 1, minWidth: 0 }}

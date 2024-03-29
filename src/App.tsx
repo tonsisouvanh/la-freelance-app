@@ -2,15 +2,15 @@ import { Route, Routes } from "react-router-dom";
 import RootLayout from "./pages/RootLayout.js";
 import {
   FreelanceSignupPage,
-  WorksPage,
-  PostWorkPage,
+  PostProjectPage,
   HomePage,
-  WorkBoardPage,
+  ProjectBoardPage,
   AboutPage,
   ChatPage,
   SigninPage,
   SignupPage,
   NotFoundPage,
+  ProjectsPage,
 } from "./pages/index";
 import { ConfigProvider } from "antd";
 import PrivateRoute from "./pages/PrivateRoute.js";
@@ -36,19 +36,25 @@ function App() {
 
           <Route element={<RootLayout />}>
             <Route index path="/" element={<HomePage />}></Route>
-            {/* Work */}
+            {/* Project */}
             {/* Freelancer & clients */}
-            <Route path="/works" element={<WorksPage />}></Route>
-            <Route path="/works/:category" element={<WorksPage />}></Route>
+            <Route path="/projects" element={<ProjectsPage />}></Route>
+            <Route
+              path="/projects/:category"
+              element={<ProjectsPage />}
+            ></Route>
 
             {/* Private routes */}
             <Route element={<PrivateRoute />}>
               <Route
-                path="/client/post-work"
-                element={<PostWorkPage />}
+                path="/client/post-project"
+                element={<PostProjectPage />}
               ></Route>
               <Route path="/chat" element={<ChatPage />}></Route>
-              <Route path="/work-board" element={<WorkBoardPage />}></Route>
+              <Route
+                path="/project-board"
+                element={<ProjectBoardPage />}
+              ></Route>
             </Route>
 
             {/* Freelancer */}

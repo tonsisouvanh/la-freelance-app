@@ -54,19 +54,19 @@
                 <mxCell id="m2JrrXw7eCol7-c0cHP9-22" value="" style="edgeStyle=none;html=1;endSize=1;" edge="1" parent="1" source="m2JrrXw7eCol7-c0cHP9-19" target="m2JrrXw7eCol7-c0cHP9-21">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="m2JrrXw7eCol7-c0cHP9-19" value="Look for work" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+                <mxCell id="m2JrrXw7eCol7-c0cHP9-19" value="Look for project" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
                     <mxGeometry x="177" y="365" width="84" height="31" as="geometry"/>
                 </mxCell>
                 <mxCell id="m2JrrXw7eCol7-c0cHP9-24" value="" style="edgeStyle=none;html=1;endSize=1;" edge="1" parent="1" source="m2JrrXw7eCol7-c0cHP9-21" target="m2JrrXw7eCol7-c0cHP9-23">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="m2JrrXw7eCol7-c0cHP9-21" value="Click on work" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+                <mxCell id="m2JrrXw7eCol7-c0cHP9-21" value="Click on project" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
                     <mxGeometry x="177" y="431" width="84" height="31" as="geometry"/>
                 </mxCell>
                 <mxCell id="m2JrrXw7eCol7-c0cHP9-26" value="" style="edgeStyle=none;html=1;endSize=1;" edge="1" parent="1" source="m2JrrXw7eCol7-c0cHP9-23" target="m2JrrXw7eCol7-c0cHP9-25">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="m2JrrXw7eCol7-c0cHP9-23" value="Check work detail" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+                <mxCell id="m2JrrXw7eCol7-c0cHP9-23" value="Check project detail" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
                     <mxGeometry x="177" y="489" width="84" height="31" as="geometry"/>
                 </mxCell>
                 <mxCell id="m2JrrXw7eCol7-c0cHP9-28" value="" style="edgeStyle=none;html=1;endSize=1;" edge="1" parent="1" source="m2JrrXw7eCol7-c0cHP9-25" target="m2JrrXw7eCol7-c0cHP9-27">
@@ -269,7 +269,7 @@
                 <mxCell id="29" value="comment" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="20" vertex="1">
                     <mxGeometry y="90" width="140" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="36" value="workid" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="20" vertex="1">
+                <mxCell id="36" value="projectid" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="20" vertex="1">
                     <mxGeometry y="120" width="140" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="23" style="edgeStyle=none;html=1;startArrow=ERone;startFill=0;endArrow=ERoneToMany;endFill=0;exitX=0.73;exitY=0.976;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="25" target="20" edge="1">
@@ -278,7 +278,7 @@
                 <mxCell id="27" value="select * from user, rating where user.id === rating.userId" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
                     <mxGeometry x="355" y="292" width="316" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="30" value="works" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="30" value="projects" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="350" y="381" width="140" height="120" as="geometry"/>
                 </mxCell>
                 <mxCell id="31" value="id" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="30" vertex="1">
@@ -293,7 +293,7 @@
                 <mxCell id="34" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERone;startFill=0;endArrow=baseDash;endFill=0;" parent="1" source="22" target="32" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="37" value="1&lt;br&gt;ratingid&lt;br&gt;workid" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                <mxCell id="37" value="1&lt;br&gt;ratingid&lt;br&gt;projectid" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
                     <mxGeometry x="13" y="329" width="57" height="55" as="geometry"/>
                 </mxCell>
             </root>

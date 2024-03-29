@@ -23,19 +23,19 @@ const items: MenuItem[] = [
     icon: <HomeOutlined />,
   },
   {
-    link: "/work-board",
+    link: "/project-board",
     text: "ປະກາດຫາວຽກ",
     key: "2",
     icon: <SoundOutlined />,
   },
   {
-    link: "/works",
+    link: "/projects",
     text: "ວຽກທັງໝົດ",
     key: "5",
     icon: <ProjectOutlined />,
   },
   //   {
-  //     link: "/works/:popular",
+  //     link: "/projects/:popular",
   //     text: "ວຽກມາແຮງ",
   //     key: "6",
   //     icon: <FireOutlined className="!text-red-500" />,
