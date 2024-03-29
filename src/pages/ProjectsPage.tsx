@@ -3,7 +3,7 @@ import { CategoryType } from "../type";
 import AdSlider from "../components/AdSlider";
 import { Button } from "antd";
 import ProjectCard from "../components/card/ProjectCard";
-import { DownOutlined, ArrowRightOutlined } from "@ant-design/icons";
+import { ArrowRightOutlined } from "@ant-design/icons";
 import Projects from "../components/workboard/Projects";
 import HorizalScrollProjectCategory from "../components/shared/HorizalScrollWorkCategory";
 const categories: CategoryType[] = [
@@ -16,21 +16,7 @@ const categories: CategoryType[] = [
   { name: "ການຕະຫຼາດ" },
 ];
 
-const data = [
-  "1",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  "10",
-  "11",
-  "12",
-  "13",
-];
+
 const ProjectsPage = () => {
   const { category = "" } = useParams();
   console.log(category);
