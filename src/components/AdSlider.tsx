@@ -1,5 +1,5 @@
 import { Carousel } from "antd";
-import { adone, adtwo } from "../assets";
+import { adone } from "../assets";
 type Props = {
   classname?: string;
 };

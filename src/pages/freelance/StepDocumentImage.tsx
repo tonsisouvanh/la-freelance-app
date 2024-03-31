@@ -1,22 +1,8 @@
-import {
-  UploadOutlined,
-  LoadingOutlined,
-  PlusOutlined,
-} from "@ant-design/icons";
-import { Button, Upload } from "antd";
-import { useState } from "react";
-import type { GetProp, UploadProps } from "antd";
+import { PlusOutlined } from "@ant-design/icons";
+import { Upload } from "antd";
 
 type Props = {
   Form: any;
-};
-
-type FileType = Parameters<GetProp<UploadProps, "beforeUpload">>[0];
-
-const getBase64 = (img: FileType, callback: (url: string) => void) => {
-  const reader = new FileReader();
-  reader.addEventListener("load", () => callback(reader.result as string));
-  reader.readAsDataURL(img);
 };
 
 const StepDocumentImage = ({ Form }: Props) => {
@@ -28,26 +14,9 @@ const StepDocumentImage = ({ Form }: Props) => {
     return e?.fileList;
   };
 
-  const [loading, setLoading] = useState(false);
-  const [imageUrl, setImageUrl] = useState<string>();
-
-  // const handleChange: UploadProps["onChange"] = (info) => {
-  //   if (info.file.status === "uploading") {
-  //     setLoading(true);
-  //     return;
-  //   }
-  //   if (info.file.status === "done") {
-  //     // Get this url from response in real world.
-  //     getBase64(info.file.originFileObj as FileType, (url) => {
-  //       setLoading(false);
-  //       setImageUrl(url);
-  //     });
-  //   }
-  // };
-
   const uploadButton = (
     <button style={{ border: 0, background: "none" }} type="button">
-      {loading ? <LoadingOutlined /> : <PlusOutlined />}
+      <PlusOutlined />
       <div style={{ marginTop: 8 }}>Upload</div>
     </button>
   );
@@ -66,7 +35,6 @@ const StepDocumentImage = ({ Form }: Props) => {
           maxCount={1}
           listType="picture-card"
         >
-          {/* <Button icon={<UploadOutlined />}>Click to upload front side</Button> */}
           {uploadButton}
         </Upload>
       </Form.Item>

@@ -4,8 +4,7 @@ import {
   type FormProps,
   Input,
   Steps,
-  Checkbox,
-  message,
+  Checkbox
 } from "antd";
 import { useState } from "react";
 import { FreelanceSignupFieldType } from "../../type";
