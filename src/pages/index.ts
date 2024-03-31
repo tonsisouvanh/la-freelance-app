@@ -8,3 +8,4 @@ export { default as PostProjectPage } from "./PostProjectPage";
 export { default as ChatPage } from "./ChatPage";
 export { default as ProjectsPage } from "./ProjectsPage";
 export { default as NotFoundPage } from "./NotFoundPage";
+export { default as ProjectPage } from "./ProjectPage";

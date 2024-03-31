@@ -11,10 +11,12 @@ import {
   SignupPage,
   NotFoundPage,
   ProjectsPage,
+  ProjectPage,
 } from "./pages/index";
 import { ConfigProvider } from "antd";
 import PrivateRoute from "./pages/PrivateRoute.js";
 import MobileNavbar from "./components/shared/MobileNavbar.js";
+
 function App() {
   return (
     <>
@@ -39,6 +41,10 @@ function App() {
             {/* Project */}
             {/* Freelancer & clients */}
             <Route path="/projects" element={<ProjectsPage />}></Route>
+            <Route
+              path="/projects/:projectId"
+              element={<ProjectPage />}
+            ></Route>
             <Route
               path="/projects/:category"
               element={<ProjectsPage />}

@@ -16,7 +16,6 @@ const categories: CategoryType[] = [
   { name: "ການຕະຫຼາດ" },
 ];
 
-
 const ProjectsPage = () => {
   const { category = "" } = useParams();
   console.log(category);
@@ -43,9 +42,9 @@ const ProjectsPage = () => {
           </div>
           <div className="flex overflow-x-scroll hide-scroll-bar gap-6 pb-10">
             {Array.from({ length: 10 }, (__, index) => (
-              <div key={index}>
+              <Link to="/projects/1" key={index}>
                 <ProjectCard classname="w-72" />
-              </div>
+              </Link>
             ))}
           </div>
         </div>

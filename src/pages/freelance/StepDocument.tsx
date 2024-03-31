@@ -23,8 +23,8 @@ const StepDocument = ({ Form }: Props) => {
         />
       </Form.Item>
       <Form.Item<FreelanceSignupFieldType>
-        label="ວັນເດືອນປີເກີດ"
-        name="dob"
+        label="ໝົດອາຍຸ"
+        name="documentExpired"
         rules={[{ required: true, message: "Please input" }]}
       >
         <DatePicker className="w-full" size="large" placeholder="YYYY-MM-DD" />

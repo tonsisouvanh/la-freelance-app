@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ProjectCard from "../card/ProjectCard";
 
 const Projects = () => {
@@ -12,7 +13,9 @@ const Projects = () => {
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-6">
           {Array.from({ length: 10 }, (__, index) => (
             <div key={index} className="">
-              <ProjectCard classname="border" />
+              <Link to="/projects/2" key={index}>
+                <ProjectCard classname="border" />
+              </Link>
             </div>
           ))}
         </div>

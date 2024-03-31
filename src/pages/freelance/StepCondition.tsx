@@ -17,7 +17,7 @@ const StepCondition = ({ Form, Checkbox, title, setIsAacceptTerms }: Props) => {
 
   return (
     <>
-      <div className="flex flex-col gap-5 bg-primary/10 p-4 lg:p-6 rounded-md">
+      <div className="flex flex-col gap-5 border p-4 lg:p-6 rounded-md">
         <h1 className="text-xl font-bold text-center">{title}</h1>
         <p className="mb-5">
           Terms and conditions (T&Cs), also referred to as terms of service

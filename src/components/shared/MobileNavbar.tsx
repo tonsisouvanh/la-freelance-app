@@ -3,7 +3,6 @@ import {
   HomeOutlined,
   SoundOutlined,
   SignatureOutlined,
-  TeamOutlined,
   ProjectOutlined,
 } from "@ant-design/icons";
 
@@ -56,7 +55,6 @@ const items: MenuItem[] = [
 
 const MobileNavbar = () => {
   const { pathname } = useLocation();
-  console.log("🚀 ~ MobileNavbar ~ pathname:", pathname);
   return (
     <div className="lg:hidden fixed bottom-0 left-0 right-0">
       <div
@@ -71,16 +69,16 @@ const MobileNavbar = () => {
               pathname === item.link && ""
             }`}
           >
-            <div
+            {/* <div
               className={` ${
                 pathname === item.link &&
                 "bg-primary absolute top-[-8px] left-[18px] z-[-1] w-[60px] h-[60px] rounded-full"
               }`}
-            ></div>
+            ></div> */}
             <div
               className={`${
                 pathname === item.link &&
-                "text-black scale-110 transition duration-300"
+                "text-black scale-110 transition font-bold duration-300"
               }`}
             >
               <div className="inline-block mb-1 w-25 h-25 text-2xl">

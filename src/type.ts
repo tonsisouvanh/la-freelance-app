@@ -6,7 +6,7 @@ export interface CategoryType {
 export interface FreelanceSignupFieldType {
   documentType: string;
   documentNumber: string;
-  dob: Date;
+  documentExpired: Date;
   imageFrontSide: string;
   imageBackSide: string;
   imageProof: string;
