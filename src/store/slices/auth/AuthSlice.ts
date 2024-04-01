@@ -21,16 +21,23 @@ export const signIn = createAsyncThunk<AuthState, SigninType>(
 );
 
 const initialState: AuthState = {
+  user: null,
+  token: null,
+  isLoggedIn: false,
   isLoading: false,
   error: null,
-  token: null,
-  user: null,
 };
 
 const authSlice = createSlice({
-  name: "user",
-  initialState: initialState,
-  reducers: {},
+  name: "auth",
+  initialState,
+  reducers: {
+    logout: (state) => {
+      state.isLoggedIn = false;
+      state.user = null;
+      state.token = null;
+    }
+  },
   extraReducers: (builder) => {
     builder
       // sign in

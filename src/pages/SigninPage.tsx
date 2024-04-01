@@ -15,9 +15,9 @@ import {
 } from "@ant-design/icons";
 import type { CheckboxProps } from "antd";
 import { Link } from "react-router-dom";
-import { SigninType } from "../store/feature/auth/authType";
+import { SigninType } from "../store/slices/auth/authType";
 import { useAppDispatch } from "../hook/hooks";
-import { signIn } from "../store/feature/auth/AuthSlice";
+import { signIn } from "../store/slices/auth/AuthSlice";
 
 const Signin = () => {
   const dispatch = useAppDispatch();

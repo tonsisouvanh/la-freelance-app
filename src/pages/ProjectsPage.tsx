@@ -7,13 +7,13 @@ import { ArrowRightOutlined } from "@ant-design/icons";
 import Projects from "../components/workboard/Projects";
 import HorizalScrollProjectCategory from "../components/shared/HorizalScrollWorkCategory";
 const categories: CategoryType[] = [
-  { name: "ຕາກ້ອງ" },
-  { name: "ອອກແບບ" },
-  { name: "ອອກແບບບ້ານ ແລະ ໂຄງການ" },
-  { name: "ຂຽນໂປຮແກຮມ" },
-  { name: "ຕັດຕໍ່ວິດີໂອ ແລະ ຮູບພາບ" },
-  { name: "ແປພາສາ ແລະ ເອກະສານ" },
-  { name: "ການຕະຫຼາດ" },
+  { id: 1, name: "ຕາກ້ອງ" },
+  { id: 2, name: "ອອກແບບ" },
+  { id: 3, name: "ອອກແບບບ້ານ ແລະ ໂຄງການ" },
+  { id: 4, name: "ຂຽນໂປຮແກຮມ" },
+  { id: 5, name: "ຕັດຕໍ່ວິດີໂອ ແລະ ຮູບພາບ" },
+  { id: 6, name: "ແປພາສາ ແລະ ເອກະສານ" },
+  { id: 7, name: "ການຕະຫຼາດ" },
 ];
 
 const ProjectsPage = () => {
@@ -42,7 +42,7 @@ const ProjectsPage = () => {
           </div>
           <div className="flex overflow-x-scroll hide-scroll-bar gap-6 pb-10">
             {Array.from({ length: 10 }, (__, index) => (
-              <Link to="/projects/1" key={index}>
+              <Link to="/projects/category/1" key={index}>
                 <ProjectCard classname="w-72" />
               </Link>
             ))}

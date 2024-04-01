@@ -1,7 +1,6 @@
 import { HeartFilled, ShareAltOutlined, StarFilled } from "@ant-design/icons";
 import {
   FaChevronLeft,
-  FaComment,
   FaHandsHelping,
   FaRocketchat,
   FaShoppingCart,
@@ -10,8 +9,7 @@ import { FaArrowRotateLeft } from "react-icons/fa6";
 
 import PackageTabs from "../components/project/PackageTabs";
 import { Avatar, Button } from "antd";
-
-import Rating from "../components/Rating";
+import Reviews from "../components/project/Reviews";
 
 const ProjectPage = () => {
   return (
@@ -109,30 +107,7 @@ const ProjectPage = () => {
                 </div>
               </div>
               <div className="py-6 space-y-4">
-                <p className="text-xs">ຣີວິວຈາກຜູ້ຈ້າງ ( 23 )</p>
-                <div className="flex items-center justify-between gap-4">
-                  <div className="bg-primary/60 w-14 h-14 flex items-center justify-center rounded-full">
-                    <span className="text-white">5.0</span>
-                  </div>
-                  <div className="flex flex-1 items-center justify-between">
-                    <div className="text-xs whitespace-nowrap text-gray-500">
-                      <p>ການຕອບ</p>
-                      <p>ການຣັບວຽກ ສົ່ງວຽກ</p>
-                      {/* <Button icon={<FaComment className="text-gray-500"/>} className="" size="small" type="default">
-                        ເບິ່ງຄອມເມັ້ນ
-                      </Button> */}
-                    </div>
-
-                    <div className="text-xs text-gray-500 space-y-1 ">
-                      <Rating value={4} color={"#FFC700"} />
-                      <Rating value={5} color={"#FFC700"} />
-                    </div>
-                  </div>
-                </div>
-                <button className="flex border rounded-md px-2 py-1 border-primary items-center gap-1 mt-2">
-                  <FaComment className="text-primary" />
-                  <span>ເບິ່ງຄອມເມັ້ນ</span>
-                </button>
+                <Reviews />
               </div>
             </div>
           </div>

@@ -42,7 +42,7 @@ function App() {
             {/* Freelancer & clients */}
             <Route path="/projects" element={<ProjectsPage />}></Route>
             <Route
-              path="/projects/:projectId"
+              path="/projects/:category/:projectId"
               element={<ProjectPage />}
             ></Route>
             <Route

@@ -1,8 +1,12 @@
+import { UserType } from "../../../type";
+
+
 export interface AuthState {
+  user: UserType | null;
+  token: string | null;
+  isLoggedIn: boolean;
   isLoading: boolean;
   error: string | null;
-  token: string | null;
-  user: string | null;
 }
 
 export interface SigninType {
