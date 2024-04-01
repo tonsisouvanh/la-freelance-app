@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import RootLayout from "./pages/RootLayout.js";
+import RootLayout from "./pages/layout/RootLayout.js";
 import {
   FreelanceSignupPage,
   PostProjectPage,
@@ -14,8 +14,9 @@ import {
   ProjectPage,
 } from "./pages/index";
 import { ConfigProvider } from "antd";
-import PrivateRoute from "./pages/PrivateRoute.js";
-import MobileNavbar from "./components/shared/MobileNavbar.js";
+import PrivateRoute from "./pages/layout/PrivateRoute.js";
+import MobileNavbar from "./components/layouts/MobileNavbar.js";
+import ScrollToTop from "./components/shared/ScrollToTop.js";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           },
         }}
       >
+        <ScrollToTop />
         <Routes>
           <Route path="/signin" element={<SigninPage />}></Route>
           <Route path="/signup" element={<SignupPage />}></Route>

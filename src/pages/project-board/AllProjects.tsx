@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import ProjectCard from "../card/ProjectCard";
+import ProjectCard from "../../components/card/ProjectCard";
 
-const Projects = () => {
+const AllProjects = () => {
   return (
     <>
       <div className="">
@@ -24,4 +24,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default AllProjects;

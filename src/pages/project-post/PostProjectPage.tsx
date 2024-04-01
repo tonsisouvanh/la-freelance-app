@@ -1,4 +1,4 @@
-import PostProjectForm from "../components/workboard/PostProjectForm";
+import PostProjectForm from "../project-board/PostProjectForm";
 
 const PostProject = () => {
   return (

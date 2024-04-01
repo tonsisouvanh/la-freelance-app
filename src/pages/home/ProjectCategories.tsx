@@ -1,5 +1,5 @@
-import { rating } from "../assets";
-import HorizalScroll from "./shared/HorizalScroll";
+import { rating } from "../../assets";
+import HorizalScroll from "../../components/shared/HorizalScroll";
 
 const ProjectCategories = () => {
   return (

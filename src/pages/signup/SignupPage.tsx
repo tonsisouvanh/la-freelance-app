@@ -4,7 +4,7 @@ import { useState } from "react";
 import type { DatePickerProps } from "antd";
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 
-import Logo from "../components/shared/Logo";
+import Logo from "../../components/shared/Logo";
 
 const steps = [
   {

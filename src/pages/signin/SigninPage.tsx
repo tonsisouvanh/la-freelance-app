@@ -7,7 +7,7 @@ import {
   Checkbox,
   Divider,
 } from "antd";
-import Logo from "../components/shared/Logo";
+import Logo from "../../components/shared/Logo";
 import {
   EyeInvisibleOutlined,
   EyeTwoTone,
@@ -15,9 +15,9 @@ import {
 } from "@ant-design/icons";
 import type { CheckboxProps } from "antd";
 import { Link } from "react-router-dom";
-import { SigninType } from "../store/slices/auth/authType";
-import { useAppDispatch } from "../hook/hooks";
-import { signIn } from "../store/slices/auth/AuthSlice";
+import { SigninType } from "../../store/slices/auth/authType";
+import { useAppDispatch } from "../../hook/hooks";
+import { signIn } from "../../store/slices/auth/AuthSlice";
 
 const Signin = () => {
   const dispatch = useAppDispatch();

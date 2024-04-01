@@ -1,5 +1,5 @@
 import { Layout } from "antd";
-import Logo from "./Logo";
+import Logo from "../shared/Logo";
 
 const { Footer: Footers } = Layout;
 

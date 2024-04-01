@@ -1,5 +1,5 @@
 import { Button, Layout, Menu } from "antd";
-import Logo from "./Logo";
+import Logo from "../shared/Logo";
 import {
   HomeOutlined,
   SoundOutlined,
@@ -11,8 +11,8 @@ import {
 import { Link } from "react-router-dom";
 const { Header } = Layout;
 import type { MenuProps } from "antd";
-import LanguageDropdown from "../LanguageDropdown";
-import MobileDrawer from "../MobileDrawer";
+import LanguageDropdown from "../shared/LanguageDropdown";
+import MobileDrawer from "./MobileDrawer";
 
 type MenuItem = Required<MenuProps>["items"][number];
 

@@ -1,11 +1,11 @@
 import { Link, useParams } from "react-router-dom";
-import { CategoryType } from "../type";
-import AdSlider from "../components/AdSlider";
+import { CategoryType } from "../../type";
+import AdSlider from "../home/AdSlider";
 import { Button } from "antd";
-import ProjectCard from "../components/card/ProjectCard";
+import ProjectCard from "../../components/card/ProjectCard";
 import { ArrowRightOutlined } from "@ant-design/icons";
-import Projects from "../components/workboard/Projects";
-import HorizalScrollProjectCategory from "../components/shared/HorizalScrollWorkCategory";
+import AllProjects from "../project-board/AllProjects";
+import HorizalScroll from "../../components/shared/HorizalScroll";
 const categories: CategoryType[] = [
   { id: 1, name: "ຕາກ້ອງ" },
   { id: 2, name: "ອອກແບບ" },
@@ -22,7 +22,27 @@ const ProjectsPage = () => {
 
   return (
     <div>
-      <HorizalScrollProjectCategory categories={categories} />
+      <div className={`flex flex-col bg-white m-auto p-auto border py-4`}>
+        <div className="flex overflow-x-scroll hide-scroll-bar">
+          <div className="flex flex-nowrap lg:ml-40 md:ml-20 ml-10 gap-4">
+            <HorizalScroll>
+              {categories.map((category, index) => (
+                <Button
+                  key={index}
+                  htmlType="button"
+                  type="default"
+                  size="large"
+                  className={`font-semibold ${
+                    index === 0 && "bg-primary text-white"
+                  }`}
+                >
+                  {category.name}
+                </Button>
+              ))}
+            </HorizalScroll>
+          </div>
+        </div>
+      </div>
       <div className="_container max-md:py-4 gap-2">
         <AdSlider classname="h-[14rem]" />
         <h1 className="text-3xl font-bold">ສະບາຍດີ , ແບັກ</h1>
@@ -50,7 +70,7 @@ const ProjectsPage = () => {
         </div>
         {/* All */}
         <div className="flex flex-col items-center justify-center">
-          <Projects />
+          <AllProjects />
         </div>
       </div>
     </div>

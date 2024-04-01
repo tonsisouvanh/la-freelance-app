@@ -1,7 +1,7 @@
 import { SearchOutlined } from "@ant-design/icons";
 import { Input } from "antd";
-import { projects } from "../assets/index";
-import TyperText from "./TyperText";
+import { projects } from "../../assets/index";
+import TyperText from "../../components/shared/TyperText";
 
 const Hero = () => {
   return (

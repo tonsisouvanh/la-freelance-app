@@ -7,9 +7,9 @@ import {
 } from "react-icons/fa";
 import { FaArrowRotateLeft } from "react-icons/fa6";
 
-import PackageTabs from "../components/project/PackageTabs";
+import PackageTabs from "./PackageTabs";
 import { Avatar, Button } from "antd";
-import Reviews from "../components/project/Reviews";
+import Reviews from "./Reviews";
 
 const ProjectPage = () => {
   return (

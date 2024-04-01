@@ -2,7 +2,7 @@ import React from "react";
 
 interface HorizalScrollProps {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 }
 
 const HorizalScroll: React.FC<HorizalScrollProps> = ({

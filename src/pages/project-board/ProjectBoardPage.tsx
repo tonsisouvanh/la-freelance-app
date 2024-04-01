@@ -1,5 +1,5 @@
 import { Tabs } from "antd";
-import ProjectBoardTable from "../components/workboard/ProjectBoardTable";
+import ProjectBoardTable from "./ProjectBoardTable";
 const TabPane = Tabs.TabPane;
 
 function callback(key: any) {

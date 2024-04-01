@@ -1,9 +1,9 @@
-import HowToStartHiring from "../components/HowToStartHiring";
-import Reason from "../components/Reason";
-import Hero from "../components/Hero";
-import ProjectCategories from "../components/ProjectCategories";
-import FreelanceQuality from "../components/FreelanceQuality";
-import AdSlider from "../components/AdSlider";
+import HowToStartHiring from "./HowToStartHiring";
+import Reason from "./Reason";
+import Hero from "./Hero";
+import ProjectCategories from "./ProjectCategories";
+import FreelanceQuality from "./FreelanceQuality";
+import AdSlider from "./AdSlider";
 
 const Home = () => {
   return (

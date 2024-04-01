@@ -1,4 +1,4 @@
-import Rating from "../Rating";
+import Rating from "../../components/shared/Rating";
 import { FaEye } from "react-icons/fa";
 
 const Reviews = () => {
