@@ -5,7 +5,7 @@ const ProjectCategories = () => {
   return (
     <div className="p-1 md:space-y-10">
       <h1 className="text-primary text-2xl md:text-4xl font-bold">
-        ໜວດໜູທັງຫມົດ
+        ໜວດໝູ່ທັງຫມົດ
       </h1>
       <HorizalScroll className="py-4">
         {Array.from({ length: 4 }, (__, index) => (

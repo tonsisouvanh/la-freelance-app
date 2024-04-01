@@ -23,12 +23,12 @@ const ProjectsPage = () => {
   return (
     <div>
       <HorizalScrollProjectCategory categories={categories} />
-      <div className="_container max-md:py-4 gap-10">
+      <div className="_container max-md:py-4 gap-2">
         <AdSlider classname="h-[14rem]" />
-        <h1 className="text-3xl mt-4 mb-12 font-bold">ສະບາຍດີ , ແບັກ</h1>
+        <h1 className="text-3xl font-bold">ສະບາຍດີ , ແບັກ</h1>
         {/* Popular */}
         <div className="">
-          <div className="w-full flex items-center justify-between mb-4 md:mb-12">
+          <div className="w-full flex items-center justify-between mb-4 md:mb-8">
             <h2 className="text-2xl md:text-4xl font-extrabold text-gray-800">
               ມາແຮງ
             </h2>

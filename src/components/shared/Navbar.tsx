@@ -51,7 +51,7 @@ const items: MenuProps["items"] = [
 
 const Navbar = () => {
   return (
-    <Header className="fixed top-0 w-full z-[999] shadow px-4 py-4 max-sm:py-0 max-sm:bg-primaryd lg:py-12d bg-white flex border-b-[0.5px] items-center justify-between flex-1 gap-10">
+    <Header className="fixed max-md:hidden top-0 w-full z-[999] shadow px-4 py-4 max-sm:py-0 max-sm:bg-primaryd lg:py-12d bg-white flex border-b-[0.5px] items-center justify-between flex-1 gap-10">
       {/* <Button
         htmlType="button"
         type="primary"

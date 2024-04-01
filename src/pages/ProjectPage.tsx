@@ -1,31 +1,34 @@
+import { HeartFilled, ShareAltOutlined, StarFilled } from "@ant-design/icons";
 import {
-  LeftCircleFilled,
-  HeartFilled,
-  ShareAltOutlined,
-  StarFilled,
-} from "@ant-design/icons";
+  FaChevronLeft,
+  FaComment,
+  FaHandsHelping,
+  FaRocketchat,
+  FaShoppingCart,
+} from "react-icons/fa";
+import { FaArrowRotateLeft } from "react-icons/fa6";
+
 import PackageTabs from "../components/project/PackageTabs";
 import { Avatar, Button } from "antd";
-import { FaHandsHelping, FaRocketchat, FaShoppingCart } from "react-icons/fa";
-import { FaArrowRotateLeft } from "react-icons/fa6";
+
 import Rating from "../components/Rating";
 
 const ProjectPage = () => {
   return (
-    <div className="_container py-4">
+    <div className="_container max-md:py-0 max-md:px-0 py-4">
       <div className="flex flex-1 justify-center">
-        <div className="bg-transparent overflow-hidden max-sm:max-w-sm">
+        <div className="bg-transparent overflow-hidden max-md:max-w-full">
           <div className="relative md:w-1/2 md:mx-auto">
             <img
               className="w-full h-full md:object-cover "
               src="https://images.unsplash.com/photo-1523275335684-37898b6baf30"
               alt="Product Image"
             />
-            <div className="absolute bg-gradient-to-b from-black/40 to-transparent h-[5rem] p-2 flex justify-between items-start top-0 left-0 right-0">
+            <div className="absolute bg-gradient-to-b from-black/40 to-transparent h-[5rem] p-4 flex justify-between items-start top-0 left-0 right-0">
               <div>
-                <LeftCircleFilled className="cursor-pointer font-bold text-white text-2xl" />
+                <FaChevronLeft className="cursor-pointer font-bold text-white text-2xl" />
               </div>
-              <div className="space-x-2">
+              <div className="space-x-4">
                 <span>
                   <HeartFilled className="cursor-pointer font-bold text-red-500 text-2xl" />
                 </span>
@@ -42,7 +45,7 @@ const ProjectPage = () => {
                 <div className="flex items-center gap-2">
                   <StarFilled className="text-yellow-400 text-xl" />
                   {"4.9"}
-                  <p className="text-gray-600 text-sm">ຂາຍໄດ້ 26 ຄັ້ງ</p>
+                  <p className="text-gray-600 text-md">ຂາຍໄດ້ 26 ຄັ້ງ</p>
                 </div>
                 <p className="text-gray-600 text-sm mb-4">
                   ຣັບແປພາສາທາງການ ແລະ ບໍທາງການ ເດີ້
@@ -115,13 +118,21 @@ const ProjectPage = () => {
                     <div className="text-xs whitespace-nowrap text-gray-500">
                       <p>ການຕອບ</p>
                       <p>ການຣັບວຽກ ສົ່ງວຽກ</p>
+                      {/* <Button icon={<FaComment className="text-gray-500"/>} className="" size="small" type="default">
+                        ເບິ່ງຄອມເມັ້ນ
+                      </Button> */}
                     </div>
+
                     <div className="text-xs text-gray-500 space-y-1 ">
-                      <Rating value={4} color={"#ffe234"} />
-                      <Rating value={5} color={"#ffe234"} />
+                      <Rating value={4} color={"#FFC700"} />
+                      <Rating value={5} color={"#FFC700"} />
                     </div>
                   </div>
                 </div>
+                <button className="flex border rounded-md px-2 py-1 border-primary items-center gap-1 mt-2">
+                  <FaComment className="text-primary" />
+                  <span>ເບິ່ງຄອມເມັ້ນ</span>
+                </button>
               </div>
             </div>
           </div>

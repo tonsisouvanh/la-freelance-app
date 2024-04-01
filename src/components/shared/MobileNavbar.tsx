@@ -33,17 +33,17 @@ const items: MenuItem[] = [
     key: "5",
     icon: <ProjectOutlined />,
   },
-  //   {
-  //     link: "/projects/:popular",
-  //     text: "ວຽກມາແຮງ",
-  //     key: "6",
-  //     icon: <FireOutlined className="!text-red-500" />,
-  //   },
+  // {
+  //   link: "/projects/:popular",
+  //   text: "ວຽກມາແຮງ",
+  //   key: "6",
+  //   icon: <ProjectOutlined className="!text-red-500" />,
+  // },
   // {
   //   link: "/about",
   //   text: "ກ່ຽວກັບ",
   //   key: "3",
-  //   icon: <TeamOutlined />,
+  //   icon: <ProjectOutlined />,
   // },
   {
     link: "/freelancer/signup",
@@ -59,7 +59,7 @@ const MobileNavbar = () => {
     <div className="lg:hidden fixed bottom-0 left-0 right-0">
       <div
         id="tabs"
-        className="flex bg-primary text-white justify-between rounded-tl-lg rounded-tr-lg px-1"
+        className="flex bg-primary text-white justify-between rounded-tl-lg rounded-tr-lg px-0"
       >
         {items.map((item, index) => (
           <Link
@@ -81,10 +81,10 @@ const MobileNavbar = () => {
                 "text-black scale-110 transition font-bold duration-300"
               }`}
             >
-              <div className="inline-block mb-1 w-25 h-25 text-2xl">
-                {item.icon}
-              </div>
-              <span className="tab tab-home block text-xs">{item.text}</span>
+              <div className="inline-block mb-1 text-lg">{item.icon}</div>
+              <span className="tab tab-home block text-[0.7rem]">
+                {item.text}
+              </span>
             </div>
           </Link>
         ))}

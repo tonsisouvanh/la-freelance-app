@@ -5,7 +5,7 @@ const Projects = () => {
   return (
     <>
       <div className="">
-        <div className="w-full flex items-center justify-between mb-4 md:mb-12">
+        <div className="w-full flex items-center justify-between mb-4 md:mb-8">
           <h2 className="text-2xl md:text-4xl font-extrabold text-gray-800">
             ທົ່ວໄປ
           </h2>

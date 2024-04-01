@@ -13,7 +13,7 @@ const TyperText: React.FC = () => {
   return (
     <div className="text-center gap-3">
       <h1 className="text-2xl lg:text-4xl text-white font-bold text-center justify-center items-center">
-        ເຮົາມີຟີຣແລຣນ ມືອາຊີບດ້ານ...
+        ເຮົາມີຟີຣແລນສ ມືອາຊີບດ້ານ...
       </h1>
       <div>
         <div>
@@ -30,7 +30,7 @@ const TyperText: React.FC = () => {
           />
         </div>
         <h1 className="mt-5 text-xl lg:text-2xl text-white">
-          ທີ່ພ້ອມປຽ່ນໄອເດຍເຈົ້າເປັນຈິງ
+          ທີ່ພ້ອມປ່ຽນໄອເດຍເຈົ້າເປັນຈິງ
         </h1>
       </div>
     </div>
