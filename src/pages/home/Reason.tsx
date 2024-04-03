@@ -3,16 +3,18 @@ import {
   SafetyCertificateOutlined,
   FileSearchOutlined,
 } from "@ant-design/icons";
-
-const Reason = () => {
+type Props = {
+  className?: string;
+};
+const Reason = ({ className }: Props) => {
   return (
     <>
-      <div className="space-y-10">
+      <div className={`space-y-10 ${className && className}`}>
         <div className="">
           <h1 className="text-3xl font-bold">
             ເປັນຫຍັງຕ້ອງເລືອກໃຊ້ LA-FREELANCE ?
           </h1>
-          <h1 className="text-primary text-4xl mt-3 font-bold">
+          <h1 className="text-primary leading-relaxed text-4xl mt-3 font-bold">
             ເພາະເຮົາສາມາດປຽ່ນໄອເດຍເຈົ້າໃຫ້ເປັນຈິງ ດ້ວຍຟີຮແລຮນມືອາຊີບ
           </h1>
         </div>

@@ -1,6 +1,9 @@
-const FreelanceQuality = () => {
+type Props = {
+  className?: string;
+};
+const FreelanceQuality = ({ className }: Props) => {
   return (
-    <section className="bg-transparent">
+    <section className={`bg-transparent ${className && className}`}>
       <div className="">
         <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
           <h2 className="text-4xl leading-relaxed font-bold text-primary ">

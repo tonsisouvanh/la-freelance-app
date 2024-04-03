@@ -10,7 +10,7 @@ const AdSlider = ({ classname }: Props) => {
   return (
     <>
       <div className="rounded-md">
-        <Carousel dots={false} autoplay>
+        <Carousel className="" dots={false} autoplay>
           {adData.map((item, index) => (
             <div
               key={index}

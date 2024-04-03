@@ -45,12 +45,12 @@ const Signin = () => {
 
   return (
     <>
-      <div className="w-full h-screen flex items-center justify-center px-10">
+      <div className="w-full h-screen flex items-center justify-center px-10 pb-24">
         <div className="absolute top-0 -z-10 h-full w-full bg-white">
           <div className="absolute bottom-auto left-auto right-0 top-0 h-[500px] w-[500px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[#1A96CB]/20 opacity-50 blur-[80px]"></div>
         </div>
-        <div className="gap-10 flex flex-col items-center justify-center">
-          <Logo className="w-36" />
+        <div className="gap-5 flex flex-col items-center justify-center">
+          <Logo className="w-24" />
           <div className="">
             <h2 className="text-center text-xl font-bold">ຍິນດີຕ້ອນຣັບກັບມາ</h2>
             <h2 className="text-center text-xl font-bold">

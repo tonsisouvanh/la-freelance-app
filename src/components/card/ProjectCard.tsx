@@ -15,7 +15,7 @@ const ProjectCard = ({ classname }: Props) => {
       <div className="bg-white w-8 h-8 flex items-center justify-center rounded-md cursor-pointer absolute top-4 right-4">
         <HeartOutlined />
       </div>
-      <div className="h-[160px] sm:h-[220px] p-3 overflow-hidden mx-auto aspect-w-16 aspect-h-8 md:mb-2 mb-4">
+      <div className="h-[160px] sm:h-[220px] p-3 overflow-hidden mx-auto aspect-w-16 aspect-h-8">
         <img
           src={worka}
           alt="Product 1"

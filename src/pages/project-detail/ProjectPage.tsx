@@ -1,17 +1,15 @@
 import { HeartFilled, ShareAltOutlined, StarFilled } from "@ant-design/icons";
-import {
-  FaChevronLeft,
-  FaHandsHelping,
-  FaRocketchat,
-  FaShoppingCart,
-} from "react-icons/fa";
-import { FaArrowRotateLeft } from "react-icons/fa6";
+import { FaChevronLeft } from "react-icons/fa";
 
 import PackageTabs from "./PackageTabs";
-import { Avatar, Button } from "antd";
+import { Button } from "antd";
 import Reviews from "./Reviews";
+import FreelancerStats from "./FreelancerStats";
+import Test from "../../Test";
+import { Link, useNavigate } from "react-router-dom";
 
 const ProjectPage = () => {
+  const navigate = useNavigate();
   return (
     <div className="_container max-md:py-0 max-md:px-0 py-4">
       <div className="flex flex-1 justify-center">
@@ -23,9 +21,9 @@ const ProjectPage = () => {
               alt="Product Image"
             />
             <div className="absolute bg-gradient-to-b from-black/40 to-transparent h-[5rem] p-4 flex justify-between items-start top-0 left-0 right-0">
-              <div>
+              <button onClick={() => navigate(-1)}>
                 <FaChevronLeft className="cursor-pointer font-bold text-white text-2xl" />
-              </div>
+              </button>
               <div className="space-x-4">
                 <span>
                   <HeartFilled className="cursor-pointer font-bold text-red-500 text-2xl" />
@@ -66,47 +64,9 @@ const ProjectPage = () => {
                 </p>
               </div>
               <div className="py-6">
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center gap-2">
-                    <Avatar
-                      src="https://bidinnovacion.org/economiacreativa/wp-content/uploads/2014/10/speaker-3.jpg"
-                      size={65}
-                    />
-                    <p>Backky</p>
-                  </div>
-                  <div className="grid grid-cols-4 divide-x-2">
-                    <div className="flex flex-col items-center gap-2">
-                      <FaHandsHelping className="text-gray-500 text-xl" />
-                      <div className="text-[0.6rem] text-center">
-                        <p>ຄວາມສຳເລັດ</p>
-                        <p>100%</p>
-                      </div>
-                    </div>
-                    <div className="flex flex-col items-center gap-2">
-                      <FaShoppingCart className="text-gray-500 text-xl" />
-                      <div className="text-[0.6rem] text-center">
-                        <p>ການສັ່ງຊື້</p>
-                        <p>12 ຄັ້ງ</p>
-                      </div>
-                    </div>
-                    <div className="flex flex-col items-center gap-2">
-                      <FaArrowRotateLeft className="text-gray-500 text-xl" />
-                      <div className="text-[0.6rem] text-center">
-                        <p>ການສັ່ງຊ້ຳ</p>
-                        <p>12 ຄັ້ງ</p>
-                      </div>
-                    </div>
-                    <div className="flex flex-col items-center gap-2">
-                      <FaRocketchat className="text-gray-500 text-xl" />
-                      <div className="text-[0.6rem] text-center">
-                        <p>ການຕອບແຊັດ</p>
-                        <p>12 ນາທີ</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <FreelancerStats />
               </div>
-              <div className="py-6 space-y-4">
+              <div className="py-6">
                 <Reviews />
               </div>
             </div>

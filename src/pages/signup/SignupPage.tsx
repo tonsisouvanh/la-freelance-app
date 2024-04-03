@@ -171,6 +171,7 @@ const Signup = () => {
               </Form.Item>
 
               {/* Step 4 Date of birth*/}
+              {/* TODO: show age after user input date of birth */}
               <Form.Item<FieldType>
                 className={`${current === 3 ? "block" : "hidden"}`}
                 label="ວັນເດືອນເກີດ"

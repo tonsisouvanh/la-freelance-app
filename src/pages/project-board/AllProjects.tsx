@@ -1,15 +1,21 @@
 import { Link } from "react-router-dom";
 import ProjectCard from "../../components/card/ProjectCard";
-
+import HorizalScroll from "../../components/shared/HorizalScroll";
+import { Button } from "antd";
+import { CategoryType } from "../../type";
+const categories: CategoryType[] = [
+  { id: 1, name: "ຕາກ້ອງ" },
+  { id: 2, name: "ອອກແບບ" },
+  { id: 3, name: "ອອກແບບບ້ານ ແລະ ໂຄງການ" },
+  { id: 4, name: "ຂຽນໂປຮແກຮມ" },
+  { id: 5, name: "ຕັດຕໍ່ວິດີໂອ ແລະ ຮູບພາບ" },
+  { id: 6, name: "ແປພາສາ ແລະ ເອກະສານ" },
+  { id: 7, name: "ການຕະຫຼາດ" },
+];
 const AllProjects = () => {
   return (
     <>
       <div className="">
-        <div className="w-full flex items-center justify-between mb-4 md:mb-8">
-          <h2 className="text-2xl md:text-4xl font-extrabold text-gray-800">
-            ທົ່ວໄປ
-          </h2>
-        </div>
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-6">
           {Array.from({ length: 10 }, (__, index) => (
             <div key={index} className="">
