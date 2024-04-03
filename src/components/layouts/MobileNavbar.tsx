@@ -78,10 +78,10 @@ const items: MenuItem[] = [
 const MobileNavbar = () => {
   const { pathname } = useLocation();
   return (
-    <div className="lg:hidden fixed bottom-0 left-0 right-0">
+    <div className="lg:hidden z-[9999] fixed bottom-0 left-0 right-0">
       <div
         id="tabs"
-        className="flex bg-primary text-white justify-between rounded-tl-lg rounded-tr-lg px-0"
+        className="flex pb-3 bg-primary text-white justify-between rounded-tl-lg rounded-tr-lg px-0"
       >
         {items.map((item, index) => (
           <Link

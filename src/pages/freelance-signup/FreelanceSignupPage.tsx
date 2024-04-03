@@ -1,11 +1,4 @@
-import {
-  Button,
-  Form,
-  type FormProps,
-  Input,
-  Steps,
-  Checkbox
-} from "antd";
+import { Button, Form, type FormProps, Input, Steps, Checkbox } from "antd";
 import { useState } from "react";
 import { FreelanceSignupFieldType } from "../../type";
 import Results from "../../components/shared/Results";
@@ -13,6 +6,8 @@ import StepCondition from "./StepCondition";
 import StepDocument from "./StepDocument";
 import StepDocumentImage from "./StepDocumentImage";
 import StepBankAccount from "./StepBankAccount";
+import { FaHouse } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const steps = [
   {
@@ -75,6 +70,13 @@ const FreelanceSignupPage = () => {
   return (
     <>
       <div className="_container gap-10">
+        <Link className="max-sm:hidden w-fit" to="/">
+          <Button
+            type="primary"
+            icon={<FaHouse />}
+            className="text-white bg-primary"
+          ></Button>
+        </Link>
         <div>
           <h1 className="text-3xl font-bold text-primary">Freelance Sign Up</h1>
           <p className="mt-2 max-w-sm">

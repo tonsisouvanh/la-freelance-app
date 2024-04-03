@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "devhost": "vite --host 192.168.0.111"
+    "devhost": "vite --host 192.168.1.16"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.2",

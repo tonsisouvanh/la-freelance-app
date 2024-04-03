@@ -1,6 +1,7 @@
 import { Button, Tabs } from "antd";
 import ProjectBoardTable from "./ProjectBoardTable";
 import ClientProjectBoard from "./ClientProjectBoard";
+import { Link } from "react-router-dom";
 const TabPane = Tabs.TabPane;
 
 function callback(key: any) {
@@ -27,9 +28,11 @@ const ProjectBoard = () => {
             </TabPane>
             <TabPane tab="ງານທີ່ຂ້ອຍປະກາດ" key="2">
               <div className="ml-auto max-w-fit">
-                <Button type="primary" className="text-white bg-primary mb-2">
-                  ສ້າງປະກາດ
-                </Button>
+                <Link to="/client/post-project">
+                  <Button type="primary" className="text-white bg-primary mb-2">
+                    ສ້າງປະກາດ
+                  </Button>
+                </Link>
               </div>
               <ClientProjectBoard />
             </TabPane>
