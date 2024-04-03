@@ -1,6 +1,5 @@
 import { worke } from "../../assets";
 import Rating from "../../components/shared/Rating";
-import { FaEye } from "react-icons/fa";
 
 const Reviews = () => {
   return (

@@ -1,4 +1,3 @@
-import { rating } from "../../assets";
 import HorizalScroll from "../../components/shared/HorizalScroll";
 import categoriesData from "../../data/categoriesData";
 

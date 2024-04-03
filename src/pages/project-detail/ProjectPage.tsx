@@ -5,8 +5,7 @@ import PackageTabs from "./PackageTabs";
 import { Button } from "antd";
 import Reviews from "./Reviews";
 import FreelancerStats from "./FreelancerStats";
-import Test from "../../Test";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ProjectPage = () => {
   const navigate = useNavigate();

@@ -1,12 +1,4 @@
-import React from "react";
-import categoriesData from "../../data/categoriesData";
-import ProjectCard from "../../components/card/ProjectCard";
-import HorizalScroll from "../../components/shared/HorizalScroll";
-import { worke } from "../../assets";
-
-type Props = {};
-
-const PopularProjects = (props: Props) => {
+const PopularProjects = () => {
   return (
     <div className="p-1">
       <h1 className="text-primary text-2xl md:text-4xl font-bold mb-4">
