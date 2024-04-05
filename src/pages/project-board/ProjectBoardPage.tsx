@@ -30,7 +30,7 @@ const ProjectBoard = () => {
               <div className="ml-auto max-w-fit">
                 <Link to="/client/post-project">
                   <Button type="primary" className="text-white bg-primary mb-2">
-                    ສ້າງປະກາດ
+                    ສ້າງປະກາດ 0/3
                   </Button>
                 </Link>
               </div>

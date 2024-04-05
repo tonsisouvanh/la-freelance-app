@@ -12,11 +12,14 @@ import {
   NotFoundPage,
   ProjectsPage,
   ProjectPage,
+  GuestProfilePage,
 } from "./pages/index";
 import { ConfigProvider } from "antd";
 import PrivateRoute from "./pages/layout/PrivateRoute.js";
 import MobileNavbar from "./components/layouts/MobileNavbar.js";
 import ScrollToTop from "./components/shared/ScrollToTop.js";
+import Spinner from "./components/shared/Spinner.js";
+import { Suspense } from "react";
 
 function App() {
   return (
@@ -30,49 +33,56 @@ function App() {
         }}
       >
         <ScrollToTop />
-        <Routes>
-          <Route path="/signin" element={<SigninPage />}></Route>
-          <Route path="/signup" element={<SignupPage />}></Route>
-          <Route
-            path="/freelancer/signup"
-            element={<FreelanceSignupPage />}
-          ></Route>
-
-          <Route element={<RootLayout />}>
-            <Route index path="/" element={<HomePage />}></Route>
-            {/* Project */}
-            {/* Freelancer & clients */}
-            <Route path="/projects" element={<ProjectsPage />}></Route>
+        <Suspense fallback={<Spinner />}>
+          <Routes>
+            <Route path="/signin" element={<SigninPage />}></Route>
+            <Route path="/signup" element={<SignupPage />}></Route>
             <Route
-              path="/projects/:category/:projectId"
-              element={<ProjectPage />}
-            ></Route>
-            <Route
-              path="/projects/:category"
-              element={<ProjectsPage />}
+              path="/freelancer/signup"
+              element={<FreelanceSignupPage />}
             ></Route>
 
-            {/* Private routes */}
-            <Route element={<PrivateRoute />}>
+            <Route element={<RootLayout />}>
+              <Route index path="/" element={<HomePage />}></Route>
+              {/* Project */}
+              {/* Freelancer & clients */}
+              <Route path="/projects" element={<ProjectsPage />}></Route>
               <Route
-                path="/client/post-project"
-                element={<PostProjectPage />}
+                path="/projects/:category/:projectId"
+                element={<ProjectPage />}
               ></Route>
-              <Route path="/chat" element={<ChatPage />}></Route>
               <Route
-                path="/project-board"
-                element={<ProjectBoardPage />}
+                path="/projects/:category"
+                element={<ProjectsPage />}
               ></Route>
+
+              {/* Private routes */}
+              <Route element={<PrivateRoute />}>
+                <Route
+                  path="/client/post-project"
+                  element={<PostProjectPage />}
+                ></Route>
+                <Route path="/chat" element={<ChatPage />}></Route>
+                <Route
+                  path="/project-board"
+                  element={<ProjectBoardPage />}
+                ></Route>
+              </Route>
+
+              {/* Public */}
+              <Route
+                path="/profile/view-as-guest"
+                element={<GuestProfilePage />}
+              ></Route>
+              {/* Freelancer */}
+
+              {/* Client */}
+
+              <Route path="/about" element={<AboutPage />}></Route>
             </Route>
-
-            {/* Freelancer */}
-
-            {/* Client */}
-
-            <Route path="/about" element={<AboutPage />}></Route>
-          </Route>
-          <Route path="*" element={<NotFoundPage />}></Route>
-        </Routes>
+            <Route path="*" element={<NotFoundPage />}></Route>
+          </Routes>
+        </Suspense>
         <MobileNavbar />
       </ConfigProvider>
     </>

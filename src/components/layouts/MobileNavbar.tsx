@@ -59,7 +59,7 @@ const items: MenuItem[] = [
   // },
 
   {
-    link: "/signin",
+    link: "/client/profile",
     text: "ໂປຣຟາຍ",
     key: "4",
     icon: <UserOutlined className="" />,

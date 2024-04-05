@@ -26,7 +26,7 @@ const ChatPage: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center w-screen h-screen">
+    <div className="flex items-center justify-center w-full h-screen">
       <div>
         {messages.map((msg, index) => (
           <div key={index}>{msg}</div>
