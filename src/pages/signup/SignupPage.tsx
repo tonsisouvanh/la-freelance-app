@@ -1,10 +1,27 @@
-import { Button, Form, type FormProps, Input, Steps, DatePicker } from "antd";
+import {
+  Button,
+  Form,
+  type FormProps,
+  Input,
+  Steps,
+  DatePicker,
+  Upload,
+  InputNumber,
+  message,
+} from "antd";
 import { InputOTP } from "antd-input-otp"; // Don't forget to import this too!
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { DatePickerProps } from "antd";
-import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
+import {
+  EyeInvisibleOutlined,
+  EyeTwoTone,
+  PlusOutlined,
+} from "@ant-design/icons";
 
 import Logo from "../../components/shared/Logo";
+import { useAppDispatch, useAppSelector } from "../../hook/hooks";
+import { resetStatus, signUp } from "../../store/slices/auth/AuthSlice";
+import { RootState } from "../../store/store";
 
 const steps = [
   {
@@ -37,14 +54,17 @@ type FieldType = {
   otp?: string;
   fname?: string;
   lname?: string;
-  dob?: string;
+  email?: string;
+  dob?: Date | null;
   password?: string;
   confirmPassword?: string;
+  profile?: File | null;
 };
 
 const Signup = () => {
   const [current, setCurrent] = useState(0);
-
+  const dispatch = useAppDispatch();
+  const { status, error } = useAppSelector((state: RootState) => state.auth);
   const next = () => {
     setCurrent(current + 1);
   };
@@ -73,16 +93,40 @@ const Signup = () => {
     console.log(date, dateString);
   };
 
-  const onFinish: FormProps<FieldType>["onFinish"] = (values) => {
-    console.log("🚀 ~ values:", values);
+  const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
+    console.log(values);
+    if (values.password !== values.confirmPassword) {
+      message.warning("Password is not match");
+      return;
+    }
+    dispatch(signUp(values));
   };
 
   const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (
     errorInfo
   ) => {
-    console.log("🚀 ~ errorInfo:", errorInfo);
+    if (errorInfo.errorFields && errorInfo.errorFields.length >= 0)
+      message.error("Thers is empty fields or invalid values");
   };
 
+  const normFile = (e: any) => {
+    if (Array.isArray(e)) {
+      return e;
+    }
+    return e?.fileList;
+  };
+
+  useEffect(() => {
+    if (status === "success") {
+      console.log("first");
+      message.success("Signup successful!");
+      dispatch(resetStatus()); // Clear state after success
+    } else if (status === "failed") {
+      console.log("sec");
+      message.error(error);
+      dispatch(resetStatus()); // Clear state after error
+    }
+  }, [dispatch, error, status]);
   return (
     <>
       <div className="w-full h-screen flex items-center justify-center px-10">
@@ -103,7 +147,15 @@ const Signup = () => {
               className=""
               name="basic"
               labelCol={{ span: 8 }}
-              initialValues={{ remember: true }}
+              // initialValues={{ remember: true }}
+              initialValues={{
+                phone: "56373311",
+                fname: "f name",
+                lname: "l name",
+                email: "tons1@gmail.com",
+                password: "password123",
+                confirmPassword: "password123",
+              }}
               onFinish={onFinish}
               onFinishFailed={onFinishFailed}
               autoComplete="off"
@@ -117,18 +169,12 @@ const Signup = () => {
                   { required: true, message: "Please input your phone!" },
                 ]}
               >
-                <Input className="" size="large" />
+                <InputNumber className="w-full" size="large" />
               </Form.Item>
 
               {/* Step 2 OTP*/}
               <div className={`${current === 1 ? "block" : "hidden"}`}>
-                <Form.Item<FieldType>
-                  label="OTP"
-                  name="otp"
-                  rules={[
-                    { required: true, message: "Please input your otp!" },
-                  ]}
-                >
+                <Form.Item<FieldType> label="OTP" name="otp">
                   <InputOTP length={4} inputType="numeric" />
                 </Form.Item>
                 <div className="ml-auto max-w-fit">
@@ -171,6 +217,23 @@ const Signup = () => {
               </Form.Item>
 
               {/* Step 4 Date of birth*/}
+              <Form.Item<FieldType>
+                name="profile"
+                label="Upload"
+                valuePropName="fileList"
+                className={`${current === 3 ? "block" : "hidden"}`}
+                getValueFromEvent={normFile}
+              >
+                <Upload maxCount={1} listType="picture-card">
+                  <button
+                    style={{ border: 0, background: "none" }}
+                    type="button"
+                  >
+                    <PlusOutlined />
+                    <div style={{ marginTop: 8 }}>Upload</div>
+                  </button>
+                </Upload>
+              </Form.Item>
               {/* TODO: show age after user input date of birth */}
               <Form.Item<FieldType>
                 className={`${current === 3 ? "block" : "hidden"}`}
@@ -191,6 +254,19 @@ const Signup = () => {
               </Form.Item>
 
               {/* Step 5 password*/}
+              <Form.Item<FieldType>
+                className={`${current === 4 ? "block" : "hidden"}`}
+                label="Email"
+                name="email"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input!",
+                  },
+                ]}
+              >
+                <Input type="email" />
+              </Form.Item>
               <Form.Item<FieldType>
                 className={`${current === 4 ? "block" : "hidden"}`}
                 label="ລະຫັດຜ່ານໃຫມ່"
@@ -247,6 +323,7 @@ const Signup = () => {
                       className="bg-primary"
                       htmlType="submit"
                       size="large"
+                      loading={status === "loading" ? true : false}
                     >
                       ຢືນຢັນ
                     </Button>

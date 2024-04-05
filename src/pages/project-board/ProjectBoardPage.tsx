@@ -1,14 +1,37 @@
-import { Button, Tabs } from "antd";
+import { Button, Tabs, TabsProps } from "antd";
 import ProjectBoardTable from "./ProjectBoardTable";
 import ClientProjectBoard from "./ClientProjectBoard";
 import { Link } from "react-router-dom";
-const TabPane = Tabs.TabPane;
 
-function callback(key: any) {
-  console.log(key);
-}
+const items: TabsProps["items"] = [
+  {
+    key: "1",
+    label: "ບ໋ອດປະກາດຫາວຽກ",
+    children: <ProjectBoardTable />,
+  },
+  {
+    key: "2",
+    label: "ງານທີ່ຂ້ອຍປະກາດ",
+    children: (
+      <>
+        <div className="ml-auto max-w-fit">
+          <Link to="/client/post-project">
+            <Button type="primary" className="text-white bg-primary mb-2">
+              ສ້າງປະກາດ 0/3
+            </Button>
+          </Link>
+        </div>
+        <ClientProjectBoard />
+      </>
+    ),
+  },
+];
 
 const ProjectBoard = () => {
+  const onChange = (key: string) => {
+    console.log(key);
+  };
+
   return (
     <div className="w-full overflow-hidden">
       <div className="max-w-6xl px-4 mx-auto flex flex-col gap-28 lg:gap-40 max-sm:py-0 py-20">
@@ -22,21 +45,7 @@ const ProjectBoard = () => {
       </div>
       <div className="border mt-5 rounded-2xl px-2">
         <div className="max-w-6xl mx-auto">
-          <Tabs defaultActiveKey="1" className="pb-2" onChange={callback}>
-            <TabPane tab="ບ໋ອດປະກາດຫາວຽກ" key="1">
-              <ProjectBoardTable />
-            </TabPane>
-            <TabPane tab="ງານທີ່ຂ້ອຍປະກາດ" key="2">
-              <div className="ml-auto max-w-fit">
-                <Link to="/client/post-project">
-                  <Button type="primary" className="text-white bg-primary mb-2">
-                    ສ້າງປະກາດ 0/3
-                  </Button>
-                </Link>
-              </div>
-              <ClientProjectBoard />
-            </TabPane>
-          </Tabs>
+          <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
         </div>
       </div>
     </div>

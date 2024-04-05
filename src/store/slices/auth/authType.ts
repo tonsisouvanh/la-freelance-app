@@ -1,11 +1,10 @@
 import { UserType } from "../../../type";
 
-
 export interface AuthState {
   user: UserType | null;
   token: string | null;
   isLoggedIn: boolean;
-  isLoading: boolean;
+  status: "idle" | "loading" | "failed" | "success";
   error: string | null;
 }
 
@@ -15,7 +14,13 @@ export interface SigninType {
 }
 
 export interface SignupType {
-  username: string;
-  email: string;
-  password: string;
+  phone?: string;
+  otp?: string;
+  fname?: string;
+  lname?: string;
+  email?: string;
+  dob?: Date | null;
+  password?: string;
+  confirmPassword?: string;
+  profile?: File | null;
 }
