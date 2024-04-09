@@ -11,7 +11,7 @@ const ProjectCategories = () => {
         {categoriesData.map((cate, index) => (
           <div
             key={index}
-            className="w-[9rem] space-y-2 py-4 border flex flex-col items-center justify-center shadow-md rounded-xl"
+            className="w-[9rem] space-y-2 py-4 border flex flex-col items-center justify-center shadow rounded-xl"
           >
             <div className="w-[3rem]">
               <img

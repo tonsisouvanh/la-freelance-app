@@ -16,7 +16,7 @@ const AdSlider = ({ classname }: Props) => {
               key={index}
               className={`h-[12rem] md:h-[20rem] ${classname && classname}`}
             >
-              <img src={item} className="w-full h-full object-contain" alt="" />
+              <img className="w-full h-full object-contain" src={item} alt="" />
             </div>
           ))}
         </Carousel>

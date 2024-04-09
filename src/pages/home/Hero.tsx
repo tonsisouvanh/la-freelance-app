@@ -5,7 +5,7 @@ import TyperText from "../../components/shared/TyperText";
 
 const Hero = () => {
   return (
-    <div className="py-10 w-full relative lg:py-24 px-2 lg:px-10 bg-gradient-to-b from-primary via-primary to-cyan-500">
+    <div className="py-10 max-sm:rounded-b-2xl w-full relative lg:py-24 px-2 lg:px-10 bg-gradient-to-b from-primary via-primary to-cyan-500">
       <div className="absolute bottom-0 left-0 right-0">
         <img
           src={projects}
@@ -14,7 +14,9 @@ const Hero = () => {
         />
       </div>
       <div className="flex flex-col items-center justify-center">
-        <TyperText />
+        <div className="max-sm:hidden">
+          <TyperText />
+        </div>
         <div className="mt-5">
           <p className=" text-md text-white lg:text-lg mb-3 z-[1] font-bold text-center ">
             ຄົ້ນຫາຟີຣແລນສ

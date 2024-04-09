@@ -12,6 +12,7 @@ import {
 } from "antd";
 import { CategoryType } from "../../type";
 import { FaBuilding, FaTimes, FaUser } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 type FieldType = {
   title: string;
@@ -36,6 +37,7 @@ const categories: CategoryType[] = [
 ];
 
 const PostProjectForm = () => {
+  const navigate = useNavigate();
   const onChange: DatePickerProps["onChange"] = (date, dateString) => {
     console.log(date, dateString);
   };
@@ -172,7 +174,7 @@ const PostProjectForm = () => {
             >
               ສົ່ງ
             </Button>
-            <Button className="w-24 rounded-full">ຍ້ອນກັບ</Button>
+            <Button onClick={() => navigate(-1)} className="w-24 rounded-full">ຍ້ອນກັບ</Button>
           </div>
         </Form.Item>
       </Form>

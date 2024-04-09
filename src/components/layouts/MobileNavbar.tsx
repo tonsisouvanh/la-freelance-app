@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useMatch } from "react-router-dom";
 import {
   HomeOutlined,
   HomeFilled,
@@ -37,7 +37,7 @@ const items: MenuItem[] = [
     activeIcon: <HomeFilled />,
   },
   {
-    link: "/chat",
+    link: "/chat-list",
     text: "ແຊັດ",
     key: "6",
     icon: <MessageOutlined />,
@@ -77,8 +77,14 @@ const items: MenuItem[] = [
 
 const MobileNavbar = () => {
   const { pathname } = useLocation();
+  const isMatch = useMatch("/chat/:chatId");
+
   return (
-    <div className="lg:hidden z-[9999] fixed bottom-0 left-0 right-0">
+    <div
+      className={`lg:hidden ${
+        isMatch && "hidden"
+      } z-[9999] fixed bottom-0 left-0 right-0 `}
+    >
       <div
         id="tabs"
         className="flex pb-3 bg-primary text-white justify-between rounded-tl-lg rounded-tr-lg px-0"

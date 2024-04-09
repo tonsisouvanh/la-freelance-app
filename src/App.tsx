@@ -6,13 +6,14 @@ import {
   HomePage,
   ProjectBoardPage,
   AboutPage,
-  ChatPage,
   SigninPage,
   SignupPage,
   NotFoundPage,
   ProjectsPage,
   ProjectPage,
   GuestProfilePage,
+  AllChatPage,
+  ChatPage,
 } from "./pages/index";
 import { ConfigProvider } from "antd";
 import PrivateRoute from "./pages/layout/PrivateRoute.js";
@@ -20,7 +21,7 @@ import MobileNavbar from "./components/layouts/MobileNavbar.js";
 import ScrollToTop from "./components/shared/ScrollToTop.js";
 import Spinner from "./components/shared/Spinner.js";
 import { Suspense } from "react";
-
+import Test from "./pages/Test.tsx";
 function App() {
   return (
     <>
@@ -62,7 +63,8 @@ function App() {
                   path="/client/post-project"
                   element={<PostProjectPage />}
                 ></Route>
-                <Route path="/chat" element={<ChatPage />}></Route>
+                <Route path="/chat-list" element={<AllChatPage />}></Route>
+                <Route path="/chat/:chatId" element={<ChatPage />}></Route>
                 <Route
                   path="/project-board"
                   element={<ProjectBoardPage />}
@@ -79,6 +81,7 @@ function App() {
               {/* Client */}
 
               <Route path="/about" element={<AboutPage />}></Route>
+              <Route path="/test" element={<Test />}></Route>
             </Route>
             <Route path="*" element={<NotFoundPage />}></Route>
           </Routes>

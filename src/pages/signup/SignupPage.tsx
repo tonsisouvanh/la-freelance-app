@@ -147,15 +147,7 @@ const Signup = () => {
               className=""
               name="basic"
               labelCol={{ span: 8 }}
-              // initialValues={{ remember: true }}
-              initialValues={{
-                phone: "56373311",
-                fname: "f name",
-                lname: "l name",
-                email: "tons1@gmail.com",
-                password: "password123",
-                confirmPassword: "password123",
-              }}
+              initialValues={{ remember: true }}
               onFinish={onFinish}
               onFinishFailed={onFinishFailed}
               autoComplete="off"
