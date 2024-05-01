@@ -21,7 +21,6 @@ import MobileNavbar from "./components/layouts/MobileNavbar.js";
 import ScrollToTop from "./components/shared/ScrollToTop.js";
 import Spinner from "./components/shared/Spinner.js";
 import { Suspense } from "react";
-import Test from "./pages/Test.tsx";
 function App() {
   return (
     <>
@@ -81,7 +80,6 @@ function App() {
               {/* Client */}
 
               <Route path="/about" element={<AboutPage />}></Route>
-              <Route path="/test" element={<Test />}></Route>
             </Route>
             <Route path="*" element={<NotFoundPage />}></Route>
           </Routes>

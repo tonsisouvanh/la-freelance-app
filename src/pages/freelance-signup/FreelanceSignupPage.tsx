@@ -70,15 +70,19 @@ const FreelanceSignupPage = () => {
   return (
     <>
       <div className="_container gap-10">
-        <Link className="max-sm:hidden w-fit" to="/">
-          <Button
-            type="primary"
-            icon={<FaHouse />}
-            className="text-white bg-primary"
-          ></Button>
-        </Link>
         <div>
-          <h1 className="text-3xl font-bold text-primary">Freelance Sign Up</h1>
+          <div className="flex items-center gap-4">
+            <Link className="max-sm:hidden w-fit" to="/">
+              <Button
+                type="primary"
+                icon={<FaHouse />}
+                className="text-white bg-primary"
+              ></Button>
+            </Link>
+            <h1 className="text-3xl font-bold text-primary">
+              Freelance Sign Up
+            </h1>
+          </div>
           <p className="mt-2 max-w-sm">
             ສະໝັກເປັນຟລີແລຣນເພື່ອການຊອອກຫາຄລູກຄ້າທີ່ເໝາະສົມ ແລະ ປອກໄພ
           </p>

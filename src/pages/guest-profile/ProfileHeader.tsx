@@ -1,8 +1,6 @@
-import { Avatar, Button, CollapseProps } from "antd";
+import { Avatar, Button } from "antd";
 import { useState } from "react";
 import { FaAngleRight, FaUser } from "react-icons/fa6";
-
-type Props = {};
 
 type submenuType = {
   text: string;
@@ -106,7 +104,7 @@ const menu: MenuType[] = [
   },
 ];
 
-const ProfileHeader = (props: Props) => {
+const ProfileHeader = () => {
   const [activeSubmenu, setActiveSubmenu] = useState<MenuType[]>(menu);
 
   return (

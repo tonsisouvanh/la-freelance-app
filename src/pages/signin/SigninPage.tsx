@@ -14,16 +14,17 @@ import {
   PhoneFilled,
 } from "@ant-design/icons";
 import type { CheckboxProps } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SigninType } from "../../store/slices/auth/authType";
-import { useAppDispatch } from "../../hook/hooks";
-import { signIn } from "../../store/slices/auth/AuthSlice";
+import { useAppDispatch, useAppSelector } from "../../hook/hooks";
+import { resetStatus, signIn } from "../../store/slices/auth/AuthSlice";
+import { useEffect } from "react";
 
 const Signin = () => {
   const dispatch = useAppDispatch();
-  // const { isLoading, error, token, user } = useAppSelector(
-  //   (state) => state.auth
-  // );
+  const [messageApi, contextHolder] = message.useMessage();
+  const navigate = useNavigate();
+  const { user, status, error } = useAppSelector((state) => state.auth);
 
   const onChange: CheckboxProps["onChange"] = (e) => {
     console.log(`checked = ${e.target.checked}`);
@@ -33,18 +34,34 @@ const Signin = () => {
     if (!values.phone || !values.password) {
       return;
     }
-    console.log("submit");
     dispatch(signIn(values));
   };
 
   const onFinishFailed: FormProps<SigninType>["onFinishFailed"] = (
     errorInfo
-  ) => {
-    console.log("🚀 ~ Signin ~ errorInfo:", errorInfo);
-  };
+  ) => {};
+
+  useEffect(() => {
+    if (status === "success") {
+      navigate("/");
+    } else if (status === "failed") {
+      messageApi.error(error);
+    }
+
+    return () => {
+      dispatch(resetStatus());
+    };
+  }, [dispatch, status, navigate, user, messageApi, error]);
+
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user, navigate]);
 
   return (
     <>
+      {contextHolder}
       <div className="w-full h-screen flex items-center justify-center px-10 pb-24">
         <div className="absolute top-0 -z-10 h-full w-full bg-white">
           <div className="absolute bottom-auto left-auto right-0 top-0 h-[500px] w-[500px] -translate-x-[30%] translate-y-[20%] rounded-full bg-[#1A96CB]/20 opacity-50 blur-[80px]"></div>

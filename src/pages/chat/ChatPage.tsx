@@ -31,7 +31,7 @@ const ChatPage: React.FC = () => {
           ))}
         </div>
         <footer className="bg-white border-t border-gray-300 absolute bottom-0 left-0 w-full">
-          <div className="flex items-center">
+          <div className="flex items-center px-4">
             <input
               type="default"
               placeholder="Type a message..."

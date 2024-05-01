@@ -93,7 +93,7 @@ const MobileNavbar = () => {
           <Link
             key={index}
             to={item.link}
-            className={`w-full relative justify-center inline-block text-center pt-2 pb-3 ${
+            className={`w-full relative justify-center inline-block text-center pt-2 ${
               pathname === item.link && ""
             }`}
           >
@@ -103,7 +103,7 @@ const MobileNavbar = () => {
                 "text-black scale-110 transition font-bold duration-300"
               }`}
             >
-              <div className="inline-block mb-1 text-lg">
+              <div className="inline-block text-lg">
                 {pathname === item.link ? item.activeIcon : item.icon}
               </div>
               <span className="tab tab-home block text-[0.7rem]">

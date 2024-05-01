@@ -19,6 +19,19 @@ export interface FreelanceSignupFieldType {
 }
 
 
+export interface AuthType {
+  id:            number;
+  firstname:     string;
+  lastname:      string;
+  phone:         string;
+  role:          string;
+  last_login:    Date;
+  token:         string;
+  access_token:  string;
+  refresh_token: string;
+}
+
+
 
 export interface UserType {
   id: number;

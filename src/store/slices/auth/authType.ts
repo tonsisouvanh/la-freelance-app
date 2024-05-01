@@ -1,9 +1,19 @@
-import { UserType } from "../../../type";
+interface User {
+  id:            number;
+  firstname:     string;
+  lastname:      string;
+  phone:         string;
+  role:          string;
+  last_login:    Date;
+  token:         string;
+  access_token:  string;
+  refresh_token: string;
+}
+
 
 export interface AuthState {
-  user: UserType | null;
+  user: User | null;
   token: string | null;
-  isLoggedIn: boolean;
   status: "idle" | "loading" | "failed" | "success";
   error: string | null;
 }

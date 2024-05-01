@@ -1,4 +1,4 @@
-import { Button, Layout, Menu } from "antd";
+import { Button, Layout, Menu, Modal } from "antd";
 import Logo from "../shared/Logo";
 import {
   HomeOutlined,
@@ -13,6 +13,10 @@ const { Header } = Layout;
 import type { MenuProps } from "antd";
 import LanguageDropdown from "../shared/LanguageDropdown";
 import MobileDrawer from "./MobileDrawer";
+import { useAppDispatch, useAppSelector } from "../../hook/hooks";
+import { FaSignOutAlt } from "react-icons/fa";
+import { logout } from "../../store/slices/auth/AuthSlice";
+import { useState } from "react";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -50,8 +54,31 @@ const items: MenuProps["items"] = [
 ];
 
 const Navbar = () => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const dispatch = useAppDispatch();
+  const { user } = useAppSelector((state) => state.auth);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+    dispatch(logout());
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
   return (
     <Header className="fixed max-md:hidden top-0 w-full z-[999] shadow px-4 py-4 max-sm:py-0 max-sm:bg-primaryd lg:py-12d bg-white flex border-b-[0.5px] items-center justify-between flex-1 gap-10">
+      <Modal
+        title="ແນ່ໃຈບໍ່ວ່າຕ້ອງການອອກຈາກລະບົບ?"
+        open={isModalOpen}
+        onOk={handleOk}
+        okButtonProps={{ style: { backgroundColor: "#1A96CB", color: "#fff" } }}
+        onCancel={handleCancel}
+      ></Modal>
       {/* <Button
         htmlType="button"
         type="primary"
@@ -75,19 +102,32 @@ const Navbar = () => {
         className="bg-transparent border-none hidden lg:flex text-lg"
       />
 
-      <div className="space-x-3 hidden lg:flex">
-        <Link to="signin">
-          <Button type="primary" size="large" className="bg-primary">
-            ເຂົ້າສູລະບົບ
-          </Button>
-        </Link>
-        <Link to="/signup">
-          <Button type="default" size="large">
-            ສະໝັກສະມາຊິກ
-          </Button>
-        </Link>
-        <LanguageDropdown />
-      </div>
+      {user && user.token ? (
+        <Button
+          type="primary"
+          icon={<FaSignOutAlt />}
+          size="large"
+          htmlType="button"
+          onClick={showModal}
+          className="bg-primary flex items-center"
+        >
+          ອອກຈາກລະບົບ
+        </Button>
+      ) : (
+        <div className="space-x-3 hidden lg:flex">
+          <Link to="signin">
+            <Button type="primary" size="large" className="bg-primary">
+              ເຂົ້າສູລະບົບ
+            </Button>
+          </Link>
+          <Link to="/signup">
+            <Button type="default" size="large">
+              ສະໝັກສະມາຊິກ
+            </Button>
+          </Link>
+          <LanguageDropdown />
+        </div>
+      )}
     </Header>
   );
 };

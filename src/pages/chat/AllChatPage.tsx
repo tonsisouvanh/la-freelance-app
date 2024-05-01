@@ -1,6 +1,7 @@
 import { Input } from "antd";
 import { FaSearch } from "react-icons/fa";
 import ChatRow from "./ChatRow";
+import React from "react";
 
 const AllChatPage = () => {
   return (
@@ -15,8 +16,8 @@ const AllChatPage = () => {
           </p>
           <Input
             size="small"
-            className="shadow-lg p-2 w-full md:w-[40rem]"
-            placeholder="By Freelance name or project"
+            className="p-2 w-full md:w-[40rem]"
+            placeholder="ພິມຊື່ຟີຣແລນສ"
             prefix={
               <FaSearch className="text-primary text-2xl border-r-2 border-r-primary px-1 mr-2" />
             }
@@ -26,7 +27,9 @@ const AllChatPage = () => {
       <div>
         <div className="flex flex-col md:_container md:gap-0 md:py-0">
           {Array.from({ length: 4 }, (__, index) => (
-            <ChatRow />
+            <React.Fragment key={index}>
+              <ChatRow />
+            </React.Fragment>
           ))}
         </div>
       </div>

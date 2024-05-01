@@ -1,23 +1,59 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { AuthState, SigninType, SignupType } from "./authType";
-import axios from "../../../helpers/axiosConfig";
-export const signIn = createAsyncThunk<AuthState, SigninType>(
+import { SignupType } from "./authType";
+import { axiosPublic } from "../../../helpers/axiosConfig";
+
+interface User {
+  id: number;
+  firstname: string;
+  lastname: string;
+  phone: string;
+  role: string;
+  last_login: Date;
+  token: string;
+  access_token: string;
+  refresh_token: string;
+}
+
+interface AuthState {
+  user: User | null;
+  status: "idle" | "loading" | "failed" | "success";
+  error: string | null;
+}
+
+interface SigninType {
+  phone: string;
+  password: string;
+}
+
+const initialState: AuthState = {
+  user: localStorage.getItem("userInfo")
+    ? JSON.parse(localStorage.getItem("userInfo") || "")
+    : null,
+  status: "idle",
+  error: null,
+};
+
+export const signIn = createAsyncThunk<User, SigninType>(
   "auth/signIn",
   async (credentials, thunkAPI) => {
     try {
-      const response = await axios.post("/v1/login", credentials, {
-        headers: { "Content-Type": "application/json" },
-      });
-      if (!response.data.success) {
-        throw new Error(response.data.message || "Login failed");
-      }
+      const response = await axiosPublic.post(
+        "/login",
+        { ...credentials, login_method: "password" },
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+
+      localStorage.setItem("userInfo", JSON.stringify(response.data));
 
       return response.data; // Replace with the actual data structure
-    } catch (error) {
-      return thunkAPI.rejectWithValue("Login failed"); // Set a clear error message
+    } catch (error: any) {
+      return thunkAPI.rejectWithValue(error.response.data.error);
     }
   }
 );
+
 export const signUp = createAsyncThunk<AuthState, SignupType>(
   "auth/signUp",
   async (userData, thunkAPI) => {
@@ -32,7 +68,7 @@ export const signUp = createAsyncThunk<AuthState, SignupType>(
         password: userData.password,
         profile: userData.profile ? userData?.profile : null,
       };
-      const response = await axios.post(
+      const response = await axiosPublic.post(
         "/signup",
         { ...formattedData },
         {
@@ -46,22 +82,13 @@ export const signUp = createAsyncThunk<AuthState, SignupType>(
   }
 );
 
-const initialState: AuthState = {
-  user: null,
-  token: null,
-  isLoggedIn: false,
-  status: "idle",
-  error: null,
-};
-
 const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
     logout: (state) => {
-      state.isLoggedIn = false;
+      localStorage.removeItem("userInfo");
       state.user = null;
-      state.token = null;
     },
     resetStatus: (state) => {
       state.error = null;
@@ -77,14 +104,13 @@ const authSlice = createSlice({
       })
       .addCase(signIn.fulfilled, (state, action) => {
         state.status = "success";
-        state.token = action.payload.token;
-        state.user = action.payload.user;
+        state.user = action.payload;
+        state.error = null;
       })
       .addCase(signIn.rejected, (state, action) => {
         state.status = "failed";
-        state.error =
-          (action.error.message as string) ||
-          "An error occurred during sign-in.";
+        // state.error = action.payload as string;
+        state.error = action.error.message as string;
       })
       .addCase(signUp.pending, (state) => {
         state.status = "loading";
@@ -95,9 +121,7 @@ const authSlice = createSlice({
       })
       .addCase(signUp.rejected, (state, action) => {
         state.status = "failed";
-        state.error =
-          (action.error.message as string) ||
-          "An error occurred during sign-in.";
+        state.error = action.error.message as string;
       });
   },
 });
