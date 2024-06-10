@@ -11,9 +11,11 @@ import {
   UserOutlined,
   SmileFilled,
 } from "@ant-design/icons";
+import { useAppSelector } from "../../hook/hooks";
 
 type MenuItem = {
   link: string;
+  guestLink?: string;
   text: string;
   key: string;
   icon: JSX.Element;
@@ -60,23 +62,26 @@ const items: MenuItem[] = [
 
   {
     link: "/client/profile",
+    guestLink: "profile/view-as-guest",
     text: "ໂປຣຟາຍ",
     key: "4",
     icon: <UserOutlined className="" />,
     activeIcon: <SmileFilled className="" />,
   },
 
-  // {
-  //   link: "/freelancer/signup",
-  //   text: "ເປັນຟີຣແລນສ",
-  //   key: "4",
-  //   icon: <SignatureOutlined />,
-  //   activeIcon: <SignatureFilled />,
-  // },
+  {
+    link: "/signin",
+    text: "ເປັນຟີຣແລນສ",
+    key: "4",
+    icon: <SoundFilled />,
+    activeIcon: <SoundFilled />,
+  },
 ];
+console.log("🚀 ~ items:", items);
 
 const MobileNavbar = () => {
   const { pathname } = useLocation();
+  const { user } = useAppSelector((state) => state.auth);
   const isMatch = useMatch("/chat/:chatId");
 
   return (
@@ -92,15 +97,19 @@ const MobileNavbar = () => {
         {items.map((item, index) => (
           <Link
             key={index}
-            to={item.link}
+            to={
+              pathname.includes("/client/profile") && user
+                ? item.guestLink!
+                : item.link
+            }
             className={`w-full relative justify-center inline-block text-center pt-2 ${
-              pathname === item.link && ""
+              user && item.link?.includes("signin") && "hidden"
             }`}
           >
             <div
               className={`${
                 pathname === item.link &&
-                "text-black scale-110 transition font-bold duration-300"
+                "text-black transition font-bold duration-300"
               }`}
             >
               <div className="inline-block text-lg">

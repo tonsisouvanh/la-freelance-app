@@ -29,7 +29,6 @@ const items: TabsProps["items"] = [
 
 const ProjectBoard = () => {
   const onChange = (key: string) => {
-    console.log(key);
   };
 
   return (
@@ -44,7 +43,7 @@ const ProjectBoard = () => {
         </div>
       </div>
       <div className="border mt-5 rounded-2xl px-2">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto pb-10">
           <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
         </div>
       </div>

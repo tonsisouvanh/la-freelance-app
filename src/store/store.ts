@@ -1,30 +1,18 @@
 import { configureStore } from "@reduxjs/toolkit";
 import AuthReducer from "./slices/auth/AuthSlice";
-// import storage from "redux-persist/lib/storage"; // Use localStorage by default
-
-// const persistConfig = {
-//   key: "root",
-//   storage,
-//   whitelist: ["auth"],
-//   blacklist: ["project"],
-// };
-
-// const rootReducer = combineReducers({
-//   auth: AuthReducer,
-//   project: ProjectReducer,
-// });
-
-// const persistedReducer = persistReducer(persistConfig, rootReducer);
-
+import { authApi } from "./slices/services/authApi";
+import { setupListeners } from "@reduxjs/toolkit/query";
 export const store = configureStore({
-  reducer: { auth: AuthReducer },
+  reducer: {
+    [authApi.reducerPath]: authApi.reducer,
+    auth: AuthReducer,
+  },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({ serializableCheck: false }),
+    getDefaultMiddleware().concat(authApi.middleware),
 });
 
-// const persistor = persistStore(store);
+setupListeners(store.dispatch);
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
-
-// export { store };
+export default store;

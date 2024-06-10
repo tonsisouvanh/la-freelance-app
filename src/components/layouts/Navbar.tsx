@@ -1,4 +1,4 @@
-import { Button, Layout, Menu, Modal } from "antd";
+import { Avatar, Button, Layout, Menu, Modal } from "antd";
 import Logo from "../shared/Logo";
 import {
   HomeOutlined,
@@ -8,7 +8,7 @@ import {
   ProjectOutlined,
   FireOutlined,
 } from "@ant-design/icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const { Header } = Layout;
 import type { MenuProps } from "antd";
 import LanguageDropdown from "../shared/LanguageDropdown";
@@ -17,6 +17,7 @@ import { useAppDispatch, useAppSelector } from "../../hook/hooks";
 import { FaSignOutAlt } from "react-icons/fa";
 import { logout } from "../../store/slices/auth/AuthSlice";
 import { useState } from "react";
+import { TiUserOutline } from "react-icons/ti";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -55,6 +56,7 @@ const items: MenuProps["items"] = [
 
 const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const { user } = useAppSelector((state) => state.auth);
 
@@ -79,14 +81,6 @@ const Navbar = () => {
         okButtonProps={{ style: { backgroundColor: "#1A96CB", color: "#fff" } }}
         onCancel={handleCancel}
       ></Modal>
-      {/* <Button
-        htmlType="button"
-        type="primary"
-        size="small"
-        className="md:hidden max-sm:text-whited bg-primary text-white"
-        onClick={() => navigate(-1)}
-        icon={<ArrowLeftOutlined />}
-      ></Button> */}
       <div className="hidden">
         <MobileDrawer />
       </div>
@@ -103,16 +97,26 @@ const Navbar = () => {
       />
 
       {user && user.token ? (
-        <Button
-          type="primary"
-          icon={<FaSignOutAlt />}
-          size="large"
-          htmlType="button"
-          onClick={showModal}
-          className="bg-primary flex items-center"
-        >
-          ອອກຈາກລະບົບ
-        </Button>
+        <div className="flex gap-2 items-center">
+          <Button
+            type="primary"
+            icon={<FaSignOutAlt />}
+            size="large"
+            htmlType="button"
+            onClick={showModal}
+            className="bg-primary flex items-center"
+          >
+            ອອກຈາກລະບົບ
+          </Button>
+          <Avatar
+          onClick={() => navigate('client/profile')}
+            size={"large"}
+
+            className="bg-primary cursor-pointer hover:opacity-70"
+            // style={{ backgroundColor: "#87d068" }}
+            icon={<TiUserOutline />}
+          />
+        </div>
       ) : (
         <div className="space-x-3 hidden lg:flex">
           <Link to="signin">
@@ -125,7 +129,7 @@ const Navbar = () => {
               ສະໝັກສະມາຊິກ
             </Button>
           </Link>
-          <LanguageDropdown />
+          {/* <LanguageDropdown /> */}
         </div>
       )}
     </Header>

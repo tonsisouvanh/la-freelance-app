@@ -6,6 +6,7 @@ import { Button } from "antd";
 import Reviews from "./Reviews";
 import FreelancerStats from "./FreelancerStats";
 import { useNavigate } from "react-router-dom";
+import Image from "../../components/Image";
 
 const ProjectPage = () => {
   const navigate = useNavigate();
@@ -14,11 +15,13 @@ const ProjectPage = () => {
       <div className="flex flex-1 justify-center">
         <div className="bg-transparent overflow-hidden max-md:max-w-full">
           <div className="relative md:w-1/2 md:mx-auto">
-            <img
+            <Image
+              image="https://images.unsplash.com/photo-1523275335684-37898b6baf30"
               className="w-full h-full md:object-cover "
-              src="https://images.unsplash.com/photo-1523275335684-37898b6baf30"
-              alt="Product Image"
             />
+            {/* <img
+              alt="Product Image"
+            /> */}
             <div className="absolute bg-gradient-to-b from-black/40 to-transparent h-[5rem] p-4 flex justify-between items-start top-0 left-0 right-0">
               <button onClick={() => navigate(-1)}>
                 <FaChevronLeft className="cursor-pointer font-bold text-white text-2xl" />

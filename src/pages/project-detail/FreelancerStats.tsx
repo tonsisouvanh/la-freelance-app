@@ -1,13 +1,14 @@
 import { Avatar } from "antd";
 import { FaHandsHelping, FaRocketchat, FaShoppingCart } from "react-icons/fa";
 import { FaArrowRotateLeft } from "react-icons/fa6";
+import { worka } from "../../assets";
 
 const FreelancerStats = () => {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center gap-2">
         <Avatar
-          src="https://bidinnovacion.org/economiacreativa/wp-content/uploads/2014/10/speaker-3.jpg"
+          src={worka}
           size={65}
         />
         <p>Backky</p>

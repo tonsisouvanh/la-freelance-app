@@ -20,7 +20,6 @@ import {
 
 import Logo from "../../components/shared/Logo";
 import { useAppDispatch, useAppSelector } from "../../hook/hooks";
-import { resetStatus, signUp } from "../../store/slices/auth/AuthSlice";
 import { RootState } from "../../store/store";
 
 const steps = [
@@ -64,7 +63,6 @@ type FieldType = {
 const Signup = () => {
   const [current, setCurrent] = useState(0);
   const dispatch = useAppDispatch();
-  const { status, error } = useAppSelector((state: RootState) => state.auth);
   const next = () => {
     setCurrent(current + 1);
   };
@@ -99,7 +97,7 @@ const Signup = () => {
       message.warning("Password is not match");
       return;
     }
-    dispatch(signUp(values));
+    // dispatch(signUp(values));
   };
 
   const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (
@@ -116,17 +114,7 @@ const Signup = () => {
     return e?.fileList;
   };
 
-  useEffect(() => {
-    if (status === "success") {
-      console.log("first");
-      message.success("Signup successful!");
-      dispatch(resetStatus()); // Clear state after success
-    } else if (status === "failed") {
-      console.log("sec");
-      message.error(error);
-      dispatch(resetStatus()); // Clear state after error
-    }
-  }, [dispatch, error, status]);
+
   return (
     <>
       <div className="w-full h-screen flex items-center justify-center px-10">

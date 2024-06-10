@@ -5,13 +5,13 @@ export default {
     extend: {
       colors: {
         primary: "#1A96CB",
+        color: {
+          1: "#1A96CB",
+        }
       },
       fontFamily: {
         notosans: ["Noto Sans Lao", "sans-serif"],
       },
     },
   },
-  // corePlugins: {
-  //   preflight: false,
-  // },
 };

@@ -1,5 +1,6 @@
 import { Carousel } from "antd";
 import { adone } from "../../assets";
+import Image from "../../components/Image";
 
 type Props = {
   classname?: string;
@@ -11,13 +12,16 @@ const AdSlider = ({ classname }: Props) => {
   return (
     <>
       <div className="rounded-md">
-        <Carousel className="" dots={false} autoplay>
+        <Carousel className="flex justify-center" dots={false} autoplay>
           {adData.map((item, index) => (
             <div
               key={index}
               className={`h-[12rem] md:h-[20rem] ${classname && classname}`}
             >
-              <img className="w-full h-full object-contain" src={item} alt="" />
+              <Image
+                image={item}
+                className={"w-full h-full object-contain"}
+              ></Image>
             </div>
           ))}
         </Carousel>

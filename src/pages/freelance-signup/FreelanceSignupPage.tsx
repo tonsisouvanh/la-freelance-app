@@ -99,7 +99,7 @@ const FreelanceSignupPage = () => {
           />
           <Form
             layout="vertical"
-            className="w-full max-w-xl"
+            className="w-full max-w-2xl"
             name="basic"
             labelCol={{ span: 8 }}
             initialValues={{ remember: true }}

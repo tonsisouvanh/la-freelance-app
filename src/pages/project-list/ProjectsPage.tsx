@@ -68,7 +68,7 @@ const ProjectsPage = () => {
               </Link>
             ))}
           </div>
-        </div>
+      </div>
         {/* All */}
         <div className="flex flex-col items-center justify-center">
           <div className="w-full flex-col flex items-center justify-between mb-4 md:mb-8">

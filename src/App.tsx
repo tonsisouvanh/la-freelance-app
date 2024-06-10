@@ -14,6 +14,7 @@ import {
   GuestProfilePage,
   AllChatPage,
   ChatPage,
+  ClientProfilePage,
 } from "./pages/index";
 import { ConfigProvider } from "antd";
 import PrivateRoute from "./pages/layout/PrivateRoute.js";
@@ -33,57 +34,145 @@ function App() {
         }}
       >
         <ScrollToTop />
-        <Suspense fallback={<Spinner />}>
-          <Routes>
-            <Route path="/signin" element={<SigninPage />}></Route>
-            <Route path="/signup" element={<SignupPage />}></Route>
+        <Routes>
+          <Route
+            path="/signin"
+            element={
+              <Suspense fallback={<Spinner />}>
+                <SigninPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <Suspense fallback={<Spinner />}>
+                <SignupPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/freelancer/signup"
+            element={
+              <Suspense fallback={<Spinner />}>
+                <FreelanceSignupPage />
+              </Suspense>
+            }
+          />
+
+          <Route element={<RootLayout />}>
             <Route
-              path="/freelancer/signup"
-              element={<FreelanceSignupPage />}
-            ></Route>
+              index
+              path="/"
+              element={
+                <Suspense fallback={<Spinner />}>
+                  <HomePage />
+                </Suspense>
+              }
+            />
 
-            <Route element={<RootLayout />}>
-              <Route index path="/" element={<HomePage />}></Route>
-              {/* Project */}
-              {/* Freelancer & clients */}
-              <Route path="/projects" element={<ProjectsPage />}></Route>
+            {/* Project */}
+            {/* Freelancer & clients */}
+            <Route
+              path="/projects"
+              element={
+                <Suspense fallback={<Spinner />}>
+                  <ProjectsPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/projects/:category/:projectId"
+              element={
+                <Suspense fallback={<Spinner />}>
+                  <ProjectPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/projects/:category"
+              element={
+                <Suspense fallback={<Spinner />}>
+                  <ProjectsPage />
+                </Suspense>
+              }
+            />
+
+            {/* Private routes */}
+            <Route element={<PrivateRoute />}>
               <Route
-                path="/projects/:category/:projectId"
-                element={<ProjectPage />}
-              ></Route>
+                path="/client/post-project"
+                element={
+                  <Suspense fallback={<Spinner />}>
+                    <PostProjectPage />
+                  </Suspense>
+                }
+              />
               <Route
-                path="/projects/:category"
-                element={<ProjectsPage />}
-              ></Route>
-
-              {/* Private routes */}
-              <Route element={<PrivateRoute />}>
-                <Route
-                  path="/client/post-project"
-                  element={<PostProjectPage />}
-                ></Route>
-                <Route path="/chat-list" element={<AllChatPage />}></Route>
-                <Route path="/chat/:chatId" element={<ChatPage />}></Route>
-                <Route
-                  path="/project-board"
-                  element={<ProjectBoardPage />}
-                ></Route>
-              </Route>
-
-              {/* Public */}
+                path="/chat-list"
+                element={
+                  <Suspense fallback={<Spinner />}>
+                    <AllChatPage />
+                  </Suspense>
+                }
+              />
               <Route
-                path="/profile/view-as-guest"
-                element={<GuestProfilePage />}
-              ></Route>
-              {/* Freelancer */}
-
-              {/* Client */}
-
-              <Route path="/about" element={<AboutPage />}></Route>
+                path="/chat/:chatId"
+                element={
+                  <Suspense fallback={<Spinner />}>
+                    <ChatPage />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="/project-board"
+                element={
+                  <Suspense fallback={<Spinner />}>
+                    <ProjectBoardPage />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="/client/profile"
+                element={
+                  <Suspense fallback={<Spinner />}>
+                    <ClientProfilePage />
+                  </Suspense>
+                }
+              />
             </Route>
-            <Route path="*" element={<NotFoundPage />}></Route>
-          </Routes>
-        </Suspense>
+
+            {/* Public */}
+            <Route
+              path="/profile/view-as-guest"
+              element={
+                <Suspense fallback={<Spinner />}>
+                  <GuestProfilePage />
+                </Suspense>
+              }
+            />
+            {/* Freelancer */}
+
+            {/* Client */}
+
+            <Route
+              path="/about"
+              element={
+                <Suspense fallback={<Spinner />}>
+                  <AboutPage />
+                </Suspense>
+              }
+            />
+          </Route>
+          <Route
+            path="*"
+            element={
+              <Suspense fallback={<Spinner />}>
+                <NotFoundPage />
+              </Suspense>
+            }
+          />
+        </Routes>
         <MobileNavbar />
       </ConfigProvider>
     </>

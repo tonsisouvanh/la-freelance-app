@@ -23,7 +23,11 @@ export const ProjectPage = React.lazy(
   () => import("./project-detail/ProjectPage")
 );
 export const GuestProfilePage = React.lazy(
-  () => import("./guest-profile/GuestProfilePage")
+  () => import("./guestProfile/GuestProfilePage")
 );
 
-export const AllChatPage = React.lazy(() => import("./chat/AllChatPage"))
+export const ClientProfilePage = React.lazy(
+  () => import("./clientProfile/ClientProfilePage")
+);
+
+export const AllChatPage = React.lazy(() => import("./chat/AllChatPage"));

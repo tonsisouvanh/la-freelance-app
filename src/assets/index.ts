@@ -10,7 +10,7 @@ import workc from "./works/workc.jpeg";
 import workd from "./works/workd.jpeg";
 import worke from "./works/worke.jpeg";
 import projects from "./projects.png";
-
+import logo from './logo.svg'
 export {
   pentool,
   rating,
@@ -23,4 +23,5 @@ export {
   workd,
   worke,
   projects,
+  logo
 };

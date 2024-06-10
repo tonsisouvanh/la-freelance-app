@@ -1,5 +1,6 @@
 import { CheckboxProps } from "antd";
 import { FreelanceSignupFieldType } from "../../type";
+import { useRef } from "react";
 
 type Props = {
   Form: any;
@@ -9,6 +10,7 @@ type Props = {
 };
 
 const StepCondition = ({ Form, Checkbox, title, setIsAacceptTerms }: Props) => {
+  const lastElementRef = useRef();
   const onChange: CheckboxProps["onChange"] = (e) => {
     const checkValue = e.target.checked;
     if (checkValue) setIsAacceptTerms(true);
@@ -18,57 +20,434 @@ const StepCondition = ({ Form, Checkbox, title, setIsAacceptTerms }: Props) => {
   return (
     <>
       <div className="flex flex-col gap-5 border p-4 lg:p-6 rounded-md">
-        <h1 className="text-xl font-bold text-center">{title}</h1>
-        <div className="space-y-4 max-h-96 overflow-auto">
-          <p className="text-base leading-loose text-justify">
-            Effective Date: April 30, 2024 This privacy policy ("Policy")
-            describes how [Company Name] ("we," "us," or "our") collects, uses,
-            and discloses your personal information when you use our website,
-            mobile application, or other online services (collectively, the
-            "Service"). Information We Collect We collect several different
-            types of information for various purposes to improve our Service to
-            you. Personal Information: This may include information that can be
-            used to directly or indirectly identify you, such as your name,
-            email address, phone number, or username. Usage Data: This
-            information may include data about your activity on the Service,
-            such as the pages you visit, the time and date of your visit, and
-            the searches you make. Device Data: This is non-personal data
-            collected automatically about your device, such as your IP address,
-            operating system, browser type, and device identifier. Use of Your
-            Information We may use your information for the following purposes:
-            To provide and maintain the Service To improve and personalize the
-            Service To send you marketing and promotional communications (with
-            your consent) To respond to your inquiries and requests For security
-            and fraud prevention Sharing of Your Information We may share your
-            information with third-party vendors who provide services to support
-            our business operations. We will only share your information with
-            these vendors in accordance with this Policy. We may also disclose
-            your information if required by law or in the good faith belief that
-            such action is necessary to comply with legal processes, protect the
-            security of others, or investigate fraud. Data Retention We will
-            retain your information for as long as necessary to fulfill the
-            purposes outlined in this Policy. We may also retain certain
-            information as required by law or for legitimate business purposes.
-            Your Rights You have certain rights regarding your personal
-            information, including the right to: Access your information Rectify
-            inaccurate information Request deletion of your information Object
-            to the processing of your information Security We take reasonable
-            steps to protect your information from unauthorized access,
-            disclosure, alteration, or destruction. However, no internet
-            transmission or electronic storage method is completely secure.
-            Children's Privacy Our Service does not address anyone under the age
-            of [Age]. We do not knowingly collect personal information from
-            children under [Age]. If you are a parent or guardian and you are
-            aware that your child has provided us with personal information,
-            please contact us. If we become aware that we have collected
-            personal information from a child under [Age], we will take steps to
-            remove that information from our servers. Changes to This Policy We
-            may update our Policy from time to time. We will notify you of any
-            changes by posting the new Policy on this page. Contact Us If you
-            have any questions about this Policy, please contact us: By email:
-            [email protected] By visiting this page on our website: [link to
-            contact page]
-          </p>
+        <h1 className="text-xl font-bold text-center">{"FREELANCER"}</h1>
+        <div className="space-y-4">
+          {/* <h1 className="text-2xl font-bold mb-4">FREELANCER</h1> */}
+          {/* Policy & prvacy */}
+          <div>
+            <h2 className="text-xl font-semibold mb-2">Privacy Policy</h2>
+            <div className="mb-6">
+              <h3 className="text-lg font-semibold mb-2">
+                1. ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ (Privacy Policy)
+              </h3>
+              <p className="mb-2">
+                LA FREELANCE (“ເຮົາ,” “ຂອງພວກເຮົາ,” ຫຼື “ພວກເຮົາ”) ດຳເນີນງານ LA
+                FREELANCE ແອັບພລິເຄຊັນຕະຫຼາດເສລີ (“ບໍລິການ”).
+              </p>
+              <p className="mb-2">
+                ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວນີ້ແຈ້ງໃຫ້ທ່ານຮູ້ນະໂຍບາຍຂອງພວກເຮົາກ່ຽວກັບການເກັບກໍາ,
+                ການນໍາໃຊ້, ແລະການເປີດເຜີຍຂໍ້ມູນສ່ວນບຸກຄົນ ເມື່ອທ່ານໃຊ້ບໍລິການ
+                ແລະ ທາງເລືອກທີ່ທ່ານມີໃນການເຊື່ອມຕໍ່ຂໍ້ມູນນັ້ນ.
+              </p>
+            </div>
+            <div className="mb-6">
+              <h3 className="text-lg font-semibold mb-2">
+                2. ນິຍາມ ແລະ ອະທິບາຍສັບ
+              </h3>
+              <p className="mb-2">
+                ຂໍ້ມູນສ່ວນຕົວໝາຍເຖິງຂໍ້ມູນໃດໆທີ່ກ່ຽວຂ້ອງກັບບຸກຄົນທີ່ຖືກລະບຸຕົວຕົນ
+                ຫຼືສາມາດລະບຸຕົວຕົນໄດ້.
+              </p>
+              <p className="mb-2">
+                ຂໍ້ມູນການນໍາໃຊ້ແມ່ນຂໍ້ມູນທີ່ຖືກເກັບກໍາໂດຍອັດຕະໂນມັດເມື່ອໃຊ້ບໍລິການເຊັ່ນ:
+                ປະເພດອຸປະກອນ, ທີ່ຢູ່ IP, ລະບົບປະຕິບັດການ. ການເຄື່ອນໄຫວການຊອກຫາ,
+                ປະຫວັດການຄົ້ນຫາ, ການໂຕ້ຕອບກັບບໍລິການ ແລະ
+                ວັນທີແລະເວລາຂອງການດໍາເນີນງານ.
+              </p>
+            </div>
+            <div className="mb-6">
+              <h3 className="text-lg font-semibold mb-2">3. ອະທິບາຍສັບ</h3>
+              <ul className="list-disc list-inside">
+                <li className="mb-2">
+                  <strong> "ແພັດຟອມ "</strong> ຫມາຍເຖິງເວັບໄຊທ໌ (
+                  <a
+                    href="https://lalance.netlify.app/"
+                    className="text-blue-500 hover:underline"
+                  >
+                    https://lalance.netlify.app/
+                  </a>
+                  ) ຫຼື ແອັບພລິເຄຊັນຂອງບໍລິສັດ (LA FREELANCE ໃນ Apple Store ແລະ
+                  Google Play Store) ເຊິ່ງເປັນພື້ນທີ່ສໍາລັບຜູ້ໃຊ້. ໝາຍຄວາມເຖິງ
+                  ນາຍຈ້າງທີ່ໃຊ້ ເພື່ອຊອກຫາ, ຕິດຕໍ່ ຫຼື ຈ້າງ freelancers. ລວມທັງ
+                  freelancers ໃຊ້ໃນການປະກາດວຽກ ຕິດຕໍ່ນາຍຈ້າງ ຫຼື
+                  ຂາຍວຽກຜ່ານເວັບໄຊທ໌ຂອງບໍລິສັດແອັບພລິເຄຊັນ.
+                </li>
+                <li className="mb-2">
+                  <strong> "ຟຣີແລນ"</strong> ໝາຍ ເຖິງຜູ້ໃຊ້ທີ່ປະກາດຮັບວຽກ ແລະ
+                  ຈະສົ່ງມອບວຽກຜ່ານແພັດຟອມຂອງພວກເຮົາ ທີ່ຕົກລົງ ແລະ
+                  ຍອມຮັບເງື່ອນໄຂການນໍາໃຊ້.
+                </li>
+                <li className="mb-2">
+                  <strong>“ອໍໍເດີ”</strong> ໝາຍເຖິງຄຳສັ່ງ ຫຼື ຄຳສັ່ງຈ້າງງານ
+                  ທີ່ຖືກສ້າງຂື້ນໂດຍນາຍຈ້າງ.
+                </li>
+              </ul>
+            </div>
+            <div className="mb-6">
+              <h3 className="text-lg font-semibold mb-2">
+                4. ຂໍ້ມູນທີ່ຖືກລວບລວມ
+              </h3>
+              <ul className="list-disc list-inside">
+                <li className="mb-2">
+                  ຂໍ້ມູນບັນຊີ - ກະລຸນາສ້າງບັນຊີເພື່ອບໍລິການຂອງພວກເຮົາ
+                </li>
+                <li className="mb-2">
+                  ຂໍ້ມູນໂປຣໄຟລ໌ -
+                  ກະລຸນາເລືອກທີ່ຈະໃຫ້ຂໍ້ມູນເພີ່ມເຕີມເພື່ອສ້າງໂປຣໄຟລ໌
+                </li>
+                <li className="mb-2">
+                  ຂໍ້ມູນວຽກ - ກະລຸນາທີ່ທ່ານໂພດວຽກຫຼືຂໍ້ສະເໜີໃນບໍລິການຂອງພວກເຮົາ
+                </li>
+                <li className="mb-2">
+                  ຂໍ້ມູນການສື່່ສານ - ກະລຸນາສະຫນອງການສົນທະນາ ແລະ
+                  ຂໍ້ຄວາມແລກປ່ຽນລະຫວ່າງຜູ້ໃຊ້
+                </li>
+                <li className="mb-2">
+                  ຂໍ້ມູນການຈ່າຍເງິນ -
+                  ກະລຸນາຈ່າຍເງິນຂອງພາກສ່ວນທີສາມເພື່ອອໍານວຍຄວາມສະດວກໃນການເຮັດທຸລະກໍາ
+                </li>
+                <li className="mb-2">
+                  ຂໍ້ມູນການນໍາໃຊ້ -
+                  ພວກເຮົາອາດຈະເກັບກໍາຂໍ້ມູນການນໍາໃຊ້ໃນເວລາທີ່ທ່ານໃຊ້ບໍລິການ
+                </li>
+              </ul>
+            </div>
+            <div className="mb-6">
+              <h3 className="text-lg font-semibold mb-2">
+                5 . ການນໍາໃຊ້ຂໍ້ມູນຂອງທ່ານ
+              </h3>
+              <p className="mb-4">ພວກເຮົາໃຊ້ຂໍ້ມູນທີ່ພວກເຮົາເກັບກໍາເພື່ອ:</p>
+              <ul className="list-disc list-inside">
+                <li className="mb-2">ສະຫນອງ ແລະ ດູແລ, ຮັກສາການບໍລິການ</li>
+                <li className="mb-2">
+                  ອໍານວຍຄວາມສະດວກໃນການສື່ສານລະຫວ່າງຜູ້ໃຊ້
+                </li>
+                <li className="mb-2">ດໍາເນີນການຊໍາລະ</li>
+                <li className="mb-2">
+                  ສົ່ງການສື່ສານປະຊາສຳພັນ (ດ້ວຍຄວາມຍິນຍອມຂອງທ່ານ)
+                </li>
+                <li className="mb-2">
+                  ວິເຄາະແນວໂນ້ມການນຳໃຊ້ ແລະ ປັບປຸງການບໍລິການ
+                </li>
+                <li className="mb-2">
+                  ກວດພົບ, ປ້ອງກັນ, ແລະແກ້ໄຂບັນຫາຄວາມປອດໄພ
+                </li>
+              </ul>
+            </div>
+            <div className="mb-6">
+              <h3 className="text-lg font-semibold mb-2">
+                6. ການເປີດເຜີຍຂໍ້ມູນຂອງທ່ານ
+              </h3>
+              <p className="mb-4">
+                ພວກເຮົາອາດຈະເປີດເຜີຍຂໍ້ມູນຂອງທ່ານກັບບຸກຄົນທີ່ສາມພາຍໃຕ້ບາງກໍລະນີ:
+              </p>
+              <ul className="list-disc list-inside">
+                <li className="mb-2">
+                  ຜູ້ໃຫ້ບໍລິການ:
+                  ພວກເຮົາອາດຈະແບ່ງປັນຂໍ້ມູນຂອງທ່ານກັບຜູ້ໃຫ້ບໍລິການບຸກຄົນທີ່ສາມທີ່ຊ່ວຍພວກເຮົາດໍາເນີນການບໍລິການ.
+                </li>
+                <li className="mb-2">
+                  ຂໍ້ກໍານົດດ້ານກົດໝາຍ: ພວກເຮົາອາດຈະເປີດເຜີຍຂໍ້ມູນຂອງທ່ານ
+                  ຖ້າຕ້ອງການໃຫ້ເຮັດຕາມກົດໝາຍ ຫຼືເພື່ອປົກປ້ອງສິດ ແລະ
+                  ຄວາມປອດໄພຂອງຕົວເຮົາເອງ ຫຼືຜູ້ອື່ນ.
+                </li>
+                <li className="mb-2">
+                  ການໂອນຍ້າຍທຸລະກິດ:
+                  ພວກເຮົາອາດຈະເປີດເຜີຍຂໍ້ມູນຂອງທ່ານກ່ຽວກັບການລວມກິດຈະການ
+                  ການເຂົ້າຊື້ກິດຈະການ ຫຼື ການເຮັດທຸລະກໍາອື່ນໆ.
+                </li>
+              </ul>
+            </div>
+            <div className="mb-6">
+              <h2 className="text-lg font-semibold mb-2">
+                7. ການເກັບຮັກສາຂໍ້ມູນ
+              </h2>
+              <p>
+                ພວກເຮົາຈະຮັກສາຂໍ້ມູນສ່ວນຕົວຂອງທ່ານໄວ້ດົນເທົ່າທີ່ຈຳເປັນເພື່ອປະຕິບັດຈຸດປະສົງທີ່ກຳນົດໄວ້ໃນນະໂຍບາຍຄວາມເປັນສ່ວນຕົວນີ້
+                ແລະ ພວກເຮົາອາດຈະເກັບຂໍ້ມູນການນໍາໃຊ້ເພື່ອຈຸດປະສົງການວິເຄາະພາຍໃນ.
+              </p>
+              <ul className="list-disc ml-6 mb-4">
+                <li>ການເຂົ້າເຖິງຂໍ້ມູນຂອງທ່ານ</li>
+                <li>ແກ້ໄຂຂໍ້ມູນທີ່ບໍ່ຖືກຕ້ອງ</li>
+                <li>ຄຳຂໍໃຫ້ຂໍ້ມູນຂອງທ່ານຖືກລຶບ</li>
+              </ul>
+            </div>
+            <div className="mb-6">
+              <h2 className="text-lg font-semibold mb-2">8. ສິດຂອງທ່ານ</h2>
+              <p>ສິດຂອງທ່ານ ກ່ຽວກັບຂໍ້ມູນຂອງທ່ານ ປະກອບມີ:</p>
+              <ul className="list-disc ml-6 mb-4">
+                <li>ການເຂົ້າເຖິງຂໍ້ມູນຂອງທ່ານ</li>
+                <li>ແກ້ໄຂຂໍ້ມູນທີ່ບໍ່ຖືກຕ້ອງ</li>
+                <li>ຄຳຂໍໃຫ້ຂໍ້ມູນຂອງທ່ານຖືກລຶບ</li>
+              </ul>
+            </div>
+            <div className="mb-6">
+              <h2 className="text-lg font-semibold mb-2">9. ຄວາມປອດໄພ</h2>
+              <p>
+                ພວກເຮົາໃຊ້ມາດຕະການທີ່ສົມເຫດສົມຜົນເພື່ອປົກປ້ອງຂໍ້ມູນຂອງທ່ານຈາກການເຂົ້າເຖິງທີ່ບໍ່ໄດ້ຮັບອະນຸຍາດ,
+                ການເປີດເຜີຍ, ການປ່ຽນແປງ. ຫຼື ທໍາລາຍໂດຍບໍ່ໄດ້ຮັບອະນຸຍາດ.
+              </p>
+            </div>
+          </div>
+          {/* Terms and condition */}
+          <div>
+            <h1 className="text-xl font-semibold mb-2">Terms and Conditions</h1>
+            <div className="mb-6">
+              <div className="">
+                <h2>1. ບົດແນະນຳ</h2>
+                <div>
+                  <p>
+                    ຂໍ້ກໍານົດແລະເງື່ອນໄຂເຫຼົ່ານີ້ ("ສັນຍາ") ປົກຄອງການໃຊ້ LA
+                    FREELNCE ແອັບພລິເຄຊັນຕະຫຼາດເສລີ ("ການບໍລິການ").
+                  </p>
+                  <p>
+                    ດໍາເນີນການໂດຍ [ຊື່ບໍລິສັດຂອງທ່ານ] (“ພວກເຮົາ,” “ຂອງພວກເຮົາ,”
+                    ຫຼື “ພວກເຮົາ”)
+                  </p>
+                </div>
+              </div>
+              <div>
+                <h2>2. ບັນຊີຜູ້ໃຊ້</h2>
+                <p>
+                  ທ່ານຕ້ອງອາຍຸຢ່າງໜ້ອຍ 15 ປີ ເຕັມຈຶ່ງສ້າງບັນຊີໄດ້
+                  ໂດຍການສ້າງບັນຊີ ທ່ານຕ້ອງຍອມຮັບເງື່ອນໄຂເຫຼົ່ານີ້ແລະ
+                  ປະຕິບັດຕາມກົດຫມາຍ ແລະ ກົດລະບຽບທັງຫມົດ ຖ້າຫາກບໍ່ ປະຕິບັດຕາມ LA
+                  FREELANCE ມີສິດທີ່ຈະລະງັບ ຫຼື ລົບບັນຊີຜູ້ໃຊ້.
+                </p>
+              </div>
+              <div>
+                <h2>3. ຂໍ້ຕົກລົງທົ່ວໄປ</h2>
+                <ul className="list-disc ml-6 mb-4">
+                  <li>
+                    ເພື່ອປົກປ້ອງຄວາມເປັນສ່ວນຕົວຂອງຜູ້ໃຊ້
+                    ຂໍ້ມູນຜູ້ໃຊ້ທີ່ໃຊ້ສໍາລັບການລະບຸຕົວຜູ້ໃຊ້ຈະຖືກເກັບຮັກສາເປັນຄວາມລັບ.
+                  </li>
+                  <li>
+                    ຜູ້ໃຊ້ບໍ່ສາມາດສະແດງຂໍ້ມູນສ່ວນຕົວເຊັ່ນ: ທີ່ຢູ່ອີເມວ,
+                    ເບີໂທລະສັບ ຫຼື ຊື່ບັນຊີຕ່າງ(LINE/Whatsapp/WeChat/Facebook)
+                    ຫຼື ຂໍ້ມູນສ່ວນຕົວອື່ນໆ ເພື່ອໃຊ້ໃນການສື່ສານເພື່ອລ່ວງລະເມີດ
+                    ຫຼື ຫລີກລ່ຽງການນໍາໃຊ້ລະບົບການສື່ສານຂອງ LA FREELANCE
+                  </li>
+                  <li>
+                    ການຮ້ອງຂໍຂໍ້ມູນເພີ່ມເຕີມເພື່ອສະຫນອງການເຮັດວຽກ ຫຼື
+                    ການບໍລິການຂອງ ຟຣີແລນ
+                    ນີ້ສາມາດເຮັດໄດ້ໂດຍຜ່ານຊ່ອງທາງການສື່ສານທີ່ ລະບົບສະຫນອງໃຫ້.
+                  </li>
+                  <li>
+                    LA FREELANCE ຈະບໍ່ໄດ້ປົກປ້ອງຜູ້ໃຊ້ທີໃຊ້ງານຢູ່ນອກລະບົບ ຫຼື
+                    ຜູ້ໃຊ້ທີ່ລະເມີດເງື່ອນໄຂການໃຊ້ງານ
+                  </li>
+                  <li>
+                    ຜູ້ໃຊ້ຕ້ອງແລກປ່ຽນຂໍ້ມູນທັງໝົດຜ່ານລະບົບຂອງ LA FREELANCE
+                    ເທົ່ານັ້ນ.
+                  </li>
+                  <li>
+                    ກະລຸນາໃຊ້ຄໍາທີ່ເຫມາະສົມ ແລະ ບໍ່ລະເມີດສິດທິຂອງຄົນອື່ນ
+                    ຖ້າບໍ່ດັ່ງນັ້ນ, ບັນຊີ ໃນ LA FREELANCE ຂອງທ່ານອາດຈະຖືກລະງັບ.
+                  </li>
+                  <li>
+                    ທຸກໆ ອໍເດີ ທີ່ທ່ານສົ່ງສໍາເລັດ.
+                    ທ່ານຈະໄດ້ຮັບລາຍຮັບຈໍານວນທັງຫມົດ 85%
+                    ຂອງຈໍານວນການຊື້ຂາຍໂດຍລາຍໄດ້ນີ້ຈະຖືກສົ່ງໄປຫາບັນຊີຜູ້ໃຊ້ຂອງທ່ານ.
+                  </li>
+                  <li>
+                    LA FREELANCE ຈະສົ່ງມອບລາຍຮັບຂອງທ່ານໃນເວລາທີ່ ອໍໍເດີ
+                    ຢູ່ໃນສະຖານະສໍາເລັດແລ້ວ. ທ່ານສາມາດເບິ່ງສະຖານະຂອງ
+                    ອໍເດີຢູ່ໃນສະຖານະການສໍາເລັດໄດ້ໃນໝວດໝູ່ອໍເດີ.
+                  </li>
+                  <li>
+                    ຖ້າຄໍາສັ່ງຖືກຍົກເລີກ
+                    ຈໍານວນເງີນສໍາລັບອໍໍເດີນີ້ຈະຖືກສົ່ງຄືນໃຫ້ນາຍຈ້າງ ແລະ ຟຣີແລນ
+                    ໃນຈໍານວນທີ່ໄດ້ຕົກລົງໃນ LA FREELANCE
+                  </li>
+                  <li>ຄະແນນການປະເມີນຜົນງານຂອງ ຟີແລນຈະຖືກປະເມີນໂດຍຜູ້ຈ້າງ</li>
+                </ul>
+              </div>
+              <div>
+                <h2>4. ພຶດຕິກໍາຂອງຜູ້ໃຊ້</h2>
+                <p>
+                  ທ່ານຕົກລົງທີ່ຈະໃຊ້ບໍລິການຕາມກົດໝາຍ ແລະ ເຄົາລົບ ຜູ້ອື່ນ ແລະ
+                  ຕ້ອງປະຕິບັດຕາມເງື່ອນໄຂຕໍ່ໄປນີ້:
+                </p>
+                <ul className="list-disc ml-6 mb-4">
+                  <li>ຫ້າມອັບໂຫຼດເນື້ອຫາທີ່ຜິດກົດໝາຍ ຫຼື ເປັນອັນຕະລາຍ.</li>
+                  <li>ຫ້າມແອບອ້າງເປັນຜູ້ໃຊ້ອື່ນ </li>
+                  <li>ຫ້າມການປະພຶດ ແລະ ການໃຊ້ພາສາບໍ່ເໝາະສົມ</li>
+                  <li>
+                    ຜູ້ໃຊ້ ຫ້າມເປີດເຜີຍຂໍ້ມູນສ່ວນຕົວຂອງຜູ້ໃຊ້ອື່ນ.
+                    ການແລກປ່ຽນຂໍ້ມູນສ່ວນຕົວທັງໝົດ ທີ່ຈໍາເປັນໃນການໃຫ້ບໍລິການ
+                    ການເຮັດວຽກໃນ LA FREELANCE ຄວນຈະເກີດຂຶ້ນຢູ່ໃນແພັດຟອມ
+                    ເທົ່ານັ້ນ. ທີ່ນີ້ໝາຍເຖິງ, ນາຍຈ້າງ ແລະ ຟຣີແລນ ຢືນຢັນ ແລະ
+                    ຕົກລົງເຫັນດີກັບການນໍາໃຊ້ຂໍ້ມູນສ່ວນຕົວຂອງອີກຝ່າຍຫນຶ່ງພຽງແຕ່ສໍາລັບການໃຫ້ບໍລິການໃນ
+                    LA FREELANCE
+                    ຜູ້ໃຊ້ທີ່ປະຕິບັດຕາມການສື່ສານຂໍ້ມູນສ່ວນບຸກຄົນນີ້ຈະໄດ້ຮັບການປົກປ້ອງໂດຍເງື່ອນໄຂການນໍາໃຊ້ຂອງພວກເຮົາ.
+                  </li>
+                  <li>ຫ້າມລະເມີດສິດ ຫຼື ຊັບສິນທາງປັນຍາຂອງຜູ້ອື່ນ</li>
+                  <li>ຫ້າມສ້າງບັນຊີຈຳນວນຫຼາຍ</li>
+                  <li>
+                    ຫ້າມການຂາຍບັນຊີ, ຜູ້ໃຊ້ງານບໍ່ສາມາດ ຊື້ຂາຍບັນຊີໃນ LA
+                    FREELANCE ໄດ້
+                  </li>
+                  <li>ຫ້າມການໃຊ້ລະບົບແບບບໍ່ເໝາະສົມ ແລະ spam </li>
+                  <li>ຫ້າມການສໍ້ໂກງ ຫຼື ໃຊ້ລະບົບຢ່າງຜິດກົດໝາຍ</li>
+                  <li>ຫ້າມລົບກວນການບໍລິການ ຫຼື ຜູ້ໃຊ້ບໍລິການ.</li>
+                  <li>
+                    ຫ້າມອັບໂຫຼດ ຫຼື ຂຽນຂໍ້ມູນສ່ວນໂຕຂອງຕົນເອງ ລົງໃນແອັບພິເຄຊັ້ນ
+                  </li>
+                  <li>ຫ້າມອັບໂຫຼດ ຂໍ້ມູນປອມ ທີ່ບໍ່ມີມູນຄວາມຈິງ</li>
+                </ul>
+              </div>
+              <div>
+                <h2>5. ໜ້າວຽກ</h2>
+                <ul className="list-disc ml-6 mb-4">
+                  <li>
+                    ວຽກຕ່າງໆທີ່ສະແດງຢູ່ໃນ LA FREELANCE
+                    ແມ່ນຖືວ່າເປັນເນື້ອຫາທີ່ສ້າງໂດຍຜູ້ໃຊ້.
+                  </li>
+                  <li>
+                    ວຽກທີ່ປະກາດໂດຍ ຟຣີແລນ ສາມາດຖືກລົບອອກໂດຍ LA FREELANCE
+                    ຖ້າວຽກດັ່ງກ່າວບໍ່ປະຕິບັດຕາມເງື່ອນໄຂທີ່ກຳນົດໄວ້. ເຊັ່ນ:
+                    ວຽກບໍລິການທີ່ຜິດກົດໝາຍ ແລະ ລະເມີດສິດທິຂອງບຸກຄົນອື່ນ,
+                    ການປະກາດຂໍໍ້ມູນປອມ ແລະ ການລະເມີດລິຂະສິດ ຫຼື
+                    ຊັບສິນທາງປັນຍາຂອງຜູ້ອື່ນ, ວຽກບໍລິການທີ່ຖືວ່າເປັນສິ່ງລາມົກ
+                    ຫຼື ວ່າ LA FREELANCE ເຫັນວ່າບໍ່ເໝາະສົມ,
+                    ການບໍລິການທີ່ມີຈຸດປະສົງເພື່ອຮຽນແບບການບໍລິການອື່ນ,
+                    ການບໍລິການທີ່ເປັນ spam, ຫຼື LA FREELANCE ເຫັນວ່າບໍ່ເໝາະສົມ,
+                    ການບໍລິການທີ່ຫຼອກລວງນາຍຈ້າງ ຫຼື ລະເມີດຂໍ້ຕົກລົງບຸກຄົນທີ່ສາມ,
+                    ຂາຍວຽກທີ່ບໍ່ແມ່ນຂອງຕົນເອງ, ຫຼື ວຽກອື່ນໆທີ່ LA FREELANCE
+                    ເຫັນວ່າບໍ່ເຫມາະສົມ.
+                  </li>
+                  <li>
+                    ບັນຊີ ຟຣີແລນ ອາດຈະຖືກລະງັບໄວ້. ຖ້າການບໍລິການຂອງ ຟຣີແລນ
+                    ຖືກລົບຍ້ອນເຫດຜົນຂ້າງເທິງ.
+                  </li>
+                  <li>
+                    ວຽກທີ່ຖືກລົບອອກສໍາລັບເຫດຜົນຂ້າງເທິງແມ່ນບໍ່ສາມາດນຳກັບມາແກ້ໄຂໄດ້
+                    ຫຼື ບໍ່ສາມາດນໍາມາໃຊ້ຄືນໃຫມ່ໃນລະບົບໄດ້
+                  </li>
+                  <li>
+                    ທຸກໆວຽກຕ້ອງມີຮູບປະກອບ. LA FREELANCE ມີວິທີໃຫ້ ຟຣີແລນ
+                    ສາມາດອັບໂຫຼດຮູບໄດ້ສູງສຸດ 2 ຮູບເພື່ອປະກອບກັບວຽກຂອງຟຣີແລນ.
+                  </li>
+                  <li>
+                    ວຽກທີ່ຕ້ອງການເພີ່ມວິດີໂອເປັນວີດີໂອປະກອບຕ້ອງໄດ້ຮັບການອະນຸມັດຈຶ່ງນຳມາໃຊ້ເປັນວິດີໂອປະກອບໄດ້.
+                  </li>
+                  <li>
+                    ຟຣີແລນ
+                    ບໍ່ສາມາດເພີ່ມລາຍລະອຽດວຽກທີ່ສົ່ງຜົນກະທົບຕໍ່ການປ່ຽນແປງຕໍ່ກັບຂໍ້ຕົກລົງ
+                    LA FREELANCE ໄດ້
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h2>6. ອໍເດີ</h2>
+                <p>ເງື່ອນໄຂທົ່ວໄປ</p>
+                <ul className="list-disc ml-6 mb-4">
+                  <li>
+                    ຫຼັງຈາກລະບົບໄດ້ຮັບການຢືນຢັນການຈ່າຍເງິນແລ້ວ.
+                    ລະບົບຈະສ້າງຄໍາສັ່ງສໍາລັບທ່ານເຊິ່ງຈະມີເລກໝາຍກຳກັບ
+                  </li>
+                  <li>
+                    ຟຣີແລນ ຕ້ອງສົ່ງວຽກຫຼືການບໍລິການໂດຍໃຊ້ປຸ່ມ ສົ່ງວຽກສຸດທ້າຍ
+                    (ຕັ້ງຢູ່ໃນໜ້າວຽກ)
+                    ໃຫ້ກັບນາຍຈ້າງທີ່ຈ່າຍຄ່າຈ້າງຕາມລາຍລະອຽດວຽກທີ່ລະບຸໄວ້ໃນໜ້າລາຍລະອຽດວຽກ
+                  </li>
+                  <li>
+                    ໃຊ້ປຸ່ມສົ່ງວຽກສຸດທ້າຍ ໃນທາງທີ່ບໍ່ເຫມາະສົມ ຕົວຢ່າງ,
+                    ໃຊ້ເພື່ອສົ່ງວຽກທີ່ບໍ່ສົມບູນ ຫຼື
+                    ສົ່ງວຽກທີ່ບໍ່ເປັນໄປຕາມຂໍ້ຕົກລົງ, ຈະສົ່ງຜົນໃຫ້ ຟຣີແລນ
+                    ຖືກຟ້ອງຮ້ອງສໍາລັບການເຮັດວຽກຂອງເຂົາເຈົ້າ. ຫຼື
+                    ຄະແນນຂອງຟຣີແລນຈະຫຼຸດລົງຫຼື ຟຣີແລນ ອາດຈະຖືກລະງັບບັນຊີໃນ LA
+                    FREELNCE
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h2>7. ອໍເດີ</h2>
+                <p>
+                  ການຈ່າຍເງິນທັງໝົດແມ່ນດຳເນີນການຜ່ານ
+                  ຕົວປະມວນຜົນການຈ່າຍເງິນຂອງບຸກຄົນທີສາມທີ່ປອດໄພ. ພວກ
+                  ເຮົາບໍ່ຮັບຜິດຊອບຕໍ່ການສູນເສຍ ຫຼື
+                  ຄວາມເສຍຫາຍທີ່ເກີດຂຶ້ນເປັນຜົນມາຈາກການເຮັດທຸລະກໍາ.
+                </p>
+              </div>
+              <div>
+                <h2>8. ຄ່າທຳນຽມ</h2>
+                <p>
+                  ພວກເຮົາອາດຈະເກັບຄ່າບໍລິການກັບ ລູກຄ້າ ແລະ ຟຣີແລນ
+                  ສໍາລັບການນໍາໃຊ້ບໍລິການຂອງພວກເຮົາ.
+                  ຄ່າທໍານຽມເຫຼົ່ານີ້ແມ່ນໄດ້ອະທິບາຍໃນລາຍລະອຽດເພີ່ມເຕີມຢູ່ໃນເວັບໄຊທ໌
+                  ຫຼື ແອັບພິເຄຊັ້ນຂອງພວກເຮົາ.
+                </p>
+              </div>
+              <div>
+                <h2>9. ການຖອນເງີນ</h2>
+                <ul className="list-disc ml-6 mb-4">
+                  <li>ຜູ້ໃຊ້ຕ້ອງໃສ່ຂໍ້ມູນບັນຊີທີ່ຖືກຕ້ອງເພື່ອຖອນລາຍໄດ້.</li>
+                  <li>
+                    ຜູ້ໃຊ້ສາມາດຖອນລາຍໄດ້ສະເພາະຈໍານວນເງີນທີ່ມີຢູ່ໃນບັນຊີຂອງຜູ້ໃຊ້ເທົ່ານັ້ນ.
+                  </li>
+                  <li>
+                    ລະບົບຈະໂອນຍອດເງິນທັງໝົດຂອງຜູ້ໃຊ້ໂດຍອັດຕະໂນມັດ.
+                    ທຸກໆວັນອັງຄານຂອງອາທິດທີ່ 2 ແລະ 4
+                    ຂອງເດືອນໂດຍບໍ່ມີຄ່າທໍານຽມການໂອນ.
+                  </li>
+                  <li>
+                    ຜູ້ໃຊ້ບໍ່ສາມາດຍົກເລີກການຖອນລາຍຮັບ ແລະ
+                    ບໍ່ສາມາດຮ້ອງຂໍຖອນລາຍຮັບກ່ອນວັນທີ່ກໍານົດ
+                  </li>
+                  <li>ບໍ່ມີຄ່າບໍລິການສໍາລັບການຖອນລາຍຮັບ.</li>
+                </ul>
+              </div>
+              <div>
+                <h2>10. ການຮັບປະກັນ</h2>
+                <p>
+                  ການບໍລິການແມ່ນສະໜອງໃຫ້ “ຕາມຄວາມເປັນຈິງ” ແລະ
+                  “ຕາມທີ່ພ້ອມໃຊ້ງານ.” ພວກເຮົາບໍ່ມີ ການຮັບປະກັນ, ສະແດງອອກ
+                  ຫຼືສະແດງອອກ. ລວມທັງແຕ່ບໍ່ຈໍາກັດ ຮັບປະກັນຄວາມສາມາດໃນການຄ້າ,
+                  ເຫມາະ ສົມກັບຈຸດປະສົງ ສະເພາະໃດຫນຶ່ງ.
+                  ຫຼືການລະເມີດລິຂະສິດທີ່ບໍ່ມີລິຂະສິດ
+                </p>
+              </div>
+              <div>
+                <h2>11. ຄວາມຮັບຜິດຊອບ</h2>
+                <p>
+                  ພວກເຮົາບໍ່ຮັບຜິດຊອບຕໍ່ຄວາມເສຍຫາຍໃດໆທີ່ເກີດຈາກການໃຊ້ບໍລິການຂອງທ່ານ.
+                  ລວມທັງ ບໍ່ຈໍາກັດ ຄວາມເສຍຫາຍໂດຍກົງ ຄວາມເສຍຫາຍທາງອ້ອມ
+                  ຄວາມເສຍຫາຍຂອງຕົນເອງ ຫຼື ຄວາມເສຍຫາຍທີ່ຈະຕາມມາ
+                </p>
+              </div>
+              <div>
+                <h2>12. ການປັບປຸງຂໍ້ຕົກລົງ</h2>
+                <p>
+                  ພວກເຮົາອາດຈະແກ້ໄຂເງື່ອນໄຂເຫຼົ່ານີ້ໄດ້ທຸກເວລາ.
+                  ພວກເຮົາຈະແຈ້ງໃຫ້ທ່ານຊາບກ່ຽວກັບການປ່ຽນແປງໃດໆໂດຍ
+                  ການປະກາດຂໍ້ຕົກລົງສະບັບປັບປຸງຢູ່ໃນເວັບໄຊທ໌ ຫຼື ແອັບພິເຄຊັ້ນ
+                  ຂອງພວກເຮົາ.
+                </p>
+              </div>
+              <div>
+                <h2>13. ກົດໝາຍວ່າດ້ວຍການປົກຄອງ</h2>
+                <p>ຂໍ້ກຳນົດເຫຼົ່ານີ້ຈະຖືກຄວບຄຸມໂດຍກົດໝາຍຂອງປະເທດລາວ.</p>
+              </div>
+              <div>
+                <h2>14. ຕິດຕໍ່</h2>
+                <p>
+                  ຖ້າທ່ານມີຄໍາຖາມໃດໆກ່ຽວກັບເງື່ອນໄຂເຫຼົ່ານີ້,
+                  ກະລຸນາຕິດຕໍ່ພວກເຮົາທີ່ ມີອີເມວຕິດຕໍ່.
+                </p>
+              </div>
+            </div>
+            <p>
+              <a
+                href="lafreelance.team@gmail.com"
+                className="text-blue-500 hover:underline"
+              >
+                lafreelance.team@gmail.com
+              </a>
+              ຫຼື ໂທລະສັບ +856 20 95450730
+            </p>
+          </div>
         </div>
         <label htmlFor=""></label>
         <Form.Item<FreelanceSignupFieldType>

@@ -14,51 +14,60 @@ import {
   PhoneFilled,
 } from "@ant-design/icons";
 import type { CheckboxProps } from "antd";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { SigninType } from "../../store/slices/auth/authType";
 import { useAppDispatch, useAppSelector } from "../../hook/hooks";
-import { resetStatus, signIn } from "../../store/slices/auth/AuthSlice";
 import { useEffect } from "react";
+import { useLoginMutation } from "../../store/slices/services/authApi";
+import { setCredentials } from "../../store/slices/auth/AuthSlice";
+import { RootState } from "../../store/store";
 
 const Signin = () => {
   const dispatch = useAppDispatch();
   const [messageApi, contextHolder] = message.useMessage();
   const navigate = useNavigate();
-  const { user, status, error } = useAppSelector((state) => state.auth);
+
+  const { user } = useAppSelector((state: RootState) => state.auth);
+  const [login, { isLoading, error }] = useLoginMutation();
 
   const onChange: CheckboxProps["onChange"] = (e) => {
     console.log(`checked = ${e.target.checked}`);
   };
-
+  // TODO: cannot login in mobile when running on localhost
   const onFinish: FormProps<SigninType>["onFinish"] = (values) => {
     if (!values.phone || !values.password) {
       return;
     }
-    dispatch(signIn(values));
+    const onSubmit = async () => {
+      try {
+        const data = await login({
+          phone: values.phone,
+          password: values.password,
+        }).unwrap();
+
+        if (data) {
+          dispatch(setCredentials(data));
+          navigate("/");
+        }
+
+        // Store user data in session storage
+        sessionStorage.setItem("user", JSON.stringify(data));
+      } catch (err) {
+        console.error("Failed to login:", err);
+      }
+    };
+    onSubmit();
   };
 
-  const onFinishFailed: FormProps<SigninType>["onFinishFailed"] = (
-    errorInfo
-  ) => {};
-
   useEffect(() => {
-    if (status === "success") {
-      navigate("/");
-    } else if (status === "failed") {
-      messageApi.error(error);
+    if (error) {
+      messageApi.error(error.data?.error || "Failed to login");
     }
+  }, [isLoading, error, messageApi, user, navigate]);
 
-    return () => {
-      dispatch(resetStatus());
-    };
-  }, [dispatch, status, navigate, user, messageApi, error]);
-
-  useEffect(() => {
-    if (user) {
-      navigate("/");
-    }
-  }, [user, navigate]);
-
+  if (user) {
+    return <Navigate to="/" replace />;
+  }
   return (
     <>
       {contextHolder}
@@ -80,7 +89,7 @@ const Signin = () => {
             name="basic"
             initialValues={{ remember: true }}
             onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
+            // onFinishFailed={onFinishFailed}
             autoComplete="off"
           >
             <Form.Item<SigninType>
@@ -126,6 +135,8 @@ const Signin = () => {
                   type="primary"
                   htmlType="submit"
                   size="large"
+                  loading={isLoading}
+                  disabled={isLoading}
                 >
                   ຢືນຢັນ
                 </Button>
@@ -137,6 +148,8 @@ const Signin = () => {
                 type="default"
                 block
                 icon={<PhoneFilled />}
+                loading={isLoading}
+                disabled={isLoading}
                 htmlType="submit"
                 size="large"
                 onClick={() => message.success("logged in")}
