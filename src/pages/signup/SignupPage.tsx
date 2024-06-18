@@ -10,7 +10,7 @@ import {
   message,
 } from "antd";
 import { InputOTP } from "antd-input-otp"; // Don't forget to import this too!
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { DatePickerProps } from "antd";
 import {
   EyeInvisibleOutlined,
@@ -19,8 +19,6 @@ import {
 } from "@ant-design/icons";
 
 import Logo from "../../components/shared/Logo";
-import { useAppDispatch, useAppSelector } from "../../hook/hooks";
-import { RootState } from "../../store/store";
 
 const steps = [
   {
@@ -62,7 +60,6 @@ type FieldType = {
 
 const Signup = () => {
   const [current, setCurrent] = useState(0);
-  const dispatch = useAppDispatch();
   const next = () => {
     setCurrent(current + 1);
   };

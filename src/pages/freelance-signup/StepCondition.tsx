@@ -1,6 +1,5 @@
 import { CheckboxProps } from "antd";
 import { FreelanceSignupFieldType } from "../../type";
-import { useRef } from "react";
 
 type Props = {
   Form: any;
@@ -10,7 +9,7 @@ type Props = {
 };
 
 const StepCondition = ({ Form, Checkbox, title, setIsAacceptTerms }: Props) => {
-  const lastElementRef = useRef();
+  console.log("🚀 ~ StepCondition ~ title:", title)
   const onChange: CheckboxProps["onChange"] = (e) => {
     const checkValue = e.target.checked;
     if (checkValue) setIsAacceptTerms(true);

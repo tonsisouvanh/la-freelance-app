@@ -30,3 +30,4 @@ export default {
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 
 # Web_Lance
+    "build": "tsc && vite build && echo '/*  /index.html  200' >> build/_redirects",

@@ -14,7 +14,7 @@ const Footer = ({ className }: Props) => {
     //   LA-FREELANCE ©{new Date().getFullYear()} Created by LAF
     //   <Logo className="w-28" />
     // </Footers>
-    <footer className="w-full ">
+    <footer className={`w-full ${className && className}`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/*Grid*/}
         <div className="py-10 flex justify-between items-center flex-col gap-8 xl:flex-row">

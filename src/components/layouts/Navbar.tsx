@@ -11,7 +11,6 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 const { Header } = Layout;
 import type { MenuProps } from "antd";
-import LanguageDropdown from "../shared/LanguageDropdown";
 import MobileDrawer from "./MobileDrawer";
 import { useAppDispatch, useAppSelector } from "../../hook/hooks";
 import { FaSignOutAlt } from "react-icons/fa";

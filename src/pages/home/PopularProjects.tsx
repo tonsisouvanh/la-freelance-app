@@ -8,13 +8,10 @@ const PopularProjects = () => {
       </h1>
       <div className="grid grid-cols-4 md:grid-cols-6 gap-2">
         {Array.from({ length: 6 }, (__, index) => (
-          // <div
-          //   key={index}
-          //   className="group cursor-pointer p-1 h-fit py-6 flex items-center justify-center overflow-hidden rounded-2xl bg-white shadow-sm border duration-200 "
-          // >
-          //   <p className="max-sm:text-xs">ແປພາສາຈີນ</p>
-          // </div>
-          <article className="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
+          <article
+            key={index}
+            className="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl"
+          >
             <a href="#">
               <div className="relative flex items-end overflow-hidden rounded-xl">
                 <img src={workb} alt="Hotel Photo" />
@@ -40,7 +37,6 @@ const PopularProjects = () => {
                     </span>
                   </p>
                   <div className="group inline-flex rounded-xl bg-blue-100 p-2 hover:bg-blue-200">
-                    
                     <span>ເບິ່ງຕື່ມ</span>
                   </div>
                 </div>

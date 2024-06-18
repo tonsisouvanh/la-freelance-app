@@ -28,7 +28,7 @@ const items: TabsProps["items"] = [
 ];
 
 const ProjectBoard = () => {
-  const onChange = (key: string) => {
+  const onChange = () => {
   };
 
   return (
