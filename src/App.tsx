@@ -29,7 +29,7 @@ function App() {
         theme={{
           token: {
             fontFamily: "Noto Sans Lao",
-            colorPrimary: "#1A96CB",
+            colorPrimary: "#00A6ED",
           },
         }}
       >

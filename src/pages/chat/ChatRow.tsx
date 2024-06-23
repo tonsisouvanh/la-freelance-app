@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 
 const ChatRow = () => {
   return (
-    <Link to={`/chat/${1}`} className="relative hover:bg-primary/10 focus:bg-primary/10 flex items-center gap-3 border-b px-2 py-4">
+    <Link
+      to={`/chat/${1}`}
+      className="relative hover:bg-color-1/10 focus:bg-color-1/10 flex items-center gap-3 border-b px-2 py-4"
+    >
       <p className="text-[10px] text-gray-500 absolute top-3 right-3">20:30</p>
       <Avatar className="min-w-12 h-12" icon={<FaUser />} />
       <div className="overflow-hidden">

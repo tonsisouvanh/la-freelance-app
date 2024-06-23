@@ -122,7 +122,7 @@ const Signin = () => {
               <div>
                 <Checkbox onChange={onChange}>ຈົດຈຳຂ້ອຍ</Checkbox>
               </div>
-              <Link to="#" className="text-primary">
+              <Link to="#" className="text-color-1">
                 ລືມລະຫັດຜ່ານ?
               </Link>
             </div>
@@ -130,7 +130,7 @@ const Signin = () => {
             <Form.Item>
               <div className="mt-2 gap-2 flex items-center">
                 <Button
-                  className="bg-primary text-white"
+                  className="bg-color-1 text-white"
                   block
                   type="primary"
                   htmlType="submit"

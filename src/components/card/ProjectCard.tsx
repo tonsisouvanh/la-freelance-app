@@ -8,7 +8,7 @@ type Props = {
 const ProjectCard = ({ classname }: Props) => {
   return (
     <div
-      className={`bg-gray-50 shadow-md overflow-hidden rounded-lg cursor-pointer hover:-translate-y-2d border hover:border-primary transition-all relative ${
+      className={`bg-gray-50 shadow-md overflow-hidden rounded-lg cursor-pointer hover:-translate-y-2d border hover:border-color-1 transition-all relative ${
         classname && classname
       }`}
     >
@@ -26,7 +26,7 @@ const ProjectCard = ({ classname }: Props) => {
         <h3 className="text-xs sm:text-sm sm:line-clamp-2 font-bold text-gray-800">
           Logo design + Brand CI ออกแบบโดย ดีไซน์เนอร์ Degree เมืองนอก
         </h3>
-        <h4 className="text-md sm:text-lg font-bold mt-2 text-primary">
+        <h4 className="text-md sm:text-lg font-bold mt-2 text-color-1">
           200.000 K
         </h4>
         <div className="flex flex-col sm:flex-row sm:items-center justify-between">

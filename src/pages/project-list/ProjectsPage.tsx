@@ -23,7 +23,9 @@ const ProjectsPage = () => {
   return (
     <div>
       {/* Categories tab */}
-      <div className={`flexd hidden flex-col bg-white m-auto p-auto border py-4`}>
+      <div
+        className={`flexd hidden flex-col bg-white m-auto p-auto border py-4`}
+      >
         <div className="flex overflow-x-scroll hide-scroll-bar">
           <div className="flex flex-nowrap lg:ml-40 md:ml-20 ml-10 gap-4">
             <HorizalScroll>
@@ -34,7 +36,7 @@ const ProjectsPage = () => {
                   type="default"
                   size="large"
                   className={`font-semibold ${
-                    index === 0 && "bg-primary text-white"
+                    index === 0 && "bg-color-1 text-white"
                   }`}
                 >
                   {category.name}
@@ -57,7 +59,7 @@ const ProjectsPage = () => {
               <Button
                 icon={<ArrowRightOutlined />}
                 type="primary"
-                className="bg-primary text-white"
+                className="bg-color-1 text-white"
               ></Button>
             </Link>
           </div>
@@ -68,7 +70,7 @@ const ProjectsPage = () => {
               </Link>
             ))}
           </div>
-      </div>
+        </div>
         {/* All */}
         <div className="flex flex-col items-center justify-center">
           <div className="w-full flex-col flex items-center justify-between mb-4 md:mb-8">
@@ -84,7 +86,7 @@ const ProjectsPage = () => {
                 type="default"
                 size="large"
                 className={`font-semibold ${
-                  index === 0 && "bg-primary text-white"
+                  index === 0 && "bg-color-1 text-white"
                 }`}
               >
                 {category.name}

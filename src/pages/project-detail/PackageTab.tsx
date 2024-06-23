@@ -3,7 +3,7 @@ import { CheckOutlined } from "@ant-design/icons";
 const PackageTab = () => {
   return (
     <div className="space-y-6">
-      <h3 className="text-primary text-lg">ແພັກເກັດ: ແປພາສາອັງກິດ</h3>
+      <h3 className="text-color-1 text-lg">ແພັກເກັດ: ແປພາສາອັງກິດ</h3>
       <p>
         ເປັນພຽງລາຄາເລີ່ມຕົ້ນ ຫາກຕ້ອງການເພີ່ມຈຳນວນ ແມ່ນຈະໄດ້ຄິດລາຄາເພີ່ມຕາມວຽກ
       </p>

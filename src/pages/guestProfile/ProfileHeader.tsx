@@ -109,7 +109,7 @@ const ProfileHeader = () => {
 
   return (
     <div className="">
-      <div className="bg-primary w-full h-28 rounded-b-xl"></div>
+      <div className="bg-color-1 w-full h-28 rounded-b-xl"></div>
       <div className="flex gap-2 flex-col items-center -mt-10">
         <Avatar
           className="w-28 h-28 border-4 border-white"
@@ -119,7 +119,7 @@ const ProfileHeader = () => {
         <h4>ຍັງບໍ່ທັນເຂົ້າສູ່ລະບົບ</h4>
         <Button
           type="primary"
-          className="text-white bg-primary rounded-full px-10"
+          className="text-white bg-color-1 rounded-full px-10"
           size="large"
         >
           ເຂົ້າສູ່ລະບົບ/ສະໝັກສະມາຊິກ

@@ -55,7 +55,7 @@ const ProjectPage = () => {
               <div className="py-6 space-y-5">
                 <Button
                   block
-                  className="text-white bg-primary"
+                  className="text-white bg-color-1"
                   type="primary"
                   htmlType="button"
                 >

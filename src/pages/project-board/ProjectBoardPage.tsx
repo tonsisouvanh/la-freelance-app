@@ -16,7 +16,7 @@ const items: TabsProps["items"] = [
       <>
         <div className="ml-auto max-w-fit">
           <Link to="/client/post-project">
-            <Button type="primary" className="text-white bg-primary mb-2">
+            <Button type="primary" className="text-white bg-color-1 mb-2">
               ສ້າງປະກາດ 0/3
             </Button>
           </Link>
@@ -28,14 +28,13 @@ const items: TabsProps["items"] = [
 ];
 
 const ProjectBoard = () => {
-  const onChange = () => {
-  };
+  const onChange = () => {};
 
   return (
     <div className="w-full overflow-hidden">
       <div className="max-w-6xl px-4 mx-auto flex flex-col gap-28 lg:gap-40 max-sm:py-0 py-20">
         <div className="mt-8 ">
-          <h1 className="text-3xl font-bold text-primary">ບ໋ອດປະກາດຫາວຽກ</h1>
+          <h1 className="text-3xl font-bold text-color-1">ບ໋ອດປະກາດຫາວຽກ</h1>
           <p className="mt-2">
             ຜູ້ຈ້າງໂພສດງານທີ່ຕ້ອງການເພື່ອຫາຄົນທີ່ເໝາະກັບງານ <br />{" "}
             ຟີຮແລຮນເລືອກງານທີ່ສົນໃຈ

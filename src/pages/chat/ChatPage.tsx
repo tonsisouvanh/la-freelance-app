@@ -11,7 +11,7 @@ const ChatPage: React.FC = () => {
 
   return (
     <>
-      <div className="bg-primary md:max-w-6xl md:mx-auto w-full px-3 h-14 flex items-center justify-between">
+      <div className="bg-color-1 md:max-w-6xl md:mx-auto w-full px-3 h-14 flex items-center justify-between">
         <FaChevronLeft
           onClick={() => navigate("/chat-list")}
           className="text-white hover:opacity-50 cursor-pointer"
@@ -37,7 +37,7 @@ const ChatPage: React.FC = () => {
               placeholder="Type a message..."
               className="w-full p-5 rounded-md focus:outline-none text-md"
             ></input>
-            <Button size="large" className="bg-primary text-white ml-2">
+            <Button size="large" className="bg-color-1 text-white ml-2">
               Send
             </Button>
           </div>

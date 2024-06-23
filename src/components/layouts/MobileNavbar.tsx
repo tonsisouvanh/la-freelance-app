@@ -92,7 +92,7 @@ const MobileNavbar = () => {
     >
       <div
         id="tabs"
-        className="flex pb-3 bg-primary text-white justify-between rounded-tl-lg rounded-tr-lg px-0"
+        className="flex pb-3 bg-color-1 text-white justify-between rounded-tl-lg rounded-tr-lg px-0"
       >
         {items.map((item, index) => (
           <Link

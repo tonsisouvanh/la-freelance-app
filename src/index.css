@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 @tailwind base;
 @tailwind components;
@@ -39,4 +41,25 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+div.swiper-button-prev,
+div.swiper-button-next {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 100%;
+  background-color: white;
+  color: #fff;
+  border: 0.5px solid #00A6ED;
+}
+
+div.swiper-button-prev::after,
+div.swiper-button-next::after {
+  color: #00A6ED; /* Replace with your desired color */
+  font-size: 1rem;
+}
+
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #00A6ED;
 }

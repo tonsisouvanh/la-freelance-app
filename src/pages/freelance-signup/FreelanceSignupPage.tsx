@@ -76,10 +76,10 @@ const FreelanceSignupPage = () => {
               <Button
                 type="primary"
                 icon={<FaHouse />}
-                className="text-white bg-primary"
+                className="text-white bg-color-1"
               ></Button>
             </Link>
-            <h1 className="text-3xl font-bold text-primary">
+            <h1 className="text-3xl font-bold text-color-1">
               Freelance Sign Up
             </h1>
           </div>
@@ -156,7 +156,7 @@ const FreelanceSignupPage = () => {
                   current + 1 != steps.length - 1 && (
                     <Button
                       type="primary"
-                      className="bg-primary"
+                      className="bg-color-1"
                       block
                       size="large"
                       disabled={current === 0 && !isAcceptTerms ? true : false}
@@ -169,7 +169,7 @@ const FreelanceSignupPage = () => {
                   <Button
                     type="primary"
                     block
-                    className="bg-primary"
+                    className="bg-color-1"
                     htmlType="submit"
                     size="large"
                   >
@@ -186,7 +186,7 @@ const FreelanceSignupPage = () => {
             {/* <Button
               type="primary"
               block
-              className="bg-primary"
+              className="bg-color-1"
               htmlType="submit"
               size="large"
             >

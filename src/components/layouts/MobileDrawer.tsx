@@ -51,7 +51,7 @@ const MobileDrawer = () => {
     <>
       <Button
         type="primary"
-        className="bg-primary"
+        className="bg-color-1"
         icon={<MenuOutlined />}
         onClick={showDrawer}
       ></Button>

@@ -103,15 +103,14 @@ const Navbar = () => {
             size="large"
             htmlType="button"
             onClick={showModal}
-            className="bg-primary flex items-center"
+            className="bg-color-1 flex items-center"
           >
             ອອກຈາກລະບົບ
           </Button>
           <Avatar
-          onClick={() => navigate('client/profile')}
+            onClick={() => navigate("client/profile")}
             size={"large"}
-
-            className="bg-primary cursor-pointer hover:opacity-70"
+            className="bg-color-1 cursor-pointer hover:opacity-70"
             // style={{ backgroundColor: "#87d068" }}
             icon={<TiUserOutline />}
           />
@@ -119,7 +118,7 @@ const Navbar = () => {
       ) : (
         <div className="space-x-3 hidden lg:flex">
           <Link to="signin">
-            <Button type="primary" size="large" className="bg-primary">
+            <Button type="primary" size="large" className="bg-color-1">
               ເຂົ້າສູລະບົບ
             </Button>
           </Link>

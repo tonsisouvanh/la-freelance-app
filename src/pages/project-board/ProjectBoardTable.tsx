@@ -95,7 +95,7 @@ const ProjectBoardTable = () => {
               ຂ້ອຍຢາກຣັບວຽກໃນປະກາດວຽກຕ້ອງເຣັດແນວໃດ?
             </Button>
             <Link to="/post-word">
-              <Button type="primary" className="bg-primary text-white">
+              <Button type="primary" className="bg-color-1 text-white">
                 ປະກາດຫາຟີຮແລຮນ 0/3
               </Button>
             </Link>
@@ -104,9 +104,9 @@ const ProjectBoardTable = () => {
 
         <div className="flex flex-col gap-6">
           {Array.from({ length: 4 }, (__, index) => (
-            <div key={index} className="bg-primary/10 rounded-md p-4">
+            <div key={index} className="bg-color-1/10 rounded-md p-4">
               <div className="space-y-2">
-                <h4 className="text-primary text-lg">
+                <h4 className="text-color-1 text-lg">
                   ຂ້ອຍຢາກໄດ້ Dev ມາເຣັດໂປຣເຈັກ ຣ້ານອາຫານ
                 </h4>
                 <div className="grid grid-cols-2 gap-4">

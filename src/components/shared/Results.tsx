@@ -23,7 +23,7 @@ const Results = ({
         <Button
           onClick={() => navigate("/")}
           type="primary"
-          className="bg-primary text-white"
+          className="bg-color-1 text-white"
           key="buy"
         >
           ກັບໄປທີ່ຫນ້າຫຼັກ

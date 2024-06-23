@@ -111,7 +111,6 @@ const Signup = () => {
     return e?.fileList;
   };
 
-
   return (
     <>
       <div className="w-full h-screen flex items-center justify-center px-10">
@@ -157,7 +156,7 @@ const Signup = () => {
                 <div className="ml-auto max-w-fit">
                   <Button
                     htmlType="button"
-                    className="text-primary ml-auto"
+                    className="text-color-1 ml-auto"
                     type="link"
                   >
                     ສົ່ງລະຫັດ OTP ອີກຄັ້ງ
@@ -285,7 +284,7 @@ const Signup = () => {
                   {current < steps.length - 1 && (
                     <Button
                       type="primary"
-                      className="bg-primary"
+                      className="bg-color-1"
                       block
                       size="large"
                       onClick={() => next()}
@@ -297,7 +296,7 @@ const Signup = () => {
                     <Button
                       type="primary"
                       block
-                      className="bg-primary"
+                      className="bg-color-1"
                       htmlType="submit"
                       size="large"
                       loading={status === "loading" ? true : false}

@@ -154,7 +154,7 @@ const PostProjectForm = () => {
                 value={item.value}
               >
                 <div className="flex flex-col items-center justify-center">
-                  <span className="text-5xl text-slate-300 group-hover:text-primary">
+                  <span className="text-5xl text-slate-300 group-hover:text-color-1">
                     {item.icon}
                   </span>
                   <span>{item.label}</span>
@@ -170,11 +170,13 @@ const PostProjectForm = () => {
             <Button
               type="primary"
               htmlType="submit"
-              className="text-white bg-primary w-24 rounded-full"
+              className="text-white bg-color-1 w-24 rounded-full"
             >
               ສົ່ງ
             </Button>
-            <Button onClick={() => navigate(-1)} className="w-24 rounded-full">ຍ້ອນກັບ</Button>
+            <Button onClick={() => navigate(-1)} className="w-24 rounded-full">
+              ຍ້ອນກັບ
+            </Button>
           </div>
         </Form.Item>
       </Form>

@@ -20,7 +20,7 @@ const Message = ({ messageType }: Props) => {
         </div>
       ) : (
         <div className="flex items-start justify-end mb-4">
-          <div className="flex max-w-96 bg-primary text-white rounded-lg p-3 gap-3">
+          <div className="flex max-w-96 bg-color-1 text-white rounded-lg p-3 gap-3">
             <p>Absolutely! Can't wait for our pizza date. 🍕</p>
           </div>
           <div className="min-w-8 min-h-8 rounded-full flex items-center justify-center ml-2">

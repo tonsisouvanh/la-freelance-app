@@ -1,10 +1,11 @@
 import React from "react";
 
 export const HomePage = React.lazy(() => import("./home/HomePage"));
-
 export const SigninPage = React.lazy(() => import("./signin/SigninPage"));
 export const SignupPage = React.lazy(() => import("./signup/SignupPage"));
 export const AboutPage = React.lazy(() => import("./about/AboutPage"));
+
+
 export const ProjectBoardPage = React.lazy(
   () => import("./project-board/ProjectBoardPage")
 );

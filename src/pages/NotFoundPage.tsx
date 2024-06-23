@@ -11,7 +11,7 @@ const NotFoundPage = () => {
         <Button
           onClick={() => navigate("/")}
           type="primary"
-          className="bg-primary text-white"
+          className="bg-color-1 text-white"
         >
           ກັບສູ່ໜ້າຫຼັກ
         </Button>

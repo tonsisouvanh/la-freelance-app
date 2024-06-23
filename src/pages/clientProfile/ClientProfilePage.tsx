@@ -112,10 +112,10 @@ const ClientProfilePage = () => {
   return (
     <>
       <div className="">
-        <div className="bg-primary w-full h-28 rounded-b-xl"></div>
+        <div className="bg-color-1 w-full h-28 rounded-b-xl"></div>
         <div className="flex gap-2 flex-col items-center -mt-10">
           <Avatar
-            className="w-28 h-28 border-4 border-white bg-primary"
+            className="w-28 h-28 border-4 border-white bg-color-1"
             icon={<FaUser />}
           />
           <h4>{user?.firstname}</h4>

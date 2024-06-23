@@ -66,7 +66,7 @@ const PostedProject = () => {
     <>
       <div>
         <div className="flex w-full items-center justify-start my-4">
-          <Button type="primary" className="bg-primary text-white">
+          <Button type="primary" className="bg-color-1 text-white">
             ປະກາດຫາຟີຮແລຮນ 0/3
           </Button>
         </div>

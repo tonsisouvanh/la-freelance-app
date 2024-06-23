@@ -3,7 +3,7 @@ import { workb } from "../../assets";
 const PopularProjects = () => {
   return (
     <div className="p-1">
-      <h1 className="text-primary text-2xl md:text-4xl font-bold mb-4">
+      <h1 className="text-color-1 text-2xl md:text-4xl font-bold mb-4">
         ງານຍອດນິຍົມ
       </h1>
       <div className="grid grid-cols-4 md:grid-cols-6 gap-2">

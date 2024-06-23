@@ -1,6 +1,6 @@
 import HowToStartHiring from "./HowToStartHiring";
 import Reason from "./Reason";
-import Hero from "./Hero";
+import Hero from "./hero/Hero";
 import ProjectCategories from "./ProjectCategories";
 import FreelanceQuality from "./FreelanceQuality";
 import AdSlider from "./AdSlider";

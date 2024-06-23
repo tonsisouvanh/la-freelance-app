@@ -4,7 +4,7 @@ import categoriesData from "../../data/categoriesData";
 const ProjectCategories = () => {
   return (
     <div className="p-1">
-      <h1 className="text-primary text-2xl md:text-4xl font-bold">
+      <h1 className="text-color-1 text-2xl md:text-4xl font-bold">
         ໜວດໝູ່ທັງຫມົດ
       </h1>
       <HorizalScroll className="py-4">

@@ -9,7 +9,7 @@ const Reviews = () => {
           <p className="text-sm">ຣີວິວຈາກຜູ້ຈ້າງ ( 23 )</p>
         </div>
         <div className="flex pt-2 items-center justify-between gap-4">
-          <div className="bg-primary/60 w-14 h-14 flex items-center justify-center rounded-full">
+          <div className="bg-color-1/60 w-14 h-14 flex items-center justify-center rounded-full">
             <span className="text-white">5.0</span>
           </div>
           <div className="flex-1">
@@ -32,7 +32,7 @@ const Reviews = () => {
               key={index}
               className="flex py-6 items-start justify-between gap-4"
             >
-              <div className="bg-primary/60 w-10 h-10 flex items-center justify-center rounded-full">
+              <div className="bg-color-1/60 w-10 h-10 flex items-center justify-center rounded-full">
                 <img
                   src={worke}
                   className="w-full h-full object-cover rounded-full"
@@ -54,8 +54,8 @@ const Reviews = () => {
             </div>
           ))}
         </div>
-        <div className="flex group items-center gap-1 text-xs px-2 mx-auto max-w-fit p-1 cursor-pointer border rounded-md border-primary text-primary">
-          {/* <FaEye className="text-gray-500 group-hover:text-primary" /> */}
+        <div className="flex group items-center gap-1 text-xs px-2 mx-auto max-w-fit p-1 cursor-pointer border rounded-md border-color-1 text-color-1">
+          {/* <FaEye className="text-gray-500 group-hover:text-color-1" /> */}
           ເບິ່ງທັງໝົດ
         </div>
       </div>
