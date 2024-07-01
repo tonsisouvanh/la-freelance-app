@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { CategoryType } from "../../type";
-import AdSlider from "../home/AdSlider";
+import AdSlider from "../home/advertisement/AdSlider";
 import { Button } from "antd";
 import ProjectCard from "../../components/card/ProjectCard";
 import { ArrowRightOutlined } from "@ant-design/icons";
@@ -66,7 +66,7 @@ const ProjectsPage = () => {
           <div className="flex overflow-x-scroll hide-scroll-bar gap-6 pb-10">
             {Array.from({ length: 10 }, (__, index) => (
               <Link to="/projects/category/1" key={index}>
-                <ProjectCard classname="w-72" />
+                <ProjectCard className="w-72" />
               </Link>
             ))}
           </div>

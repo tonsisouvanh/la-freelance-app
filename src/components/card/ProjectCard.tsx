@@ -1,17 +1,17 @@
 import { HeartOutlined } from "@ant-design/icons";
 import { worka } from "../../assets";
 import { Rate } from "antd";
+import { tailwindMerge } from "../../utils/tailwindMerge";
 type Props = {
-  classname?: string;
+  className?: string;
 };
 
-const ProjectCard = ({ classname }: Props) => {
+const ProjectCard = ({ className }: Props) => {
+  const baseClass =
+    "bg-gray-50 shadow-md overflow-hidden rounded-lg cursor-pointer hover:-translate-y-2d border hover:border-color-1 transition-all relative";
+  const mergedClass = tailwindMerge(baseClass, className);
   return (
-    <div
-      className={`bg-gray-50 shadow-md overflow-hidden rounded-lg cursor-pointer hover:-translate-y-2d border hover:border-color-1 transition-all relative ${
-        classname && classname
-      }`}
-    >
+    <div className={`${mergedClass}`}>
       <div className="bg-white w-8 h-8 flex items-center justify-center rounded-md cursor-pointer absolute top-4 right-4">
         <HeartOutlined />
       </div>

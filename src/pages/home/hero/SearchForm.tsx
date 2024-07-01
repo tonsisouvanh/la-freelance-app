@@ -41,7 +41,7 @@ const SearchForm = (props: Props) => {
         <input
           placeholder="ພິມຊື່ໂປຣເຈັກທີ່ຕ້ອງການຄົ້ນຫາ"
           type="text"
-          className="border-0 max-lg:text-xs text-sm p-2 focus:outline-none w-full"
+          className="border-0 max-lg:text-xs text-sm p-2 focus:outline-none bg-transparent w-full"
         />
         <Button type="primary" className="rounded-full bg-color-1 mb-1">
           ຄົ້ນຫາ

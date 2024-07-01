@@ -33,7 +33,7 @@ const items: MenuProps["items"] = [
   getItem(<Link to="/">Home</Link>, "1", <HomeOutlined />),
   getItem(<Link to="/project-board">ປະກາດຫາວຽກ</Link>, "2", <SoundOutlined />),
   getItem(<Link to="/about">ກ່ຽວກັບ</Link>, "3", <TeamOutlined />),
-  getItem(<Link to="#">ສະໝັກເປັນຟີຣແລນສ</Link>, "4", <SignatureOutlined />),
+  getItem(<Link to="#">ສະໝັກເປັນຟີຣແລນສ໌</Link>, "4", <SignatureOutlined />),
 ];
 
 const MobileDrawer = () => {

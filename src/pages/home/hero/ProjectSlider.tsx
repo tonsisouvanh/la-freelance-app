@@ -24,19 +24,18 @@ const ProjectSlider = (props: Props) => {
         pagination={{
           clickable: true,
         }}
-        navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper rounded-md"
+        className="mySwiper"
       >
         {projectSliderData?.map((slide) => (
-          <SwiperSlide key={slide.id} className="mb-5 bg-transparent ">
+          <SwiperSlide key={slide.id} className="mb-5 bg-transparent">
             <div className="relative max-sm:h-[15rem]">
               <img
                 className="h-full w-full object-cover"
                 src={slide.imageUrl}
                 alt={"project"}
               />
-              <div className="absolute rounded-md bottom-0 max-sm:h-[7rem] h-[10rem] flex items-end justify-center left-0 right-0 p-5 bg-gradient-to-t from-color-1 via-color-1/90 to-transparent">
+              <div className="absolute rounded-2xl bottom-0 max-sm:h-[7rem] h-[10rem] flex items-end justify-center left-0 right-0 p-5 bg-gradient-to-t from-color-1 via-color-1/50 to-transparent">
                 <h1
                   style={{
                     textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",

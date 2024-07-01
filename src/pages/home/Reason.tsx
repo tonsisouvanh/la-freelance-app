@@ -3,6 +3,7 @@ import {
   SafetyCertificateOutlined,
   FileSearchOutlined,
 } from "@ant-design/icons";
+import SectionHeading from "../../components/SectionHeading";
 type Props = {
   className?: string;
 };
@@ -10,12 +11,10 @@ const Reason = ({ className }: Props) => {
   return (
     <>
       <div className={`space-y-10 ${className && className}`}>
-        <div className="">
-          <h1 className="text-3xl font-bold">
-            ເປັນຫຍັງຕ້ອງເລືອກໃຊ້ LA-FREELANCE ?
-          </h1>
+        <div className="flex flex-col items-center">
+          <SectionHeading className="text-black" title="ເປັນຫຍັງຕ້ອງເລືອກໃຊ້ LA-FREELANCE ?" />
           <h1 className="text-color-1 leading-relaxed text-4xl mt-3 font-bold">
-            ເພາະເຮົາສາມາດປຽ່ນໄອເດຍເຈົ້າໃຫ້ເປັນຈິງ ດ້ວຍຟີຮແລຮນມືອາຊີບ
+            ເພາະຟີຣແລນສ໌ສາມາດນຳເອົາໄອເດຍຂອງທ່ານອອກມາສ້າງໃຫ້ເປັນຈິງດ້ວຍຟີຣແລນສ໌ມືອາຊີບ
           </h1>
         </div>
         <div className="">

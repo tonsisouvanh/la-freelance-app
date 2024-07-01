@@ -77,7 +77,6 @@ const items: MenuItem[] = [
     activeIcon: <SoundFilled />,
   },
 ];
-console.log("🚀 ~ items:", items);
 
 const MobileNavbar = () => {
   const { pathname } = useLocation();

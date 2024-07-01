@@ -22,6 +22,8 @@ import MobileNavbar from "./components/layouts/MobileNavbar.js";
 import ScrollToTop from "./components/shared/ScrollToTop.js";
 import Spinner from "./components/shared/Spinner.js";
 import { Suspense } from "react";
+
+
 function App() {
   return (
     <>

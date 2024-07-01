@@ -15,7 +15,7 @@ const Footer = ({ className }: Props) => {
     //   <Logo className="w-28" />
     // </Footers>
     <footer className={`w-full ${className && className}`}>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 hidden">
         {/*Grid*/}
         <div className="py-10 flex justify-between items-center flex-col gap-8 xl:flex-row">
           <div className="flex items-center flex-col xl:flex-row ">

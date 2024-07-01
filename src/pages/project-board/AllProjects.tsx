@@ -9,7 +9,7 @@ const AllProjects = () => {
           {Array.from({ length: 10 }, (__, index) => (
             <div key={index} className="">
               <Link to="/projects/category/2" key={index}>
-                <ProjectCard classname="border" />
+                <ProjectCard className="border" />
               </Link>
             </div>
           ))}

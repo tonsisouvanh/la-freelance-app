@@ -13,7 +13,7 @@ const TyperText: React.FC = () => {
   return (
     <div className="text-center gap-3">
       <h1 className="text-2xl lg:text-4xl text-white font-bold text-center justify-center items-center">
-        ເຮົາມີຟີຣແລນສ ມືອາຊີບດ້ານ...
+        ເຮົາມີຟີຣແລນສ໌ ມືອາຊີບດ້ານ...
       </h1>
       <div>
         <div>

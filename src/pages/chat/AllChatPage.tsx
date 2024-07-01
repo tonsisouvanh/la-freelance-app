@@ -1,4 +1,4 @@
-import { Input } from "antd";
+import { Button, Input } from "antd";
 import { FaSearch } from "react-icons/fa";
 import ChatRow from "./ChatRow";
 import React from "react";
@@ -6,22 +6,20 @@ import React from "react";
 const AllChatPage = () => {
   return (
     <div className="">
-      <div className="bg-color-1 rounded-b-lg flex items-center justify-center h-20">
-        <h1 className="text-white">CHAT</h1>
-      </div>
-      <div className="bg-color-1/20 -mt-1 px-2 py-6">
-        <div className="md:_container md:gap-0 md:py-0">
-          <p className="text-md font-semibold text-slate-800 mb-1 lg:text-lg z-[1]">
-            ຄົ້ນຫາຟີຣແລນສ
-          </p>
+      <div className="flex flex-col w-full items-center gap-4">
+        <h1 className="text-color-1 font-bold text-2xl">ແຊັດ</h1>
+        <div className="max-w-xl w-full flex justify-center items-center gap-2">
           <Input
             size="small"
-            className="p-2 w-full md:w-[40rem]"
-            placeholder="ພິມຊື່ຟີຣແລນສ"
-            prefix={
-              <FaSearch className="text-color-1 text-2xl border-r-2 border-r-color-1 px-1 mr-2" />
-            }
+            className="p-2 max-w-[480px] w-full rounded-lg"
+            placeholder="ພິມຊື່ຟີຣແລນສ໌"
           />
+          <Button
+            type="primary"
+            size="large"
+            icon={<FaSearch />}
+            className="text-white rounded-lg flex items-center justify-center bg-color-1"
+          ></Button>
         </div>
       </div>
       <div>
