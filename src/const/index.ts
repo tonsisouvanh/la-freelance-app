@@ -1,20 +1,21 @@
 import {
   adone,
   adthree,
-  adtwo,
+  camera,
   designer,
   feedback,
   finance,
-  graphic_category,
+  garanteefreelancer,
+  graphic,
   looking,
   negotiate,
   payment,
-  photography_category,
   photoshoot,
   programming,
-  programming_category,
-  translate_category,
+  sales,
+  toponefreelancer,
   translator,
+  variousfreelancer,
 } from "../assets";
 
 export const projectSliderData = [
@@ -59,45 +60,89 @@ export const advertisementData = [
 export const categoryData = [
   {
     id: 1,
-    title: "Graphic & Design",
-    imageUrl: graphic_category,
+    title: "Graphic Design",
+    imageUrl: graphic,
+  },
+  {
+    id: 4,
+    title: "Sales",
+    imageUrl: sales,
   },
   {
     id: 2,
     title: "Photography",
-    imageUrl: photography_category,
+    imageUrl: camera,
   },
   {
     id: 3,
     title: "Programming",
-    imageUrl: programming_category,
-  },
-  {
-    id: 4,
-    title: "Translator",
-    imageUrl: translate_category,
+    imageUrl: programming,
   },
 ];
 
-export const hiringGuide = [
+export const hiringSteps = [
   {
     id: 1,
     title: "ຄົ້ນຫາຟີຣແລຣສທີ່ຖືກໃຈ",
-    imageUrl: looking,
   },
   {
     id: 2,
     title: "ລົມລາຍລະອຽດໜ້າວຽກເຮັດສັນຍາຮ່ວມກັນ",
-    imageUrl: negotiate,
   },
   {
     id: 3,
     title: "ຊຳລະເງິນຜ່ານບັນຊີທະນາຄານກອງກາງ",
-    imageUrl: payment,
   },
   {
     id: 4,
     title: "ຮັບວຽກຈາກຟີຣແລນສ໌",
-    imageUrl: feedback,
   },
+];
+
+export const platformServices = [
+  {
+    id: 1,
+    title: "ຟີຣແລນສ໌ຄຸນນະພາບອັນດັບ 1",
+    description:
+      "ຟີຣແລຮນຈະຜ່ານການຄັດເລືອກ ແລະ ຢືນຢັນຕົວຕົນ ກັບ LA-FREELANCE ສາມາດກວດສອບໄດ້",
+    imageUrl: toponefreelancer,
+  },
+  {
+    id: 2,
+    title: "ຮັບປະກັບການຈ້າງວຽກ",
+    description:
+      "ເງິນຂອງທ່ານຈະໄດ້ຮັບການຄຸ້ມຄອງຕັ້ງແຕ່ຟີຮແລນສ໌ເລິ່ມເຮັດວຽກຈົນໄດ້ຮັບວຽກທີ່ພໍໃຈ",
+    imageUrl: garanteefreelancer,
+  },
+  {
+    id: 3,
+    title: "ມີບໍລິການຫຼາຍຢ່າງໃຫ້ທ່ານເລືອກ",
+    description: "ມີຟີຮແລນສ໌ຫຼາຍຄົນທີ່ພ້ອມໃຫ້ບໍລິການ",
+    imageUrl: variousfreelancer,
+  },
+];
+
+export const projectData = [
+  {
+    id: 1,
+    title: "ອອກແບບ ໂລໂກ້ ຮ້ານ ອາຫານ, ແບຣນເສື້ອຜ້າ",
+    thumbnail: "path_to_image",
+    images: [],
+    profileImage: "",
+    freelancerName: "Jennifer Kim",
+    rate: 4,
+    budget: 200000,
+    completedProject: 19,
+  },
+  {
+    id: 2,
+    title: "ຮັບພັດທະນາ Web Application",
+    thumbnail: "path_to_image",
+    images: [],
+    profileImage: "",
+    freelancerName: "Jennifer Kim",
+    rate: 4,
+    budget: 200000,
+    completedProject: 19,
+  }
 ];

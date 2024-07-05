@@ -5,7 +5,8 @@ import { useAppSelector } from "../../hook/hooks";
 const ProtectedRoutes = () => {
   const location = useLocation();
   const { user } = useAppSelector((state) => state.auth);
-  return user ? (
+  // TODO: remove === null after done testing
+  return user === null ? (
     <Outlet />
   ) : (
     <Navigate to="/signin" replace state={{ from: location }} />

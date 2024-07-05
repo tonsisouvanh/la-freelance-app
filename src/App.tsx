@@ -23,7 +23,6 @@ import ScrollToTop from "./components/shared/ScrollToTop.js";
 import Spinner from "./components/shared/Spinner.js";
 import { Suspense } from "react";
 
-
 function App() {
   return (
     <>
@@ -32,6 +31,11 @@ function App() {
           token: {
             fontFamily: "Noto Sans Lao",
             colorPrimary: "#00A6ED",
+          },
+          components: {
+            Select: {
+              borderRadius: 24, // Custom border radius
+            },
           },
         }}
       >

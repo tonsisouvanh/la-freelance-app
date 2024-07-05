@@ -17,7 +17,6 @@ const StepBankAccount = ({ Form, Input }: Props) => {
         rules={[{ required: true, message: "Please input" }]}
       >
         <Select
-
           options={[
             {
               value: "bcelbank",

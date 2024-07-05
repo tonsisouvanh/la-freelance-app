@@ -7,7 +7,7 @@ type Props = {
 
 const SectionHeading = ({ className, title }: Props) => {
   const baseClass =
-    "text-color-1 font-bold max-sm:text-2xl text-2xl mx-auto max-w-fit max-sm:mb-2 mb-4";
+    "text-color-1 font-bold max-sm:text-2xl text-[24px] mx-auto max-w-fit max-sm:mb-2 mb-4";
   const mergedClass = tailwindMerge(baseClass, className);
   return (
     <>

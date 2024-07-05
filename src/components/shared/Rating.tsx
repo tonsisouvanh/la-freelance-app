@@ -1,14 +1,18 @@
 import { FaStarHalfAlt, FaStar, FaRegStar } from "react-icons/fa";
+import { tailwindMerge } from "../../utils/tailwindMerge";
 type Props = {
   value?: number;
   text?: string;
   color?: string;
   iconStyle?: string;
+  className?: string;
 };
-const Rating = ({ value = 0, text, color, iconStyle }: Props) => {
+const Rating = ({ value = 0, text, color, iconStyle, className }: Props) => {
+  const baseClass = "flex items-center gap-1";
+  const mergedClass = tailwindMerge(baseClass, className);
   return (
     <>
-      <div className={"flex items-center gap-1"}>
+      <div className={mergedClass}>
         <span className={iconStyle} style={{ color }}>
           {value >= 1 ? (
             <FaStar />

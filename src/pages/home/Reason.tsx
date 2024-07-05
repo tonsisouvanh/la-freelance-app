@@ -1,60 +1,48 @@
-import {
-  SolutionOutlined,
-  SafetyCertificateOutlined,
-  FileSearchOutlined,
-} from "@ant-design/icons";
-import SectionHeading from "../../components/SectionHeading";
+import { tailwindMerge } from "../../utils/tailwindMerge";
+import { platformServices } from "../../const";
 type Props = {
   className?: string;
 };
 const Reason = ({ className }: Props) => {
+  const baseClass = "space-y-10";
+  const mergedClass = tailwindMerge(baseClass, className);
   return (
     <>
-      <div className={`space-y-10 ${className && className}`}>
-        <div className="flex flex-col items-center">
-          <SectionHeading className="text-black" title="ເປັນຫຍັງຕ້ອງເລືອກໃຊ້ LA-FREELANCE ?" />
-          <h1 className="text-color-1 leading-relaxed text-4xl mt-3 font-bold">
+      <section className={mergedClass}>
+        <div className="mx-auto max-w-fit space-y-[8px] text-center">
+          <h4 className="mx-auto max-w-fit text-[24px] font-bold text-color-7 max-sm:mb-2 max-sm:text-2xl">
+            ເປັນຫຍັງຕ້ອງເລືອກໃຊ້
+            <span className="text-color-1"> LA-FREELANCE ?</span>
+          </h4>
+          <p className="text-[20px] text-color-2">
             ເພາະຟີຣແລນສ໌ສາມາດນຳເອົາໄອເດຍຂອງທ່ານອອກມາສ້າງໃຫ້ເປັນຈິງດ້ວຍຟີຣແລນສ໌ມືອາຊີບ
-          </h1>
+          </p>
         </div>
-        <div className="">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 place-content-center gap-10">
-            <div className="flex items-start">
-              <SolutionOutlined className="text-[56px] text-color-1" />
-              <h1 className="text-xl whitespace-nowrap ml-5 font-bold">
-                ຟີຣແລຮນຄຸນນະພາບອັນດັບ 1<br />
-                <span className="text-sm font-medium">
-                  ຟີຣແລຮນຈະຜ່ານການຄັດເລືອກ ແລະ ຢືນຢັນຕົວຕົນ
-                  <br />
-                  ກັບ LA-FREELANCE ສາມາດກວດສອບໄດ້
-                </span>
-              </h1>
+        <div className="grid grid-cols-3 justify-items-center">
+          {platformServices.map((item) => (
+            <div
+              key={item.id}
+              className="w-full max-w-xs space-y-[16px] rounded-[16px] bg-color-8 p-8 shadow-2xl shadow-color-2/20"
+            >
+              {/* <div
+              key={item.id}
+              className="w-full max-w-xs space-y-[16px] rounded-[16px] bg-color-8 p-8 shadow-color-8 shadow-2xl drop-shadow-2xl"
+            > */}
+              <img
+                src={item.imageUrl}
+                className="h-auto max-w-[80px] object-cover"
+                alt=""
+              />
+              <article className="space-y-[8px]">
+                <h1 className="whitespace-nowrap text-[20px] font-bold text-color-7">
+                  {item.title}
+                </h1>
+                <p className="text-[16px] text-color-7">{item.description}</p>
+              </article>
             </div>
-            <div className="flex items-start">
-              <SafetyCertificateOutlined className="text-[56px] text-color-1" />
-              <h1 className="text-xl whitespace-nowrap ml-5 font-bold">
-                ຮັບປະກັບການຈ້າງວຽກ
-                <br />
-                <span className="text-sm font-medium">
-                  ເງິນຂອງທ່ານຈະໄດ້ຮິບການຄຸ້ມຄອງຕັ້ງແຕ່ຟີຮແລຮນ
-                  <br />
-                  ເລິ່ມເຮັດວຽກຈົນໄດ້ຮັບວຽກທີ່ພໍໃຈ
-                </span>
-              </h1>
-            </div>
-            <div className="flex items-start">
-              <FileSearchOutlined className="text-[56px] text-color-1" />
-              <h1 className="text-xl whitespace-nowrap ml-5 font-bold">
-                ມີບໍລິການຫຼາຍຢ່າງໃຫ້ທ່ານເລືອກ
-                <br />
-                <span className="text-sm font-medium">
-                  ມີຟີຮແລຮນຫຼາຍຄົນທີ່ພ້ອມໃຫ້ບໍລິການ
-                </span>
-              </h1>
-            </div>
-          </div>
+          ))}
         </div>
-      </div>
+      </section>
     </>
   );
 };

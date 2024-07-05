@@ -6,17 +6,18 @@ interface AuthState {
 }
 
 const initialState: AuthState = {
-  user: {
-    id: 1,
-    firstname: "John",
-    lastname: "Doe",
-    phone: "123456789",
-    role: "admin",
-    last_login: new Date(),
-    token: "k09qwdpojk",
-    access_token: "fkpw9i",
-    refresh_token: "fjpw9",
-  },
+  // user: {
+  //   id: 1,
+  //   firstname: "John",
+  //   lastname: "Doe",
+  //   phone: "123456789",
+  //   role: "admin",
+  //   last_login: new Date(),
+  //   token: "k09qwdpojk",
+  //   access_token: "fkpw9i",
+  //   refresh_token: "fjpw9",
+  // },
+  user: null,
   // user: sessionStorage.getItem("user")
   //   ? JSON.parse(sessionStorage.getItem("user") || "")
   //   : null,

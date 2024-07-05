@@ -1,43 +1,51 @@
-import { HeartOutlined } from "@ant-design/icons";
-import { worka } from "../../assets";
-import { Rate } from "antd";
+import { workb } from "../../assets";
+import { Avatar } from "antd";
 import { tailwindMerge } from "../../utils/tailwindMerge";
+import { Link } from "react-router-dom";
+import Rating from "../shared/Rating";
 type Props = {
   className?: string;
+  id: number;
 };
 
-const ProjectCard = ({ className }: Props) => {
-  const baseClass =
-    "bg-gray-50 shadow-md overflow-hidden rounded-lg cursor-pointer hover:-translate-y-2d border hover:border-color-1 transition-all relative";
+const ProjectCard = ({ className, id }: Props) => {
+  const baseClass = "rounded-xl border bg-white hover:shadow-xl p-[10px]";
   const mergedClass = tailwindMerge(baseClass, className);
   return (
-    <div className={`${mergedClass}`}>
-      <div className="bg-white w-8 h-8 flex items-center justify-center rounded-md cursor-pointer absolute top-4 right-4">
-        <HeartOutlined />
-      </div>
-      <div className="h-[160px] sm:h-[220px] p-3 overflow-hidden mx-auto aspect-w-16 aspect-h-8">
-        <img
-          src={worka}
-          alt="Product 1"
-          className="h-full w-full object-cover rounded-lg"
-        />
-      </div>
-      <div className="p-4 bg-white">
-        <h3 className="text-xs sm:text-sm sm:line-clamp-2 font-bold text-gray-800">
-          Logo design + Brand CI ออกแบบโดย ดีไซน์เนอร์ Degree เมืองนอก
-        </h3>
-        <h4 className="text-md sm:text-lg font-bold mt-2 text-color-1">
-          200.000 K
-        </h4>
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between">
-          <p className="text-gray-500 mt-2d text-xs sm:text-md">
-            ຂາຍສຳເລັດ: 10
-          </p>
-          <div className="mt-2d sm:mt-6d">
-            <Rate className="text-sm" value={5} disabled />
-          </div>
+    <div key={id} className={mergedClass}>
+      <Link to="#">
+        <div className="relative flex items-end overflow-hidden rounded-[8px]">
+          <img src={workb} alt="Hotel Photo" />
         </div>
-      </div>
+        <article className="mt-1 space-y-3">
+          <h2 className="mb-10 line-clamp-2 h-[3rem] text-[16px] text-color-5">
+            ອອກແບບ ໂລໂກ້ ຮ້ານ ອາຫານ, ແບຣນເສື້ອຜ້ານ, ແບຣນເສື້ອຜ້ານ,
+            ແບຣນເສື້ອຜ້ານ, ແບຣນເສື້ອຜ້ານ,
+            ແບຣນເສື້ອຜ້ານເສື້ອຜ້ານເສື້ອຜ້ານເສື້ອຜ້ານເສື້ອຜ້ານເສື້ອຜ້າ
+          </h2>
+          <div className="mb-[12px] flex items-center gap-2 divide-x-[1px]">
+            <div>
+              <p className="text-[14px] text-color-2">ວຽກທີ່ໄດ້ຮັບ: 19</p>
+            </div>
+            <div>
+              <Rating value={4} color="#FFC700" className="gap-1 pl-2" />
+            </div>
+          </div>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-[7px]">
+              <Avatar
+                size={"large"}
+                src="https://www.perfocal.com/blog/content/images/size/w960/2021/01/Perfocal_17-11-2019_TYWFAQ_100_standard-3.jpg"
+              />
+              <p className="text-[14px] text-color-3">Jennifer Kim</p>
+            </div>
+            <div className="text-end">
+              <p className="text-[14px] text-color-2">ເລີ່ມຕົ້ນ</p>
+              <p className="text-[16px] font-bold text-color-1">500,000 ກີບ</p>
+            </div>
+          </div>
+        </article>
+      </Link>
     </div>
   );
 };

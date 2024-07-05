@@ -1,14 +1,17 @@
 import { logo } from "../../assets";
+import { tailwindMerge } from "../../utils/tailwindMerge";
 
 type Props = {
   className?: string;
 };
 
 const Logo = ({ className }: Props) => {
+  const baseClass = "w-full h-full";
+  const mergedClass = tailwindMerge(baseClass, className);
   return (
-    <>
-      <img className={className && className} src={logo} alt="" />
-    </>
+    <div className={mergedClass}>
+      <img className="w-full h-full object-cover" src={logo} alt="" />
+    </div>
   );
 };
 

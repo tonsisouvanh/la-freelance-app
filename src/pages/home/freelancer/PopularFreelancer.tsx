@@ -1,21 +1,23 @@
-import { Button } from "antd";
 import SectionHeading from "../../../components/SectionHeading";
-import PopProjectCard from "./PopProjectCard";
+import PopularFreelancerCard from "./PopularFreelancerCard";
+import { Button } from "antd";
 import { GoArrowRight } from "react-icons/go";
 
-const PopularProjects = () => {
+type Props = {};
+
+const PopularFreelancer = (props: Props) => {
   return (
     <section className="">
-      <SectionHeading title="ງານຍອດນິຍົມ" />
-      <div className="mb-[40px] grid grid-cols-4 gap-[32px] max-md:grid-cols-3 max-sm:grid-cols-2">
+      <SectionHeading title="ຟຣີແລນສ໌ຍອດນິຍົມ" />
+      <div className="grid max-sm:grid-cols-2 max-md:grid-cols-3 grid-cols-4 gap-[32px] mb-[40px]">
         {Array.from({ length: 6 }, (__, index) => (
-          <PopProjectCard key={index} id={index} />
+          <PopularFreelancerCard key={index} id={index} />
         ))}
       </div>
       {/* <Button icon={<GoArrowRight />} iconPosition={} >ເບິ່ງທັງໝົດ</Button> */}
-      <div className="ml-auto max-w-fit">
+      <div className="max-w-fit ml-auto">
         <Button
-          className="border-none text-[16px] font-bold text-color-1 shadow-none"
+          className="text-[16px] border-none shadow-none text-color-1 font-bold"
           icon={<GoArrowRight size={25} className="font-bold" />}
           type="default"
           iconPosition={"end"}
@@ -27,4 +29,4 @@ const PopularProjects = () => {
   );
 };
 
-export default PopularProjects;
+export default PopularFreelancer;

@@ -11,57 +11,54 @@ import Image from "../../components/Image";
 const ProjectPage = () => {
   const navigate = useNavigate();
   return (
-    <div className="_container max-md:py-0 max-md:px-0 py-4">
+    <div className="_container py-4 max-md:px-0 max-md:py-0">
       <div className="flex flex-1 justify-center">
-        <div className="bg-transparent overflow-hidden max-md:max-w-full">
-          <div className="relative md:w-1/2 md:mx-auto">
+        <div className="overflow-hidden bg-transparent max-md:max-w-full">
+          <div className="relative md:mx-auto md:w-1/2">
             <Image
               image="https://images.unsplash.com/photo-1523275335684-37898b6baf30"
-              className="w-full h-full md:object-cover "
+              className="h-full w-full md:object-cover"
             />
-            {/* <img
-              alt="Product Image"
-            /> */}
-            <div className="absolute bg-gradient-to-b from-black/40 to-transparent h-[5rem] p-4 flex justify-between items-start top-0 left-0 right-0">
+            <div className="absolute left-0 right-0 top-0 flex h-[5rem] items-start justify-between bg-gradient-to-b from-black/40 to-transparent p-4">
               <button onClick={() => navigate(-1)}>
-                <FaChevronLeft className="cursor-pointer font-bold text-white text-2xl" />
+                <FaChevronLeft className="cursor-pointer text-2xl font-bold text-white" />
               </button>
               <div className="space-x-4">
                 <span>
-                  <HeartFilled className="cursor-pointer font-bold text-red-500 text-2xl" />
+                  <HeartFilled className="cursor-pointer text-2xl font-bold text-red-500" />
                 </span>
                 <span>
-                  <ShareAltOutlined className="cursor-pointer font-bold text-white text-2xl" />
+                  <ShareAltOutlined className="cursor-pointer text-2xl font-bold text-white" />
                 </span>
               </div>
             </div>
-            <div className="p-2 divide-y-2 divide-slate-300">
+            <div className="divide-y-2 divide-slate-300 p-2">
               <div className="">
-                <h3 className="text-lg font-medium mb-2">
+                <h3 className="mb-2 text-lg font-medium">
                   ຣັບແປຣພາສາ ອັງກິດ ລາວ ຈີນ ໄທ
                 </h3>
                 <div className="flex items-center gap-2">
-                  <StarFilled className="text-yellow-400 text-xl" />
+                  <StarFilled className="text-xl text-yellow-400" />
                   {"4.9"}
-                  <p className="text-gray-600 text-md">ຂາຍໄດ້ 26 ຄັ້ງ</p>
+                  <p className="text-md text-gray-600">ຂາຍໄດ້ 26 ຄັ້ງ</p>
                 </div>
-                <p className="text-gray-600 text-sm mb-4">
+                <p className="mb-4 text-sm text-gray-600">
                   ຣັບແປພາສາທາງການ ແລະ ບໍທາງການ ເດີ້
                 </p>
               </div>
               <div className="py-6">
                 <PackageTabs />
               </div>
-              <div className="py-6 space-y-5">
+              <div className="space-y-5 py-6">
                 <Button
                   block
-                  className="text-white bg-color-1"
+                  className="bg-color-1 text-white"
                   type="primary"
                   htmlType="button"
                 >
                   ແຊັດກັບຟີຣແລຣນ
                 </Button>
-                <p className="text-sm text-center text-gray-500">
+                <p className="text-center text-sm text-gray-500">
                   ທ່ານຈະບໍ່ເສຍຄ່າໃຊ້ຈ່າຍ
                 </p>
               </div>
