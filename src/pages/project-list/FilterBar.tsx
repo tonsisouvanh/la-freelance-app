@@ -48,21 +48,21 @@ const FilterBar: React.FC = () => {
           ຕົວກອງ
         </Button>
         <Select
-          defaultValue="ທັງຫມົດ"
+          defaultValue="ໝວດໝູ່"
           suffixIcon={
             <BsChevronDown className="text-md font-bold text-color-1" />
           }
-          className="w-[8rem]"
+          className="w-[10rem]"
         >
+          <Option value="category">ໝວດໝູ່</Option>
           <Option value="all">ທັງຫມົດ</Option>
-          <Option value="option1">Option 1</Option>
-          <Option value="option2">Option 2</Option>
-          <Option value="option3">Option 3</Option>
-          <Option value="option4">Option 4</Option>
-          <Option value="option5">Option 5</Option>
+          <Option value="option1">Photogarphy</Option>
+          <Option value="option2">Programming</Option>
+          <Option value="option3">Graphic & Design</Option>
+          <Option value="option4">Sales</Option>
           {/* Add more options */}
         </Select>
-        <Select
+        {/* <Select
           suffixIcon={
             <BsChevronDown className="text-md font-bold text-color-1" />
           }
@@ -75,24 +75,30 @@ const FilterBar: React.FC = () => {
           <Option value="option3">Option 3</Option>
           <Option value="option4">Option 4</Option>
           <Option value="option5">Option 5</Option>
-          {/* Add more options */}
-        </Select>
+        </Select> */}
         <Select
           suffixIcon={
             <BsChevronDown className="text-md font-bold text-color-1" />
           }
           defaultValue="ລາຄາ"
-          className="w-full md:w-auto"
+          className="w-[8rem]"
         >
           <Option value="price">ລາຄາ</Option>
-          <Option value="option1">Option 1</Option>
-          <Option value="option2">Option 2</Option>
-          <Option value="option3">Option 3</Option>
-          <Option value="option4">Option 4</Option>
-          <Option value="option5">Option 5</Option>
-          {/* Add more options */}
+          <Option value="option1">ສຼງ - ຕ່ຳ</Option>
+          <Option value="option2">ຕ່ຳ - ສູງ</Option>
         </Select>
         <Select
+          suffixIcon={
+            <BsChevronDown className="text-md font-bold text-color-1" />
+          }
+          defaultValue="price"
+          className="w-[8rem]"
+        >
+          <Option value="price">ຄະແນນຣີວິວ</Option>
+          <Option value="option1">ໜ້ອຍ - ຫຼາຍ</Option>
+          <Option value="option2">ຫຼາຍ - ໜ້ອຍ</Option>
+        </Select>
+        {/* <Select
           suffixIcon={
             <BsChevronDown className="text-md font-bold text-color-1" />
           }
@@ -105,22 +111,18 @@ const FilterBar: React.FC = () => {
           <Option value="option3">Option 3</Option>
           <Option value="option4">Option 4</Option>
           <Option value="option5">Option 5</Option>
-          {/* Add more options */}
-        </Select>
+        </Select> */}
         <Select
           suffixIcon={
             <BsChevronDown className="text-md font-bold text-color-1" />
           }
           defaultValue="ລະດັບ"
-          className="w-full md:w-auto"
+          className="w-[10rem]"
         >
           <Option value="level">ລະດັບ</Option>
-          <Option value="option1">Option 1</Option>
-          <Option value="option2">Option 2</Option>
-          <Option value="option3">Option 3</Option>
-          <Option value="option4">Option 4</Option>
-          <Option value="option5">Option 5</Option>
-          {/* Add more options */}
+          <Option value="option1">Freelance</Option>
+          <Option value="option2">Specialist</Option>
+          <Option value="option3">Professional</Option>
         </Select>
       </div>
     </div>

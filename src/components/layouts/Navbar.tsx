@@ -57,7 +57,7 @@ const menuItems: MenuItem[] = [
   },
   {
     id: 3,
-    title: "ຊອກຫາວຽກ",
+    title: "ວຽກທັງໝົດ",
     path: "/projects",
   },
   {

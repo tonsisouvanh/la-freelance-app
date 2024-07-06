@@ -46,14 +46,15 @@ div.swiper-button-next {
   height: 2rem;
   width: 2rem;
   border-radius: 100%;
-  background-color: white;
   color: #fff;
   border: 0.5px solid #00a6ed;
+  background-color: #00a6ed;
+
 }
 
 div.swiper-button-prev::after,
 div.swiper-button-next::after {
-  color: #00a6ed; /* Replace with your desired color */
+  color: #FFFFFF; /* Replace with your desired color */
   font-size: 1rem;
 }
 

@@ -13,7 +13,7 @@ const PopProjectCard = ({ id }: Props) => {
       key={id}
       className="rounded-xl border bg-white hover:shadow-xl p-[12px]"
     >
-      <Link to="/projects/:category/:projectId">
+      <Link to={`/projects/${'cate'}/${1}`}>
         <div className="relative flex items-end overflow-hidden rounded-xl">
           <img src={workb} alt="Hotel Photo" />
         </div>

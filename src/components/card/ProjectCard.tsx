@@ -13,7 +13,7 @@ const ProjectCard = ({ className, id }: Props) => {
   const mergedClass = tailwindMerge(baseClass, className);
   return (
     <div key={id} className={mergedClass}>
-      <Link to="#">
+      <Link to={`/projects/${"cate"}/${1}`}>
         <div className="relative flex items-end overflow-hidden rounded-[8px]">
           <img src={workb} alt="Hotel Photo" />
         </div>
