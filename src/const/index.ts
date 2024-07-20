@@ -3,15 +3,27 @@ import {
   adthree,
   camera,
   designer,
-  feedback,
   finance,
+  freelancea,
+  freelanceb,
+  freelancec,
+  freelanced,
+  freelancee,
+  freelancef,
+  freelanceg,
+  freelanceh,
   garanteefreelancer,
   graphic,
-  looking,
-  negotiate,
-  payment,
   photoshoot,
+  proa,
+  prob,
+  proc,
+  prod,
+  proe,
+  prof,
+  prog,
   programming,
+  proh,
   sales,
   toponefreelancer,
   translator,
@@ -126,9 +138,9 @@ export const projectData = [
   {
     id: 1,
     title: "ອອກແບບ ໂລໂກ້ ຮ້ານ ອາຫານ, ແບຣນເສື້ອຜ້າ",
-    thumbnail: "path_to_image",
+    thumbnail: proa,
     images: [],
-    profileImage: "",
+    profileImage: freelancea,
     freelancerName: "Jennifer Kim",
     rate: 4,
     budget: 200000,
@@ -137,12 +149,78 @@ export const projectData = [
   {
     id: 2,
     title: "ຮັບພັດທະນາ Web Application",
-    thumbnail: "path_to_image",
+    thumbnail: prob, // replace with actual path
     images: [],
-    profileImage: "",
-    freelancerName: "Jennifer Kim",
+    profileImage: freelanceb, // replace with actual path
+    freelancerName: "Black Jack",
+    rate: 3,
+    budget: 20000000,
+    completedProject: 15,
+  },
+  {
+    id: 3,
+    title: "ອອກແບບ ແລະ ສ້າງເວັບໄຊ້ທຸກປະເພດ",
+    thumbnail: proc, // replace with actual path
+    images: [],
+    profileImage: freelancec, // replace with actual path
+    freelancerName: "Peter Parker",
     rate: 4,
-    budget: 200000,
-    completedProject: 19,
-  }
+    budget: 20000000,
+    completedProject: 30,
+  },
+  {
+    id: 4,
+    title: "ຮັບແຕ້ມຮູບ cartoon ສີນໍ້າ",
+    thumbnail: prod, // replace with actual path
+    images: [],
+    profileImage: freelanced, // replace with actual path
+    freelancerName: "Taylor Swift",
+    rate: 4,
+    budget: 100000,
+    completedProject: 30,
+  },
+  {
+    id: 5,
+    title: "ອອກແບບຕຶກອາຄານ ບ້ານ ລາຄາເປັນກັນເອງ",
+    thumbnail: proe, // replace with actual path
+    images: [],
+    profileImage: freelancee, // replace with actual path
+    freelancerName: "Pecky KL",
+    rate: 5,
+    budget: 5000000,
+    completedProject: 10,
+  },
+  {
+    id: 6,
+    title: "Front-end development & UX/UI",
+    thumbnail: prof, // replace with actual path
+    images: [],
+    profileImage: freelancef, // replace with actual path
+    freelancerName: "Emily Emily",
+    rate: 4,
+    budget: 5000000,
+    completedProject: 13,
+  },
+  {
+    id: 7,
+    title: "ຮັບເຮັດລະບົບຮ້ານອາຫານ ແລະ ຈອງໂຮງແຮມ",
+    thumbnail: prog, // replace with actual path
+    images: [],
+    profileImage: freelanceg, // replace with actual path
+    freelancerName: "Getty Noah",
+    rate: 5,
+    budget: 50000000,
+    completedProject: 21,
+  },
+  {
+    id: 8,
+    title: "ອອກແບບພາຊະນະບັນຈຸສິນຄ້າ ອາຫານ ເຄື່ອງດື່ມ ແຖມຟີຣ! Mockup",
+    thumbnail: proh, // replace with actual path
+    images: [],
+    profileImage: freelanceh, // replace with actual path
+    freelancerName: "Kelly Killer",
+    rate: 4,
+    budget: 500000,
+    completedProject: 25,
+  },
 ];

@@ -8,9 +8,10 @@ const PopularProjects = () => {
     <section className="">
       <SectionHeading title="ງານຍອດນິຍົມ" />
       <div className="mb-[40px] grid grid-cols-4 gap-[32px] max-md:grid-cols-3 max-sm:grid-cols-2">
-        {Array.from({ length: 6 }, (__, index) => (
+          <PopProjectCard />
+        {/* {projectData.map((project, index) => (
           <PopProjectCard key={index} id={index} />
-        ))}
+        ))} */}
       </div>
       {/* <Button icon={<GoArrowRight />} iconPosition={} >ເບິ່ງທັງໝົດ</Button> */}
       <div className="ml-auto max-w-fit">

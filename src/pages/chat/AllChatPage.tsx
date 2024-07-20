@@ -3,8 +3,55 @@ import { useState } from "react";
 import { PaperClipOutlined, SendOutlined } from "@ant-design/icons";
 import ModalContractForm from "./form/ModalContractForm";
 import { IoSearchOutline } from "react-icons/io5";
+import {
+  freelancea,
+  freelanceb,
+  freelancec,
+  freelanced,
+  freelancee,
+  freelancef,
+  freelanceh,
+} from "../../assets";
 
 const { TextArea } = Input;
+const chatData = [
+  {
+    id: 1,
+    profileImage: freelanceb, // replace with actual path
+    name: "Jan Mayer",
+    status: "online",
+    time: "12 mins ago",
+    message: "We want to invite you for a qui...",
+  },
+  {
+    id: 2,
+    profileImage: freelancec, // replace with actual path
+    name: "Joe Bartmann",
+    time: "3:40 PM",
+    message: "Hey thanks for your interview...",
+  },
+  {
+    id: 3,
+    profileImage: freelanced, // replace with actual path
+    name: "Ally Wales",
+    time: "3:40 PM",
+    message: "Hey thanks for your interview...",
+  },
+  {
+    id: 4,
+    profileImage: freelancee, // replace with actual path
+    name: "James Gardner",
+    time: "3:40 PM",
+    message: "Hey thanks for your interview...",
+  },
+  {
+    id: 5,
+    profileImage: freelancef, // replace with actual path
+    name: "Allison Geidt",
+    time: "3:40 PM",
+    message: "Hey thanks for your interview...",
+  },
+];
 
 const AllChatPage = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -38,15 +85,17 @@ const AllChatPage = () => {
           <ul className="mt-4 flex-grow divide-y-[1px] overflow-y-auto">
             {/* Chat list items */}
             <li className="flex cursor-pointer items-center p-2 py-[16px] hover:bg-[#EFF5FF]">
-              <img
-                src="https://www.tadpole.co.nz/wp-content/uploads/2021/02/team-1.jpg"
-                alt="User"
-                className="mr-3 h-10 w-10 rounded-full"
-              />
+              <div className="mr-3 h-[40px] w-[40px] shrink-0 overflow-hidden rounded-full">
+                <img
+                  src={freelancea}
+                  alt="User"
+                  className="h-full w-full object-cover"
+                />
+              </div>
               <div className="w-full space-y-2">
                 <div className="flex w-full items-center justify-between">
                   <h4 className="flex items-center gap-2 text-sm font-semibold">
-                    Jan Mayer{" "}
+                    Jennifer Lee{" "}
                     <div className="h-[6px] w-[6px] rounded-full bg-color-1"></div>
                   </h4>
                   <span className="ml-auto text-xs text-gray-500">
@@ -58,20 +107,22 @@ const AllChatPage = () => {
                 </p>
               </div>
             </li>
-            {Array.from({ length: 4 }, (__, index) => (
+            {chatData.map((chat) => (
               <li
-                key={index}
+                key={chat.id}
                 className="flex cursor-pointer items-center p-2 py-[16px] hover:bg-[#EFF5FF]"
               >
-                <img
-                  src="https://www.tadpole.co.nz/wp-content/uploads/2021/02/team-1.jpg"
-                  alt="User"
-                  className="mr-3 h-10 w-10 rounded-full"
-                />
+                <div className="mr-3 h-[40px] w-[40px] shrink-0 overflow-hidden rounded-full">
+                  <img
+                    src={chat.profileImage}
+                    alt="User"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
                 <div className="w-full space-y-2">
                   <div className="flex w-full items-center justify-between">
                     <h4 className="flex items-center gap-2 text-[16px] font-semibold">
-                      Jan Mayer
+                      {chat.name}
                     </h4>
                     <span className="ml-auto text-xs text-gray-500">
                       12 mins ago
@@ -92,13 +143,15 @@ const AllChatPage = () => {
           <div className="">
             <div className="flex items-center justify-between border-b border-gray-300 p-[24px]">
               <div className="flex items-center">
-                <img
-                  src="https://www.tadpole.co.nz/wp-content/uploads/2021/02/team-1.jpg"
-                  alt="User"
-                  className="mr-3 h-12 w-12 rounded-full"
-                />
+                <div className="mr-3 h-12 w-12 shrink-0 overflow-hidden rounded-full">
+                  <img
+                    src={freelancea}
+                    alt="User"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
                 <div>
-                  <h4 className="text-lg font-semibold">Jan Mayer</h4>
+                  <h4 className="text-lg font-semibold">Jennifer Lee</h4>
                 </div>
               </div>
               <div className="flex items-center gap-5">
@@ -171,12 +224,14 @@ const AllChatPage = () => {
           {/* Messages */}
           <div className="overscroll-y-scroll flex-grow space-y-[60px] overflow-y-auto px-10">
             <div className="flex flex-col items-center justify-center gap-[8px] py-[32px]">
-              <img
-                src="https://www.tadpole.co.nz/wp-content/uploads/2021/02/team-1.jpg"
-                alt="User"
-                className="h-[88px] w-[88px] rounded-full"
-              />
-              <h4 className="text-[24px] text-color-10">Jan Mayer</h4>
+              <div className="mr-3 h-[88px] w-[88px] shrink-0 overflow-hidden rounded-full">
+                <img
+                  src={freelancea}
+                  alt="User"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <h4 className="text-[24px] text-color-10">Jennifer Lee</h4>
               <p className="text-[16px] text-color-2">
                 This is the very beginning of your direct message with{" "}
                 <span className="font-bold text-color-10">Jan Mayer</span>
@@ -184,13 +239,15 @@ const AllChatPage = () => {
             </div>
             <div>
               <div className="mb-4 flex items-start">
-                <img
-                  src="https://www.tadpole.co.nz/wp-content/uploads/2021/02/team-1.jpg"
-                  alt="User"
-                  className="mr-3 h-10 w-10 rounded-full"
-                />
+                <div className="mr-3 h-10 w-10 shrink-0 overflow-hidden rounded-full">
+                  <img
+                    src={freelancea}
+                    alt="User"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
                 <div className="w-full max-w-2xl space-y-[8px] text-[16px]">
-                  <h4 className="font-semibold text-color-10">Jan Mayer</h4>
+                  <h4 className="font-semibold text-color-10">Jennifer Lee</h4>
                   <p className="border p-2 px-[16px] py-[12px] text-[#515B6F]">
                     Hey Jake, I wanted to reach out because we saw your work
                     contributions and were impressed by your work.
@@ -243,11 +300,13 @@ const AllChatPage = () => {
                   <p className="ml-auto w-fit text-color-2">12 mins ago</p>
                 </div>
                 <div className="flex items-center">
-                  <img
-                    src="https://www.tadpole.co.nz/wp-content/uploads/2021/02/team-1.jpg"
-                    alt="You"
-                    className="ml-3 h-10 w-10 rounded-full"
-                  />
+                  <div className="ml-3 h-10 w-10 shrink-0 overflow-hidden rounded-full">
+                    <img
+                      src={freelanceh}
+                      alt="You"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
                 </div>
               </div>
             </div>

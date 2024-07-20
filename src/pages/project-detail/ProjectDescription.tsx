@@ -1,13 +1,11 @@
 import { Button } from "antd";
 import { FaStar } from "react-icons/fa";
 
-type Props = {};
-
-const ProjectDescription = (props: Props) => {
+const ProjectDescription = () => {
   return (
     <div className="flex-1">
-      <div className="mb-[40px] rounded-lg bg-white p-[16px] shadow border">
-        <h2 className="mb-[12px] text-[30px] text-xl font-bold leading-tight">
+      <div className="mb-[40px] rounded-lg border bg-white p-[16px] shadow">
+        <h2 className="mb-[12px] text-[30px] font-bold leading-tight text-color-10">
           ຮັບອອກແບບໂລໂກ້, Branding, CI Brand ຄຸນນະພາບສູງດ້ວຍປະສົບການ 5 ປີ
         </h2>
         <div className="space-y-2">
@@ -18,8 +16,8 @@ const ProjectDescription = (props: Props) => {
           <div className="mt-2 flex items-center text-[16px]">
             <FaStar className="text-[#FFC700]" />
             <p className="ml-2">
-              <span className="text-color-1">4.5</span>| ສຳເລັດວຽກ:{" "}
-              <span className="font-semibold text-color-1">26 ຄັ້ງ</span>
+              <span className="text-color-1">4.5</span> | ສຳເລັດວຽກ:
+              <span className="ml-1 font-semibold text-color-1">26 ຄັ້ງ</span>
             </p>
           </div>
           <div className="flex items-center gap-1.5">

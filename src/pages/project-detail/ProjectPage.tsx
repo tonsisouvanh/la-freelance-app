@@ -1,13 +1,9 @@
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import ThumbnailGallery from "./ThumbnailGallery";
 import ProjectDescription from "./ProjectDescription";
 import RelatedProject from "./RelatedProject";
 import { Breadcrumb } from "antd";
 
 const ProjectPage = () => {
-  const navigate = useNavigate();
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
     <div className="container mx-auto p-4 py-20">

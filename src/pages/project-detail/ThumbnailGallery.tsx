@@ -6,16 +6,19 @@ import "swiper/css/navigation";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 
 import "./styles.css";
-import { advertisementData } from "../../const";
 import Review from "./Review";
+import { freelancea, proc, prod, thumba, thumbb, thumbc } from "../../assets";
 
-type Props = {};
+const sliderProjectImages = [
+  "https://images.unsplash.com/3/doctype-hi-res.jpg?q=80&w=2930&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1493421419110-74f4e85ba126?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+];
 
-const ThumbnailGallery = (props: Props) => {
+const ThumbnailGallery = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
-    <div className="w-full max-w-4xl flex-1 space-y-[48px] max-xl:max-w-xl max-lg:max-w-lg">
+    <div className="w-full max-w-2xl flex-1 space-y-[48px] max-xl:max-w-xl max-lg:max-w-lg">
       <div className="space-y-5">
         <Swiper
           spaceBetween={10}
@@ -31,15 +34,15 @@ const ThumbnailGallery = (props: Props) => {
             modules={[FreeMode, Navigation, Thumbs]}
             className="mySwiper bg-transparent"
           >
-            {advertisementData?.map((slide) => (
+            {sliderProjectImages?.map((slide, index) => (
               <SwiperSlide
-                key={slide.id}
+                key={index}
                 className="-mb-3 rounded-lg bg-transparent !p-0"
               >
                 <div className="relative h-[22rem] w-full max-sm:h-[12rem]">
                   <img
                     className="h-full w-full !object-cover"
-                    src={slide.imageUrl}
+                    src={slide}
                     alt={"project"}
                   />
                 </div>
@@ -59,82 +62,27 @@ const ThumbnailGallery = (props: Props) => {
         >
           <SwiperSlide>
             <div className="relative h-[5rem] w-full max-sm:h-[12rem]">
-              <img
-                className="h-full w-full !object-cover"
-                src="https://swiperjs.com/demos/images/nature-1.jpg"
-              />
+              <img className="h-full w-full !object-cover" src={thumba} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="relative h-[5rem] w-full max-sm:h-[12rem]">
-              <img
-                className="h-full w-full !object-cover"
-                src="https://swiperjs.com/demos/images/nature-2.jpg"
-              />
+              <img className="h-full w-full !object-cover" src={thumbb} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="relative h-[5rem] w-full max-sm:h-[12rem]">
-              <img
-                className="h-full w-full !object-cover"
-                src="https://swiperjs.com/demos/images/nature-3.jpg"
-              />
+              <img className="h-full w-full !object-cover" src={thumbc} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="relative h-[5rem] w-full max-sm:h-[12rem]">
-              <img
-                className="h-full w-full !object-cover"
-                src="https://swiperjs.com/demos/images/nature-4.jpg"
-              />
+              <img className="h-full w-full !object-cover" src={prod} />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="relative h-[5rem] w-full max-sm:h-[12rem]">
-              <img
-                className="h-full w-full !object-cover"
-                src="https://swiperjs.com/demos/images/nature-5.jpg"
-              />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="relative h-[5rem] w-full max-sm:h-[12rem]">
-              <img
-                className="h-full w-full !object-cover"
-                src="https://swiperjs.com/demos/images/nature-6.jpg"
-              />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="relative h-[5rem] w-full max-sm:h-[12rem]">
-              <img
-                className="h-full w-full !object-cover"
-                src="https://swiperjs.com/demos/images/nature-7.jpg"
-              />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="relative h-[5rem] w-full max-sm:h-[12rem]">
-              <img
-                className="h-full w-full !object-cover"
-                src="https://swiperjs.com/demos/images/nature-8.jpg"
-              />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="relative h-[5rem] w-full max-sm:h-[12rem]">
-              <img
-                className="h-full w-full !object-cover"
-                src="https://swiperjs.com/demos/images/nature-9.jpg"
-              />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="relative h-[5rem] w-full max-sm:h-[12rem]">
-              <img
-                className="h-full w-full !object-cover"
-                src="https://swiperjs.com/demos/images/nature-10.jpg"
-              />
+              <img className="h-full w-full !object-cover" src={proc} />
             </div>
           </SwiperSlide>
         </Swiper>
@@ -143,11 +91,13 @@ const ThumbnailGallery = (props: Props) => {
         <h3 className="text-[20px] font-bold text-color-1">ຟີຣແລນສ໌</h3>
         <div className="rounded-lg border bg-white p-4 text-color-7">
           <div className="mt-2 flex items-start">
-            <img
-              src="https://via.placeholder.com/50"
-              alt="Freelancer"
-              className="h-12 w-12 rounded-full"
-            />
+            <div className="h-[70px] min-w-[70px]">
+              <img
+                src={freelancea}
+                alt="Freelancer"
+                className="h-full w-full rounded-full object-cover"
+              />
+            </div>
             <div className="ml-4 space-y-5 divide-y-[1px]">
               <div className="space-y-[16px] text-[16px]">
                 <div className="space-y-[4px]">
@@ -171,7 +121,7 @@ const ThumbnailGallery = (props: Props) => {
                     Vientiane
                   </p>
                 </div>
-                <p className="text-gray-600">
+                <p className="leading-relaxed text-gray-600">
                   Hey! This is Laira studio, a highly creative and multitalented
                   Graphic design studio based in Pakistan with a magnanimous
                   experience of +10 years in this field. In my corporate and

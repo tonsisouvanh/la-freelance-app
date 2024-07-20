@@ -46,7 +46,50 @@ import address from "./footer/address.svg";
 import email from "./footer/email.svg";
 import phone from "./footer/phone.svg";
 
+import proa from "./projects/proa.png";
+import prob from "./projects/prob.png";
+import proc from "./projects/proc.png";
+import prod from "./projects/prod.png";
+import proe from "./projects/proe.png";
+import prof from "./projects/prof.png";
+import prog from "./projects/prog.png";
+import proh from "./projects/proh.png";
+
+import freelancea from "./projects/freelacnea.jpg";
+import freelanceb from "./projects/freelanceb.jpg";
+import freelancec from "./projects/freelancec.jpg";
+import freelanced from "./projects/freelanced.jpg";
+import freelancee from "./projects/freelancee.jpg";
+import freelancef from "./projects/freelancef.jpg";
+import freelanceg from "./projects/freelanceg.jpg";
+import freelanceh from "./projects/freelanceh.jpg";
+
+import thumba from "./projects/thumba.jpeg";
+import thumbb from "./projects/thumbb.jpeg";
+import thumbc from "./projects/thumbc.jpeg";
+import thumbd from "./projects/thumbd.jpeg";
+
 export {
+  thumba,
+  thumbb,
+  thumbc,
+  thumbd,
+  freelancea,
+  freelanceb,
+  freelancec,
+  freelanced,
+  freelancee,
+  freelancef,
+  freelanceg,
+  freelanceh,
+  proa,
+  prob,
+  proc,
+  prod,
+  proe,
+  prof,
+  prog,
+  proh,
   phone,
   email,
   address,

@@ -1,4 +1,3 @@
-import React from "react";
 import ProjectCard from "../../components/card/ProjectCard";
 
 type Props = {};
@@ -10,11 +9,12 @@ const RelatedProject = (props: Props) => {
         ວຽກທີ່ຄ້າຍກັນ
       </h4>
       <div className="grid grid-cols-4 gap-[40px]">
-        {Array.from({ length: 4 }, (__, index) => (
+          <ProjectCard />
+        {/* {Array.from({ length: 4 }, (__, index) => (
           <div key={index} className="">
             <ProjectCard id={index} />
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   );
